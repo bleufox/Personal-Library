@@ -1,51 +1,35 @@
-// Log books in a personal library
+// --------------------------------------------------------------------------------
+// Book log function - log books in a personal library
 
-// console.log("Enter a book");
+// Code adapted from: https://stackoverflow.com/questions/52505323/save-input-value-to-local-storage-and-retrieve-it-on-a-different-page
+function getBook(){
+    return localStorage.getItem("bookStorage");
+};
 
-// const userBook = [];
+function updateHTML(){
+    const bookEl = getBook();
+    document.getElementById("submitReturn").innerHTML = bookEl + " has been added!";
+    // document.getElementById("savedBook").innerHTML = bookEl;
+    // console.log(bookEl + " has been added!");
+};
 
-// localStorage.setItem();
-
-// console.log(userBook);
-
-// function getBook() {
-//     return localStorage.getItem("bookStorage");
-// };
-
-// function updateHTML() {
-//     const bookEl = getBook();
-//     document.getElementById("submitReturn").innerHTML = bookEl + " has been added!";
-//     document.getElementById("savedBook").innerHTML = bookEl;
-// };
-
-// function saveBook() {
-//     // Gets input value
-//     var bookInputEl = document.getElementById("bookInput").value;
-  
-//     // Saves data to retrieve later
-//     localStorage.setItem("bookStorage", bookInputEl);
-    
-//     // Updates HTML
-//     updateHTML();
-// };
-
-function getName() {
-    return localStorage.getItem("userName");
-  }
-  
-function updateHTML() {
-    const name = getName();
-    document.getElementById("greeting").innerHTML = "Hello, " + name + "! Welcome!";
-    document.getElementById("storedName").innerHTML = name;
-}
-
-function myFunction() {
+const saveBookButton = document.getElementById("submitButton")
+saveBookButton.onclick = function saveBook(){
     // Gets input value
-    const name = document.getElementById("myInput").value;
-
+    const bookInputEl = document.getElementById("bookInput").value;
+  
     // Saves data to retrieve later
-    localStorage.setItem("userName", name);
+    localStorage.setItem("bookStorage", bookInputEl);
 
+    console.log(`In this array: ${bookInputEl}`);
+    
     // Updates HTML
     updateHTML();
-}
+};
+
+// document.getElementById('demo').onclick = function changeContent() {
+//     document.getElementById('demo').textContent = "Help me";
+//     document.getElementById('demo').style = "Color: red";
+// };
+
+// --------------------------------------------------------------------------------
