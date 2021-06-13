@@ -8,9 +8,9 @@ function getBook(){
 
 function updateHTML(){
     const bookEl = getBook();
+    document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = bookEl + " has been added!";
     // document.getElementById("savedBook").innerHTML = bookEl;
-    // console.log(bookEl + " has been added!");
 };
 
 function saveBook(){
@@ -25,10 +25,5 @@ function saveBook(){
 
     console.log(`In this array: ${bookInputEl}`);
 };
-
-// document.getElementById('demo').onclick = function changeContent() {
-//     document.getElementById('demo').textContent = "Help me";
-//     document.getElementById('demo').style = "Color: red";
-// };
 
 // --------------------------------------------------------------------------------
