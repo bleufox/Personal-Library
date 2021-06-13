@@ -13,18 +13,17 @@ function updateHTML(){
     // console.log(bookEl + " has been added!");
 };
 
-const saveBookButton = document.getElementById("submitButton")
-saveBookButton.onclick = function saveBook(){
+function saveBook(){
     // Gets input value
     const bookInputEl = document.getElementById("bookInput").value;
   
     // Saves data to retrieve later
     localStorage.setItem("bookStorage", bookInputEl);
 
-    console.log(`In this array: ${bookInputEl}`);
-    
     // Updates HTML
     updateHTML();
+
+    console.log(`In this array: ${bookInputEl}`);
 };
 
 // document.getElementById('demo').onclick = function changeContent() {
