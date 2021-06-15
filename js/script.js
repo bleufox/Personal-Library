@@ -1,3 +1,18 @@
+const searchBarAPI = "https://www.googleapis.com/books/v1/volumes?q={author/title/etc}"
+
+function getAPI(){
+    fetch(searchBarAPI)
+    .then(function (response){
+        return response.json()
+    })
+    .then(function (data){
+        console.log(data)
+    })
+}
+getAPI();
+
+
+
 // --------------------------------------------------------------------------------
 // Book log function - log books in a personal library
 
