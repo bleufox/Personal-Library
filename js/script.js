@@ -1,15 +1,46 @@
-const searchBarAPI = "https://www.googleapis.com/books/v1/volumes?q={author/title/etc}"
+const searchInputEl = document.getElementById('bookInput');
+const submitBtn = document.getElementById('submitButton');
+const titleEl = document.createElement('div');
+const authorEl = document.createElement('div');
+const genreEl = document.createElement('div');
+const descriptionEl = document.createElement('p');
+const bookImgEl = document.createElement('img');
+document.body.append(titleEl);
+document.body.append(authorEl);
+document.body.append(genreEl);
+document.body.append(descriptionEl);
+document.body.append(bookImgEl);
 
-function getAPI(){
-    fetch(searchBarAPI)
+// Searches the api using user's query and gives top 10 results
+function getAPI(bookSearch){
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`)
     .then(function (response){
         return response.json()
     })
-    .then(function (data){
-        console.log(data)
-    })
+    .then(handleData);
 }
-getAPI();
+
+submitBtn.addEventListener('click', handleClick)
+function handleClick(){
+    const userQuery = searchInputEl.value;
+    getAPI(userQuery);
+}
+
+// pulls data from 10 results based on desired parameters
+function handleData(data){
+    const bookInfo = data.items;
+    console.log(bookInfo)
+    for (let i = 0; i < bookInfo.length; i++) {
+        const title = bookInfo[i].volumeInfo.title;
+        const authors = bookInfo[i].volumeInfo.authors[0];
+        const genre = bookInfo[i].volumeInfo.categories;
+        const description = bookInfo[i].volumeInfo.description;
+        const bookImg = bookInfo[i].volumeInfo.imageLinks.thumbnail;
+        // !!--appends book image to page BUT looks like it stacks all 10 images and/or defaults to last image in the array to append..EEK! might needs hlep figuring that one out
+        bookImgEl.setAttribute('src', bookImg) 
+        //--!!
+    }
+}
 
 
 
@@ -40,7 +71,9 @@ function saveBook(){
 
     console.log(`In this array: ${bookInputEl}`);
 };
-
+getBook();
+updateHTML();
+saveBook();
 // function savedBooks(){
 
 // };
