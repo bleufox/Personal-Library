@@ -12,22 +12,22 @@ document.body.append(descriptionEl);
 document.body.append(bookImgEl);
 
 // Searches the api using user's query and gives top 10 results
-function getAPI(bookSearch){
+function getAPI(bookSearch) {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`)
-    .then(function (response){
-        return response.json()
-    })
-    .then(handleData);
+        .then(function (response) {
+            return response.json()
+        })
+        .then(handleData);
 }
 
 submitBtn.addEventListener('click', handleClick)
-function handleClick(){
+function handleClick() {
     const userQuery = searchInputEl.value;
     getAPI(userQuery);
 }
 
 // pulls data from 10 results based on desired parameters
-function handleData(data){
+function handleData(data) {
     const bookInfo = data.items;
     console.log(bookInfo)
     for (let i = 0; i < bookInfo.length; i++) {
@@ -48,12 +48,16 @@ function handleData(data){
 const libraryArr = [];
 
 // Code adapted from: https://stackoverflow.com/questions/52505323/save-input-value-to-local-storage-and-retrieve-it-on-a-different-page
+<<<<<<< HEAD
+function getBook() {
+=======
 function getBook(){
     console.log(localStorage.getItem("bookStorage"));
+>>>>>>> main
     return localStorage.getItem("bookStorage");
 };
 
-function updateHTML(){
+function updateHTML() {
     const bookEl = getBook();
     document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = bookEl + " has been added!";
@@ -62,9 +66,13 @@ function updateHTML(){
 
 };
 
-function saveBook(){
+function saveBook() {
     // Gets input value
     const bookInputEl = document.getElementById("bookInput").value;
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
     // Saves data to retrieve later
     localStorage.setItem("bookStorage", bookInputEl);
 

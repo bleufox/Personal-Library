@@ -18,6 +18,16 @@ nav {
     border-bottom: 5px solid #555555;
 }
 
+h1  {
+    text-align: center;
+    font-size: 24pt;
+    padding-top: 50px;
+}
+
+h2  {
+    padding-top: 35px;
+}
+
 a {
     color: #555555;
     text-decoration: none;
@@ -30,9 +40,26 @@ nav a {
 }
 
 table {
-    table-layout: fixed;
-    width: auto;
+    table-layout: flex;
+    width: 100%;
 }
+
+input {
+    width: 65%;
+    height: 40px;
+    padding: 12px 20px;
+    margin: 8px 15px 15px;
+    box-sizing: border-box;
+    border: 2px solid #9bbabc;
+    border-radius: 10px;
+}
+
+button  {
+    background-color:#9bbabc;
+    padding: 5px;
+    border: 1px solid #555555;
+    border-radius: 5px ;
+    }
 
 .library {
     padding: 50px;
@@ -40,8 +67,22 @@ table {
     
 }
 
-tr.rowResults {
+.rowResults {
     font-size: 12pt;
-    color: green;
+    color: #555555;
     font-weight: 100;
+}
+
+.personalLibrary {
+    color: #555555;
+    text-align: center;
+    font-size: 24pt;
+    padding-top: 30px;
+}
+
+#searchBar {
+    margin: auto;
+    width: 75%;
+    border: 3px solid green;
+    padding: 10px;
 }
