@@ -56,8 +56,10 @@ function getBook(){
 function updateHTML(){
     const bookEl = getBook();
     document.getElementById("submitReturn").style = "Color: grey";
+    document.getElementById("submitReturn").innerHTML = bookEl + " has been added!";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
     // Add fade out effect?
+
 };
 
 function saveBook(){
@@ -65,6 +67,16 @@ function saveBook(){
     const bookInputEl = document.getElementById("bookInput").value;
     // Saves data to retrieve later
     localStorage.setItem("bookStorage", bookInputEl);
+
+    updateHTML();
+
+    libraryArr.push(bookInputEl);
+     
+    console.log(`In this array: ${libraryArr}`);
+
+    savedBooks()
+};
+
     updateHTML();
     libraryArr.push(bookInputEl);
     console.log(`In this array: ${libraryArr}`);
