@@ -42,13 +42,18 @@ function handleData(data) {
     }
 }
 
-
-
 // --------------------------------------------------------------------------------
 // Book log function - log books in a personal library
 
+const libraryArr = [];
+
 // Code adapted from: https://stackoverflow.com/questions/52505323/save-input-value-to-local-storage-and-retrieve-it-on-a-different-page
+<<<<<<< HEAD
 function getBook() {
+=======
+function getBook(){
+    console.log(localStorage.getItem("bookStorage"));
+>>>>>>> main
     return localStorage.getItem("bookStorage");
 };
 
@@ -56,26 +61,40 @@ function updateHTML() {
     const bookEl = getBook();
     document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = bookEl + " has been added!";
-    // document.getElementById("savedBook").innerHTML = bookEl;
+    document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
+    // Add fade out effect?
+
 };
 
 function saveBook() {
     // Gets input value
     const bookInputEl = document.getElementById("bookInput").value;
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     // Saves data to retrieve later
     localStorage.setItem("bookStorage", bookInputEl);
 
-    // Updates HTML
     updateHTML();
 
-    console.log(`In this array: ${bookInputEl}`);
-};
-getBook();
-updateHTML();
-saveBook();
-// function savedBooks(){
+    libraryArr.push(bookInputEl);
+     
+    console.log(`In this array: ${libraryArr}`);
 
-// };
+    savedBooks()
+};
+
+    updateHTML();
+    libraryArr.push(bookInputEl);
+    console.log(`In this array: ${libraryArr}`);
+    savedBooks()
+};
+
+function savedBooks(){
+    const savedBookEl = document.getElementById("bookLibrary");    
+    const PostLibraryArr = libraryArr.join(`, `);
+    savedBookEl.textContent = `${PostLibraryArr}`;
+};
 
 // --------------------------------------------------------------------------------
