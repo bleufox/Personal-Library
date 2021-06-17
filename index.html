@@ -18,6 +18,12 @@
         <a class="active" href="#recommendations">Recommendations</a>
     </nav>
 
+<<<<<<< HEAD
+    <div id="searchBar">
+        <h2>Search by title, author, or genre</h2>
+        <input id="search" type="text" placeholder="e.g. Fantasy, J.K Rowling, etc.">
+        <button id="submitButton" onclick="saveBook()">Search</button>
+=======
     <div class='searchBar'>
 
         <section id="">
@@ -28,33 +34,34 @@
             <p id=""></p>
         </section>
 
+>>>>>>> main
     </div>
 
-    <table class="library">
-        <p>Your Library: </p>
-        <p id=bookLibrary></p>
+    <table class="personalLibrary">
 
-        <tr class = "columns">
-            <th>Book Title</th>
-            <th>Author</th>
-            <th>Genre</th>
-            <th>Read/Unread</th>
-            <th>Loan Status</th>
-            <th>Due Date</th>
-            <th>Loaned To</th>
-            <th>Remove/Edit</th>
+        <h1> Your Personal Library</h1>
+
+        <tr class="columns">
+            <th id="title">Book Title</th>
+            <th id="author">Author</th>
+            <th id="genre">Genre</th>
+            <th id="read">Read/Unread</th>
+            <th id="status">Loan Status</th>
+            <th id="due">Due Date</th>
+            <th id="borrower">Loaned To</th>
+            <th id="edit">Remove/Edit</th>
         </tr>
 
         <tr class="rowResults">
             <!-- Will be the search results of the API that matches the input above separated into columns -->
-            <th>Harry Potter and the Goblet of Fire</th>
-            <th>J.K Rowling</th> 
-            <th>Fantasy</th> 
-            <th>Needs to be a Checkmark</th> 
-            <th>Checked Out</th> 
-            <th>July 10, 2021</th> 
-            <th>Ophelia Jones</th> 
-            <th>Trash/Pencil Icons</th> 
+            <th id="resultsTitle">Harry Potter and the Goblet of Fire</th>
+            <th id="resultsAuthor">J.K Rowling</th>
+            <th id="resultsGenre">Fantasy</th>
+            <th id="resultsRead">Needs to be a Checkmark</th>
+            <th id="resultsStatus">Checked Out</th>
+            <th id="resultsDue">July 10, 2021</th>
+            <th id="results borrower">Ophelia Jones</th>
+            <th id="resultsIcons">Trash/Pencil Icons</th>
         </tr>
 
 
