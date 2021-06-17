@@ -1,19 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css"/>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>    
-    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
     <title>Boiler Plate Index</title>
 </head>
-<body>
-    
-    <h1>Header 1</h1>
 
-    <section id="bookLogSection">
+<body>
+
+    <nav>
+        <a class="active" href="#library">Personal Library</a>
+        <a class="active" href="#recommendations">Recommendations</a>
+    </nav>
+
+
+    <div class='searchBar'>
+
+        <section id="bookLogSection">
+            <h2>Search by title, author, or genre</h2>
+            <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
+            <button id="submitButton" onclick="saveBook()">Submit</button>
+            <p id="submitReturn"></p>
+            <p id="savedBooks"></p>
+        </section>
+
+    </div>
+
+
+    <table class="library">
+        <p>Your Library: </p>
+        <p id=bookLibrary></p>
+
+        <tr class = "columns">
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Read/Unread</th>
+            <th>Loan Status</th>
+            <th>Due Date</th>
+            <th>Loaned To</th>
+            <th>Remove/Edit</th>
+        </tr>
+
+        <tr class="rowResults">
+            <!-- Will be the search results of the API that matches the input above separated into columns -->
+            <th>Harry Potter and the Goblet of Fire</th>
+            <th>J.K Rowling</th> 
+            <th>Fantasy</th> 
+            <th>Needs to be a Checkmark</th> 
+            <th>Checked Out</th> 
+            <th>July 10, 2021</th> 
+            <th>Ophelia Jones</th> 
+            <th>Trash/Pencil Icons</th> 
+        </tr>
+
+
+        </div>
+    </table>
+
+    <!-- <section id="bookLogSection">
         <h2>Book Log</h2>
         <p>Which book would you like to enter?</p>
         <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
@@ -23,9 +73,10 @@
         <br>
         <p>Your library: </p>
         <p id=bookLibrary></p>
-    </section>
+    </section> -->
 
     <script src="./js/script.js"></script>
 
 </body>
+
 </html>
