@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: "Calibri";
+    font-size: 16pt;
+    color: #555555;
+}
+
+nav {
+    display: flex;
+    background-color: #9bbabc;
+    width: 100%;
+    padding:35px;
+    font-weight: 250;
+    border-bottom: 5px solid #555555;
+}
+
+a {
+    color: #555555;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+nav a {
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+table {
+    table-layout: fixed;
+    width: auto;
+}
+
+.library {
+    padding: 50px;
+    align-items: center;
+    
+}
+
+tr.rowResults {
+    font-size: 12pt;
+    color: green;
+    font-weight: 100;
+}
