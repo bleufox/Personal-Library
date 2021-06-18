@@ -26,7 +26,6 @@ function handleClick() {
     getAPI(userQuery);
 }
 
-<<<<<<< HEAD
 
 // Handles the parameters of title/author/genre/description/bookimg
 function handleData(data){
@@ -92,21 +91,6 @@ function handleImg(book){
     }else {
         bookImgEl.setAttribute('src', bookImg);
         console.log('image link is:' + bookImg);
-=======
-// pulls data from 10 results based on desired parameters
-function handleData(data) {
-    const bookInfo = data.items;
-    console.log(bookInfo)
-    for (let i = 0; i < bookInfo.length; i++) {
-        const title = bookInfo[i].volumeInfo.title;
-        // const authors = bookInfo[i].volumeInfo.authors[0];
-        const genre = bookInfo[i].volumeInfo.categories;
-        const description = bookInfo[i].volumeInfo.description;
-        const bookImg = bookInfo[i].volumeInfo.imageLinks.thumbnail;
-        // !!--appends book image to page BUT looks like it stacks all 10 images and/or defaults to last image in the array to append..EEK! might needs hlep figuring that one out
-        bookImgEl.setAttribute('src', bookImg)
-        //--!!
->>>>>>> main
     }
 }
 
@@ -132,7 +116,6 @@ function saveBook() {
     const bookInputEl = document.getElementById("bookInput").value;
     // Saves data to retrieve later
     localStorage.setItem("bookStorage", bookInputEl);
-<<<<<<< HEAD
 
     updateHTML();
 
@@ -148,12 +131,6 @@ function saveBook() {
         savedBooks()
     };
 
-=======
-    updateHTML();
-    libraryArr.push(bookInputEl);
-    // console.log(`In this array: ${libraryArr}`);
-    savedBooks();
->>>>>>> main
 };
 
 
