@@ -27,7 +27,7 @@ function handleClick(){
 }
 
 
-// Handles the parameters
+// Handles the parameters of title/author/genre/description/bookimg
 function handleData(data){
         const bookInfo = data.items;
         console.log('data array is:', data)
@@ -93,63 +93,6 @@ function handleImg(book){
         console.log('image link is:' + bookImg);
     }
 }
-
-
-// function handleData(data){
-//     const bookInfo = data.items;
-//     console.log(bookInfo)
-//         function handleTitle(){
-//             for (let i = 0; i < bookInfo.length; i++){
-//                 const title = bookInfo[i].volumeInfo.title;
-//                 console.log(title)
-//                 titleEl.textContent = title
-//                 // let titleArr = {};
-//                 // const test = title.map(x => titleArr[x]);
-//                 // title.forEach(value =>{
-//                 //     if(!title.includes(value)){
-//                 //         titleArr.push(value);
-//                 //     }
-//                 // });
-//                 // console.log(titleArr)
-//                 // if(title){
-//                 //   titleEl.textContent = title;  
-//                 // } else return  
-//             }
-//         } 
-//         function handleAuthor(){
-//             for (let i = 0; i < bookInfo.length; i++){
-//                 const authors = bookInfo[i].volumeInfo.authors[0];
-//                 authorEl.textContent = authors;
-//             }
-            
-//         }
-//         function handleGenre(){
-//             for (let i = 0; i < bookInfo.length; i++){
-//                 const genre = bookInfo[i].volumeInfo.categories; 
-//                 genreEl.textContent = genre;  
-//             }
-            
-//         }
-//         // function handleDescription(){
-//         //     for (let i = 0; i < bookInfo.length; i++){
-//         //         const description = bookInfo[i].volumeInfo.description;
-//         //         const descripSnippet = description.split('.');
-//         //         descriptionEl.textContent = descripSnippet[0] + '.';
-//         //     }
-            
-//         // }
-//         function handleImg(){
-//             for (let i = 0; i < bookInfo.length; i++){
-//                 const bookImg = bookInfo[i].volumeInfo.imageLinks.thumbnail;
-//             bookImgEl.setAttribute('src', bookImg)
-//             }
-//         }
-//    handleTitle(); 
-//    handleAuthor();
-//    handleGenre();
-// //    handleDescription();
-//    handleImg();
-// }
 
 // --------------------------------------------------------------------------------
 // Book log function - log books in a personal library
