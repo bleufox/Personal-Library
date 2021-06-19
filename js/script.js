@@ -99,13 +99,7 @@ function handleImg(book){
 
 const libraryArr = [];
 
-
-// Code adapted from: https://stackoverflow.com/questions/52505323/save-input-value-to-local-storage-and-retrieve-it-on-a-different-page
-function getBook() {
-
 function getBook(){
-    // console.log(localStorage.getItem("bookStorage"));
-
     return localStorage.getItem("bookStorage");
 };
 
@@ -117,56 +111,23 @@ function updateHTML() {
 };
 
 function saveBook() {
-    // Gets input value
     const bookInputEl = document.getElementById("bookInput").value;
-    // Saves data to retrieve later
     localStorage.setItem("bookStorage", bookInputEl);
-
     updateHTML();
-
     libraryArr.push(bookInputEl);
-
-    console.log(`In this array: ${libraryArr}`);
-
-    savedBooks()
-    
-    function updateHTML(){
-        libraryArr.push(bookInputEl);
-        console.log(`In this array: ${libraryArr}`);
-        savedBooks()
-    };
-
-
-updateHTML();
-libraryArr.push(bookInputEl);
-console.log(`In this array: ${libraryArr}`);
-savedBooks()
+    savedBooks();
 };
-
-function savedBooks() {
-    const savedBookEl = document.getElementById("bookLibrary");
-    const PostLibraryArr = libraryArr.join(`, `);
-    savedBookEl.textContent = `${PostLibraryArr}`;
-
-};
-
-
-    
-
 
 function savedBooks(){
     const savedBookEl = document.getElementById("bookLibrary");    
     const postLibraryArr = libraryArr.join(`, `);
     savedBookEl.textContent = `${postLibraryArr}`;
-
 };
 
 // --------------------------------------------------------------------------------
 
 const lentBooks = [];
-const dueDateRowEl = document.querySelector("rowResults");
-
-document.querySelector
+const dueDateRowEl = document.querySelector("resultsDue");
 
 function dueDateReminder(){
     const dueDateEl = document.querySelector("#dueDates");
@@ -174,7 +135,7 @@ function dueDateReminder(){
     for (let i = 0; i < lentBooks.length; i++) {
         // const element = array[i];
         if(lentBooks.length <= 0){
-            dueDateEl.textContent = "Hooray! No upcoming due dates!";
+            dueDateEl.textContent = "No upcoming due dates!";
         }else{
             dueDateEl.textContent = `${dueDateEl} is due on ${dueDateEl}`;
         };        
