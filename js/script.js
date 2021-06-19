@@ -99,74 +99,42 @@ function handleImg(book){
 
 const libraryArr = [];
 
-
-// Code adapted from: https://stackoverflow.com/questions/52505323/save-input-value-to-local-storage-and-retrieve-it-on-a-different-page
-function getBook() {
-
 function getBook(){
-    // console.log(localStorage.getItem("bookStorage"));
-
     return localStorage.getItem("bookStorage");
 };
 
-function updateHTML() {
+function updateHTML(){
     const bookEl = getBook();
     document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
     // Add fade out
 };
 
-function saveBook() {
-    // Gets input value
+function saveBook(){
     const bookInputEl = document.getElementById("bookInput").value;
-    // Saves data to retrieve later
     localStorage.setItem("bookStorage", bookInputEl);
-
     updateHTML();
-
     libraryArr.push(bookInputEl);
-
-    console.log(`In this array: ${libraryArr}`);
-
-    savedBooks()
+    // console.log(`In this array: ${libraryArr}`);
+    savedBooks();
     
-    function updateHTML(){
-        libraryArr.push(bookInputEl);
-        console.log(`In this array: ${libraryArr}`);
-        savedBooks()
-    };
-
-
-updateHTML();
-libraryArr.push(bookInputEl);
-console.log(`In this array: ${libraryArr}`);
-savedBooks()
+    // function updateHTML(){
+    //     libraryArr.push(bookInputEl);
+    //     console.log(`In this array: ${libraryArr}`);
+    //     savedBooks()
+    // };
 };
-
-function savedBooks() {
-    const savedBookEl = document.getElementById("bookLibrary");
-    const PostLibraryArr = libraryArr.join(`, `);
-    savedBookEl.textContent = `${PostLibraryArr}`;
-
-};
-
-
-    
-
 
 function savedBooks(){
-    const savedBookEl = document.getElementById("bookLibrary");    
+    const savedBookEl = document.getElementById("bookLibrary");
     const postLibraryArr = libraryArr.join(`, `);
     savedBookEl.textContent = `${postLibraryArr}`;
-
 };
 
 // --------------------------------------------------------------------------------
 
 const lentBooks = [];
-const dueDateRowEl = document.querySelector("rowResults");
-
-document.querySelector
+const dueDateRowEl = document.querySelector("#due");
 
 function dueDateReminder(){
     const dueDateEl = document.querySelector("#dueDates");
