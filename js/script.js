@@ -99,8 +99,18 @@ function handleImg(book){
 
 const libraryArr = [];
 
-function getBook(){
-    return localStorage.getItem("bookStorage");
+function saveBook(){
+    const bookInputEl = document.getElementById("bookInput").value;
+    localStorage.setItem("bookStorage", bookInputEl);
+    libraryArr.push(bookInputEl);
+    updateHTML();
+    savedBooks();
+};
+
+function savedBooks(){
+    const savedBookEl = document.getElementById("bookLibrary");
+    const postLibraryArr = libraryArr.join(`, `);
+    savedBookEl.textContent = `${postLibraryArr}`;
 };
 
 function updateHTML(){
@@ -110,31 +120,14 @@ function updateHTML(){
     // Add fade out
 };
 
-function saveBook(){
-    const bookInputEl = document.getElementById("bookInput").value;
-    localStorage.setItem("bookStorage", bookInputEl);
-    updateHTML();
-    libraryArr.push(bookInputEl);
-    // console.log(`In this array: ${libraryArr}`);
-    savedBooks();
-    
-    // function updateHTML(){
-    //     libraryArr.push(bookInputEl);
-    //     console.log(`In this array: ${libraryArr}`);
-    //     savedBooks()
-    // };
-};
-
-function savedBooks(){
-    const savedBookEl = document.getElementById("bookLibrary");
-    const postLibraryArr = libraryArr.join(`, `);
-    savedBookEl.textContent = `${postLibraryArr}`;
+function getBook(){
+    return localStorage.getItem("bookStorage");
 };
 
 // --------------------------------------------------------------------------------
 
 const lentBooks = [];
-const dueDateRowEl = document.querySelector("#due");
+const dueDateRowEl = document.querySelector("resultsDue");
 
 function dueDateReminder(){
     const dueDateEl = document.querySelector("#dueDates");
@@ -142,13 +135,15 @@ function dueDateReminder(){
     for (let i = 0; i < lentBooks.length; i++) {
         // const element = array[i];
         if(lentBooks.length <= 0){
-            dueDateEl.textContent = "Hooray! No upcoming due dates!";
+            dueDateEl.textContent = "No upcoming due dates!";
         }else{
             dueDateEl.textContent = `${dueDateEl} is due on ${dueDateEl}`;
         };        
     };
 };
 
-// dueDateReminder();
+// window.onload = function(){
+//     dueDateReminder();
+// };
 
 // --------------------------------------------------------------------------------
