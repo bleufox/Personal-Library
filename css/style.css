@@ -11,22 +11,13 @@ body {
 
 nav {
     display: flex;
-    text-align: middle;
     background-color: #9bbabc;
     margin: auto 0;
     width: 100%;
     padding:20px;
-    font-weight: 250;
+    font-weight: bold;
     border-bottom: 5px solid #555555;
     float: left;
-}
-
-h1 {
-    text-align: center;
-    padding-right: 0px;
-    padding-bottom: 25px;
-    color: red;
-    font-size: 24pt;
 }
 
 h2  {
@@ -35,8 +26,18 @@ h2  {
 }
 
 h3 {
-    font-size: 20pt;
-    color: red
+    text-align: center;
+    padding-right: 0px;
+    padding-bottom: 25px;
+    color: red;
+    font-size: 24pt;
+}
+
+h4 {
+    color: green;
+    font-size: 25pt;
+    padding-top: 10px;
+    text-align: center;
 }
 
 a {
@@ -128,4 +129,11 @@ img {
 
 #carousel-sci-fi {
     border-top: 2px solid #9bbabc;
+}
+
+#bookLogSection {
+    margin: auto;
+    width: 90%;
+    padding-top: 150px;
+    padding-bottom: 50px;
 }
