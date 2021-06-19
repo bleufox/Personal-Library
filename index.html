@@ -7,73 +7,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Boiler Plate Index</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous"/>
+    <title>Personal Library API</title>
 </head>
 
 <body>
 
     <nav>
         <a class="active" href="#library">Personal Library</a>
+        <img src="images/book.png" alt="Book Icon">
         <a class="active" href="#recommendations">Recommendations</a>
     </nav>
 
-    <div class='searchBar'>
+    <div id="searchBar">
+        <h2>Search by title, author, or genre</h2>
+        <input id="search" type="text" placeholder="e.g. Fantasy, J.K Rowling, etc.">
+        <button id="submitButton" onclick="saveBook()">Search</button>
+        </div>
+        <div class="h1El">
+            <h1>Your Personal Library</h1>
+        </div>
+
+
+        <table class="personalLibrary">
+
+            <tr class="columns">
+                <th class="thElColumns" id="title">Book Title</th>
+                <th class="thElColumns" id="author">Author</th>
+                <th class="thElColumns" id="genre">Genre</th>
+                <th class="thElColumns" id="read">Read/Unread</th>
+                <th class="thElColumns" id="status">Loan Status</th>
+                <th class="thElColumns" id="due">Due Date</th>
+                <th class="thElColumns" id="borrower">Loaned To</th>
+                <th class="thElColumns" id="edit">Remove/Edit</th>
+            </tr>
+
+            <tr class="rowResults">
+                <!-- Will be the search results of the API that matches the input above separated into columns -->
+                <th class="results" id="resultsTitle">Harry Potter and the Goblet of Fire</th>
+                <th class="results" id="resultsAuthor">J.K Rowling</th>
+                <th class="results" id="resultsGenre">Fantasy</th>
+                <th class="results" id="resultsRead">Needs to be a Checkmark</th>
+                <th class="results" id="resultsStatus">Checked Out</th>
+                <th class="results" id="resultsDue">July 10, 2021</th>
+                <th class="results" id="results borrower">Ophelia Jones</th>
+                <th class="results" id="resultsIcons">Trash/Pencil Icons</th>
+            </tr>
+
+        </table>
 
         <section id="bookLogSection">
-            <h2>Search by title, author, or genre</h2>
-            <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
-            <button id="submitButton" onclick="saveBook()">Submit</button>
-            <p id="submitReturn"></p>
-            <p id="savedBooks"></p>
+            <div>
+                <h2>Book Log</h2>
+                <p>Which book would you like to enter?</p>
+                <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
+                <button id="submitButton" onclick="saveBook()">Submit</button>
+                <p id="submitReturn"></p><br>
+            </div>
         </section>
 
-    </div>
+        <section>
+            <div>
+                <h2>Upcoming due dates</h2>
+                <div id="dueDates"></div><br><br><br>
+            </div>
+        </section>
 
-    <table class="library">
-        <p>Your Library: </p>
-        <p id=bookLibrary></p>
-
-        <tr class = "columns">
-            <th>Book Title</th>
-            <th>Author</th>
-            <th>Genre</th>
-            <th>Read/Unread</th>
-            <th>Loan Status</th>
-            <th>Due Date</th>
-            <th>Loaned To</th>
-            <th>Remove/Edit</th>
-        </tr>
-
-        <tr class="rowResults">
-            <!-- Will be the search results of the API that matches the input above separated into columns -->
-            <th>Harry Potter and the Goblet of Fire</th>
-            <th>J.K Rowling</th> 
-            <th>Fantasy</th> 
-            <th>Needs to be a Checkmark</th> 
-            <th>Checked Out</th> 
-            <th>July 10, 2021</th> 
-            <th>Ophelia Jones</th> 
-            <th>Trash/Pencil Icons</th> 
-        </tr>
-
-
-        </div>
-    </table>
-
-    <!-- <section id="bookLogSection">
-        <h2>Book Log</h2>
-        <p>Which book would you like to enter?</p>
-        <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
-        <button id="submitButton" onclick="saveBook()">Submit</button>
-        <p id="submitReturn"></p>
-        <p id="savedBooks"></p>
-        <br>
-        <p>Your library: </p>
-        <p id=bookLibrary></p>
-    </section> -->
-
-    <script src="./js/script.js"></script>
+        <script src="./js/script.js"></script>
 
 </body>
 
