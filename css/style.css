@@ -14,18 +14,20 @@ nav {
     background-color: #9bbabc;
     width: 100%;
     padding:35px;
-    font-weight: 250;
     border-bottom: 5px solid #555555;
+    float: left;
 }
 
 h1  {
     text-align: center;
     font-size: 24pt;
-    padding-top: 50px;
+    padding-right: 0px;
 }
 
 h2  {
-    padding-top: 35px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
 }
 
 a {
@@ -35,36 +37,53 @@ a {
 }
 
 nav a {
-    margin: 0 auto;
+    margin: 10px auto;
     text-decoration: none;
 }
 
+nav a:hover {
+    color: #f5f5f5;
+
+}
+
 table {
-    table-layout: flex;
+    table-layout: fixed;
     width: 100%;
+    border-collapse: collapse;
 }
 
 input {
-    width: 65%;
+    width: 87%;
     height: 40px;
     padding: 12px 20px;
     margin: 8px 15px 15px;
     box-sizing: border-box;
     border: 2px solid #9bbabc;
     border-radius: 10px;
+    font-size: 15pt;
 }
 
 button  {
     background-color:#9bbabc;
     padding: 5px;
     border: 1px solid #555555;
-    border-radius: 5px ;
+    border-radius: 5px;
+    font-size: 14pt;
     }
+
+button:hover {
+    background-color: #e0dacc;
+    color:#ac8220;
+    border: 3px solid #976c17;
+    }
+
+.columns  {
+    font-size: 10pt;
+}
 
 .library {
     padding: 50px;
     align-items: center;
-    
 }
 
 .rowResults {
@@ -73,16 +92,21 @@ button  {
     font-weight: 100;
 }
 
-.personalLibrary {
+th.thElRows {
     color: #555555;
     text-align: center;
-    font-size: 24pt;
+    font-size: 12pt;
     padding-top: 30px;
+    padding: 15px;
+    font-weight: 100;
 }
 
-#searchBar {
-    margin: auto;
+.searchBar {
+    margin: 6px auto;
     width: 75%;
-    border: 3px solid green;
-    padding: 10px;
+    padding-top: 100px;
+}
+
+.thElColumns {
+    font-size: 15pt;
 }

@@ -99,8 +99,13 @@ function handleImg(book){
 
 const libraryArr = [];
 
+
+// Code adapted from: https://stackoverflow.com/questions/52505323/save-input-value-to-local-storage-and-retrieve-it-on-a-different-page
+function getBook() {
+
 function getBook(){
     // console.log(localStorage.getItem("bookStorage"));
+
     return localStorage.getItem("bookStorage");
 };
 
@@ -120,7 +125,7 @@ function saveBook() {
     updateHTML();
 
     libraryArr.push(bookInputEl);
-     
+
     console.log(`In this array: ${libraryArr}`);
 
     savedBooks()
@@ -130,6 +135,18 @@ function saveBook() {
         console.log(`In this array: ${libraryArr}`);
         savedBooks()
     };
+
+
+updateHTML();
+libraryArr.push(bookInputEl);
+console.log(`In this array: ${libraryArr}`);
+savedBooks()
+};
+
+function savedBooks() {
+    const savedBookEl = document.getElementById("bookLibrary");
+    const PostLibraryArr = libraryArr.join(`, `);
+    savedBookEl.textContent = `${PostLibraryArr}`;
 
 };
 
@@ -141,6 +158,7 @@ function savedBooks(){
     const savedBookEl = document.getElementById("bookLibrary");    
     const postLibraryArr = libraryArr.join(`, `);
     savedBookEl.textContent = `${postLibraryArr}`;
+
 };
 
 // --------------------------------------------------------------------------------
