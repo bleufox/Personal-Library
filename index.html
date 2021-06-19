@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous" />
     <title>Personal Library</title>
 
 </head>
@@ -20,13 +22,19 @@
         <a class="active" href="#recommendations">Recommendations</a>
     </nav>
 
-    <div id="searchBar">
-        <h2>Search by title, author, or genre</h2>
-        <input id="search" type="text" placeholder="e.g. Fantasy, J.K Rowling, etc.">
-        <button id="submitButton" onclick="saveBook()">Search</button>
+    <section id="bookLogSection">
+        <div>
+            <h2>Book Log</h2>
+            <p>Which book would you like to enter?</p>
+            <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
+            <button id="submitButton" onclick="saveBook()">Submit</button>
+            <p id="submitReturn"></p><br>
         </div>
-        <div class="h1El">
+    </section>
 
+    <section class="library-table">
+
+        <h1>Your Personal Library</h1>
         <table class="personalLibrary">
 
             <tr class="columns">
@@ -53,26 +61,19 @@
             </tr>
 
         </table>
+    </section>
 
-    <section id="bookLogSection">
+
+
+    <section>
         <div>
-            <h2>Book Log</h2>
-            <p>Which book would you like to enter?</p>
-            <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
-            <button id="submitButton" onclick="saveBook()">Submit</button>
-            <p id="submitReturn"></p><br>
-            <div id="bookLibrary"></div>
+            <h2>Upcoming due dates</h2>
+            <div id="dueDates"></div><br><br><br>
         </div>
     </section>
 
-        <section>
-            <div>
-                <h2>Upcoming due dates</h2>
-                <div id="dueDates"></div><br><br><br>
-            </div>
-        </section>
-
-        <script src="./js/script.js"></script>
+    <script src="./js/script.js"></script>
 
 </body>
+
 </html>
