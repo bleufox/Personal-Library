@@ -94,8 +94,7 @@ function handleImg(book){
     }
 }
 
-// --------------------------------------------------------------------------------
-// Book log function - log books in a personal library
+// --------------------------- Book log ---------------------------
 
 const libraryArr = [];
 
@@ -103,8 +102,8 @@ function saveBook(){
     const bookInputEl = document.getElementById("bookInput").value;
     localStorage.setItem("bookStorage", bookInputEl);
     libraryArr.push(bookInputEl);
-    updateHTML();
     savedBooks();
+    updateHTML();
 };
 
 function savedBooks(){
@@ -124,13 +123,14 @@ function getBook(){
     return localStorage.getItem("bookStorage");
 };
 
-// --------------------------------------------------------------------------------
+// --------------------------- Due date reminder ---------------------------
 
 const lentBooks = [];
 const dueDateRowEl = document.querySelector("resultsDue");
 
 function dueDateReminder(){
     const dueDateEl = document.querySelector("#dueDates");
+    lentBooks.push(dueDateEl);
     
     for (let i = 0; i < lentBooks.length; i++) {
         // const element = array[i];
@@ -138,7 +138,7 @@ function dueDateReminder(){
             dueDateEl.textContent = "No upcoming due dates!";
         }else{
             dueDateEl.textContent = `${dueDateEl} is due on ${dueDateEl}`;
-        };        
+        };
     };
 };
 
