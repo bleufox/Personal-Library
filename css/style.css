@@ -11,9 +11,10 @@ body {
 
 nav {
     display: flex;
+    text-align: justify;
     background-color: #9bbabc;
     width: 100%;
-    padding:35px;
+    padding:20px;
     font-weight: 250;
     border-bottom: 5px solid #555555;
 }
@@ -26,6 +27,7 @@ h1  {
 
 h2  {
     padding-top: 35px;
+    text-align: center;
 }
 
 a {
@@ -45,9 +47,9 @@ table {
 }
 
 input {
-    width: 65%;
+    width: 85%;
     height: 40px;
-    padding: 12px 20px;
+    /* padding: 12px 20px; */
     margin: 8px 15px 15px;
     box-sizing: border-box;
     border: 2px solid #9bbabc;
@@ -58,8 +60,24 @@ button  {
     background-color:#9bbabc;
     padding: 5px;
     border: 1px solid #555555;
-    border-radius: 5px ;
+    border-radius: 5px;
     }
+
+th {
+    font-size: 14pt;
+}
+
+img {
+    display: inline-block;
+    margin: 0 auto;
+    height: 100px;
+    vertical-align: center;
+}
+
+.results {
+    font-size: 12pt;
+    font-weight: 100;
+}
 
 .library {
     padding: 50px;
@@ -82,7 +100,10 @@ button  {
 
 #searchBar {
     margin: auto;
-    width: 75%;
-    border: 3px solid green;
-    padding: 10px;
+    width: 85%;
+}
+
+#container {
+    background-color: #9bbabc;
+    text-align: center;
 }

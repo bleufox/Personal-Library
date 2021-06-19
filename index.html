@@ -8,33 +8,23 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Boiler Plate Index</title>
+    <title>Personal Library API</title>
 </head>
 
 <body>
 
+    <div id="container">
+    </div>
     <nav>
         <a class="active" href="#library">Personal Library</a>
+        <img src="images/book.png" alt="Book Icon">
         <a class="active" href="#recommendations">Recommendations</a>
     </nav>
 
-<<<<<<< HEAD
     <div id="searchBar">
         <h2>Search by title, author, or genre</h2>
         <input id="search" type="text" placeholder="e.g. Fantasy, J.K Rowling, etc.">
         <button id="submitButton" onclick="saveBook()">Search</button>
-=======
-    <div class='searchBar'>
-
-        <section id="">
-            <h2>Search by title, author, or genre</h2>
-            <input id="" type="text" placeholder="Search for anything">
-            <button id="">Submit</button>
-            <p id=""></p>
-            <p id=""></p>
-        </section>
-
->>>>>>> main
     </div>
 
     <table class="personalLibrary">
@@ -54,14 +44,14 @@
 
         <tr class="rowResults">
             <!-- Will be the search results of the API that matches the input above separated into columns -->
-            <th id="resultsTitle">Harry Potter and the Goblet of Fire</th>
-            <th id="resultsAuthor">J.K Rowling</th>
-            <th id="resultsGenre">Fantasy</th>
-            <th id="resultsRead">Needs to be a Checkmark</th>
-            <th id="resultsStatus">Checked Out</th>
-            <th id="resultsDue">July 10, 2021</th>
-            <th id="results borrower">Ophelia Jones</th>
-            <th id="resultsIcons">Trash/Pencil Icons</th>
+            <th class="results" id="resultsTitle">Harry Potter and the Goblet of Fire</th>
+            <th class="results" id="resultsAuthor">J.K Rowling</th>
+            <th class="results" id="resultsGenre">Fantasy</th>
+            <th class="results" id="resultsRead">Needs to be a Checkmark</th>
+            <th class="results" id="resultsStatus">Checked Out</th>
+            <th class="results" id="resultsDue">July 10, 2021</th>
+            <th class="results" id="results borrower">Ophelia Jones</th>
+            <th class="results" id="resultsIcons">Trash/Pencil Icons</th>
         </tr>
 
 
