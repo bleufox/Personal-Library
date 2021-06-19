@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous" />
     <title>Personal Library</title>
+
 </head>
 
 <body>
@@ -16,17 +19,61 @@
     <nav>
         <a class="active" href="#library">Personal Library</a>
         <img src="images/book.png" alt="Book Icon">
-        <a class="active" href="https://bleufox.github.io/Personal-Library/recommendations">Recommendations</a>
+        <a class="active" href="#recommendations">Recommendations</a>
     </nav>
 
-    <div id="searchBar">
-        <h2>Search by title, author, or genre</h2>
-        <input id="search" type="text" placeholder="e.g. Fantasy, J.K Rowling, etc.">
-        <button id="submitButton" onclick="saveBook()">Search</button>
+    <section id="bookLogSection">
+        <div>
+            <h2>Book Log</h2>
+            <p>Which book would you like to enter?</p>
+            <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
+            <button id="submitButton" onclick="saveBook()">Submit</button>
+            <p id="submitReturn"></p><br>
         </div>
-        <div class="h1El">
+    </section>
 
-        <script src="./js/script.js"></script>
+    <section class="library-table">
+
+        <h1>Your Personal Library</h1>
+        <table class="personalLibrary">
+
+            <tr class="columns">
+                <th class="thElColumns" id="title">Book Title</th>
+                <th class="thElColumns" id="author">Author</th>
+                <th class="thElColumns" id="genre">Genre</th>
+                <th class="thElColumns" id="read">Read/Unread</th>
+                <th class="thElColumns" id="status">Loan Status</th>
+                <th class="thElColumns" id="due">Due Date</th>
+                <th class="thElColumns" id="borrower">Loaned To</th>
+                <th class="thElColumns" id="edit">Remove/Edit</th>
+            </tr>
+
+            <tr class="rowResults">
+                <!-- Will be the search results of the API that matches the input above separated into columns -->
+                <th class="results" id="resultsTitle">Harry Potter and the Goblet of Fire</th>
+                <th class="results" id="resultsAuthor">J.K Rowling</th>
+                <th class="results" id="resultsGenre">Fantasy</th>
+                <th class="results" id="resultsRead">Needs to be a Checkmark</th>
+                <th class="results" id="resultsStatus">Checked Out</th>
+                <th class="results" id="resultsDue">July 10, 2021</th>
+                <th class="results" id="results borrower">Ophelia Jones</th>
+                <th class="results" id="resultsIcons">Trash/Pencil Icons</th>
+            </tr>
+
+        </table>
+    </section>
+
+
+
+    <section>
+        <div>
+            <h2>Upcoming due dates</h2>
+            <div id="dueDates"></div><br><br><br>
+        </div>
+    </section>
+
+    <script src="./js/script.js"></script>
 
 </body>
+
 </html>
