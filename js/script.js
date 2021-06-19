@@ -99,29 +99,29 @@ function handleImg(book){
 
 const libraryArr = [];
 
-function getBook(){
-    return localStorage.getItem("bookStorage");
+function saveBook(){
+    const bookInputEl = document.getElementById("bookInput").value;
+    localStorage.setItem("bookStorage", bookInputEl);
+    libraryArr.push(bookInputEl);
+    updateHTML();
+    savedBooks();
 };
 
-function updateHTML() {
+function savedBooks(){
+    const savedBookEl = document.getElementById("bookLibrary");
+    const postLibraryArr = libraryArr.join(`, `);
+    savedBookEl.textContent = `${postLibraryArr}`;
+};
+
+function updateHTML(){
     const bookEl = getBook();
     document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
     // Add fade out
 };
 
-function saveBook() {
-    const bookInputEl = document.getElementById("bookInput").value;
-    localStorage.setItem("bookStorage", bookInputEl);
-    updateHTML();
-    libraryArr.push(bookInputEl);
-    savedBooks();
-};
-
-function savedBooks(){
-    const savedBookEl = document.getElementById("bookLibrary");    
-    const postLibraryArr = libraryArr.join(`, `);
-    savedBookEl.textContent = `${postLibraryArr}`;
+function getBook(){
+    return localStorage.getItem("bookStorage");
 };
 
 // --------------------------------------------------------------------------------
@@ -142,6 +142,8 @@ function dueDateReminder(){
     };
 };
 
-// dueDateReminder();
+// window.onload = function(){
+//     dueDateReminder();
+// };
 
 // --------------------------------------------------------------------------------
