@@ -11,11 +11,26 @@ body {
 
 nav {
     display: flex;
+    text-align: middle;
     background-color: #9bbabc;
+    margin: auto 0;
     width: 100%;
-    padding:35px;
+    padding:20px;
     font-weight: 250;
     border-bottom: 5px solid #555555;
+    float: left;
+}
+
+h1  {
+    text-align: center;
+    font-size: 18pt;
+    padding-right: 0px;
+    padding-bottom: 25px;
+}
+
+h2  {
+    padding-top: 35px;
+    text-align: center;
 }
 
 a {
@@ -25,23 +40,74 @@ a {
 }
 
 nav a {
-    margin: 0 auto;
+    margin: auto;
     text-decoration: none;
+}
+
+nav a:hover {
+    color: #f5f5f5;
+    transform: scale(1.12);
+    font-style: italic;
 }
 
 table {
     table-layout: fixed;
-    width: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+input {
+    width: 85%;
+    height: 40px;
+    /* padding: 12px 20px; */
+    margin: 8px 15px 15px;
+    box-sizing: border-box;
+    border: 2px solid #9bbabc;
+    border-radius: 10px;
+    font-size: 15pt;
+}
+
+button  {
+    background-color:#9bbabc;
+    padding: 5px;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    }
+
+th {
+    font-size: 14pt;
+}
+
+img {
+    display: inline-block;
+    margin: 0 auto;
+    height: 100px;
+    vertical-align: center;
+}
+
+.rowResults {
+    font-size: 12pt;
+    color: #555555;
+    font-weight: 100;
+}
+
+.results {
+    color: #555555;
+    text-align: center;
+    font-size: 12pt;
+    padding-top: 30px;
+    padding: 15px;
+    font-weight: 100;
 }
 
 .library {
     padding: 50px;
     align-items: center;
-    
 }
 
-tr.rowResults {
-    font-size: 12pt;
-    color: green;
-    font-weight: 100;
+#searchBar {
+    margin: auto;
+    width: 90%;
+    padding-top: 150px;
+    padding-bottom: 50px;
 }
