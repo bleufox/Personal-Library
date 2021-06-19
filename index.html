@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous" />
     <title>Personal Library</title>
@@ -24,17 +24,18 @@
 
     <section id="bookLogSection">
         <div>
-            <h2>Book Log</h2>
-            <p>Which book would you like to enter?</p>
+            <p>To add a book to your library, type in the title, genre, or author you wish to add.</p>
             <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
-            <button id="submitButton" onclick="saveBook()">Submit</button>
+            <button id="submitButton" onclick="saveBook()">Search</button>
             <p id="submitReturn"></p><br>
         </div>
     </section>
 
     <section class="library-table">
 
-        <h1>Your Personal Library</h1>
+        <!-- Note for Ashley: Look into h1 formatting issues -->
+        <h3>Your Personal Library</h3>
+
         <table class="personalLibrary">
 
             <tr class="columns">
@@ -56,25 +57,25 @@
                 <th class="results" id="resultsRead">Needs to be a Checkmark</th>
                 <th class="results" id="resultsStatus">Checked Out</th>
                 <th class="results" id="resultsDue">July 10, 2021</th>
-                <th class="results" id="results borrower">Ophelia Jones</th>
+                <th class="results" id="resultsBorrower">Ophelia Jones</th>
                 <th class="results" id="resultsIcons">Trash/Pencil Icons</th>
                 <th class="results" id="resultsDescrip">Description</th>
                 <th class="results" id="resultsImg">Image Here</th>
             </tr>
 
         </table>
+
     </section>
-
-
 
     <section>
         <div>
-            <h2>Upcoming due dates</h2>
-            <div id="dueDates"></div><br><br><br>
+            <h3>Upcoming Due Dates</h3>
+            <div id="dueDates"></div>
+            <h4>Carousel or Table?</h4>
         </div>
-    </section>
 
-    <script src="./js/script.js"></script>
+        <script src="./js/script.js"></script>
+        </section>
 
 </body>
 
