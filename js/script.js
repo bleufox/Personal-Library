@@ -1,10 +1,10 @@
 const searchInputEl = document.getElementById('bookInput');
 const submitBtn = document.getElementById('submitButton');
-const titleEl = document.createElement('div');
-const authorEl = document.createElement('div');
-const genreEl = document.createElement('div');
-const descriptionEl = document.createElement('p');
-const bookImgEl = document.createElement('img');
+const titleEl = document.getElementById('resultsTitle');
+const authorEl = document.getElementById('resultsAuthor');
+const genreEl = document.getElementById('resultsGenre');
+const descriptionEl = document.getElementById('resultsDescription');
+const bookImgEl = document.createElement('resultsImg');
 document.body.append(titleEl);
 document.body.append(authorEl);
 document.body.append(genreEl);
@@ -30,7 +30,7 @@ function handleClick() {
 // Handles the parameters of title/author/genre/description/bookimg
 function handleData(data){
         const bookInfo = data.items;
-        console.log('data array is:', data)
+        console.log('data array: ' + data)
         for (let i = 0; i < bookInfo.length; i++) {
             handleTitle(bookInfo[i]); 
             handleAuthor(bookInfo[i]);
@@ -42,11 +42,27 @@ function handleData(data){
 
 function handleTitle(book){
     const title = book.volumeInfo.title;
+    console.log(book)
     if (title === undefined){
         titleEl.textContent = 'No title listed.'
     } else {
-        titleEl.textContent = title;
-        console.log('title is:' + title);
+        const listEl = document.createElement('ul');
+            const listItem = document.createElement('li');
+            titleEl.appendChild(listEl)
+            listItem.innerHTML = title;
+            listEl.appendChild(listItem);
+            titleEl.textContent = title;
+            console.log('title is:' + title);
+        // for(let i = 0; i < book.length; i++){
+        //     const listEl = document.createElement('ul');
+        //     const listItem = document.createElement('li');
+        //     titleEl.appendChild(listEl)
+        //     listItem.innerHTML = title;
+        //     listEl.appendChild(listItem);
+        //     titleEl.textContent = title;
+        //     console.log('title is:' + title);
+        // }
+        console.log(hi)
     }
 }
 
