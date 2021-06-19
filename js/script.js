@@ -30,7 +30,7 @@ function handleClick() {
 // Handles the parameters of title/author/genre/description/bookimg
 function handleData(data){
         const bookInfo = data.items;
-        console.log('data array: ' + data)
+        console.log('data array: ' + data[0])
         for (let i = 0; i < bookInfo.length; i++) {
             handleTitle(bookInfo[i]); 
             handleAuthor(bookInfo[i]);
@@ -47,27 +47,29 @@ function handleTitle(book){
         titleEl.textContent = 'No title listed.'
     } else {
         const listEl = document.createElement('ul');
+            // const listItem = document.createElement('li');
+            // titleEl.appendChild(listEl)
+            // listItem.innerHTML = title;
+            // listEl.appendChild(listItem);
+            // titleEl.textContent = title;
+            // console.log('title is:' + title);
+        for(let i = 0; i < book.length; i++){
+            console.log(title)
+            const listEl = document.createElement('ul');
             const listItem = document.createElement('li');
             titleEl.appendChild(listEl)
             listItem.innerHTML = title;
             listEl.appendChild(listItem);
             titleEl.textContent = title;
             console.log('title is:' + title);
-        // for(let i = 0; i < book.length; i++){
-        //     const listEl = document.createElement('ul');
-        //     const listItem = document.createElement('li');
-        //     titleEl.appendChild(listEl)
-        //     listItem.innerHTML = title;
-        //     listEl.appendChild(listItem);
-        //     titleEl.textContent = title;
-        //     console.log('title is:' + title);
-        // }
-        console.log(hi)
+        }
+        console.log('hi')
     }
 }
 
 function handleAuthor(book){
     const author = book.volumeInfo.authors;
+    
     if (author === undefined){
         authorEl.textContent = 'No author listed.'
     } else {
