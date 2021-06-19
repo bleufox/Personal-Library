@@ -17,17 +17,14 @@
 <body>
 
     <nav>
-        <a class="active" href="https://bleufox.github.io/Personal-Library/">Personal Library</a>
         <img src="imges/book.png" alt="Book Icon">
-        <a class="active" href="https://bleufox.github.io/Personal-Library/recommendations">Recommendations</a>
     </nav>
 
     <section id="bookLogSection">
         <div>
-            <h2>Book Log</h2>
             <p>To add a book to your library, type in the title, genre, or author you wish to add.</p>
             <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
-            <button id="submitButton" onclick="saveBook()">Submit</button>
+            <button id="submitButton" onclick="saveBook()">Search</button>
             <p id="submitReturn"></p><br>
         </div>
     </section>
@@ -68,13 +65,13 @@
 
     <section>
         <div>
-            <h2>Upcoming Due Dates</h2>
+            <h3>Upcoming Due Dates</h3>
             <div id="dueDates"></div>
             <h4>Carousel or Table?</h4>
         </div>
 
         <script src="./js/script.js"></script>
-    </section>
+        </section>
 
 </body>
 
