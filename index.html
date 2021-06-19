@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous" />
     <title>Personal Library</title>
@@ -17,14 +17,16 @@
 <body>
 
     <nav>
-        <a class="active" href="#library">Personal Library</a>
-        <img src="images/book.png" alt="Book Icon">
-        <a class="active" href="#recommendations">Recommendations</a>
+        <a class="active" href="https://bleufox.github.io/Personal-Library/">Personal Library</a>
+        <img src="imges/book.png" alt="Book Icon">
+        <a class="active" href="https://bleufox.github.io/Personal-Library/recommendations">Recommendations</a>
     </nav>
 
     <section class="library-table">
-
-        <h1>Your Personal Library</h1>
+        
+        <!-- Note for Ashley: Look into h1 formatting issues -->
+        <h3>Your Personal Library</h3>
+       
         <table class="personalLibrary">
 
             <tr class="columns">
@@ -46,11 +48,12 @@
                 <th class="results" id="resultsRead">Needs to be a Checkmark</th>
                 <th class="results" id="resultsStatus">Checked Out</th>
                 <th class="results" id="resultsDue">July 10, 2021</th>
-                <th class="results" id="results borrower">Ophelia Jones</th>
+                <th class="results" id="resultsBorrower">Ophelia Jones</th>
                 <th class="results" id="resultsIcons">Trash/Pencil Icons</th>
             </tr>
 
         </table>
+
     </section>
 
     <section>
@@ -58,7 +61,6 @@
             <h2>Upcoming due dates</h2>
             <div id="dueDates"></div><br><br><br>
         </div>
-    </section>
 
     <section id="bookLogSection">
         <div>
@@ -68,7 +70,7 @@
             <button id="submitButton" onclick="saveBook()">Submit</button>
             <p id="submitReturn"></p><br>
             <div id="bookLibrary"></div>
-        </div>
+
     </section>
 
     <script src="./js/script.js"></script>
