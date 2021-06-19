@@ -8,32 +8,23 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
+    
+    <!-- link below causing white bar at the top of page -->
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous" />
+        
     <title>Personal Library</title>
 
 </head>
 
 <body>
-
     <nav>
         <a class="active" href="#library">Personal Library</a>
-        <img src="images/book.png" alt="Book Icon">
+        <img src="./imges/book.png" alt="Book Icon">
         <a class="active" href="#recommendations">Recommendations</a>
     </nav>
 
-    <section id="bookLogSection">
-        <div>
-            <h2>Book Log</h2>
-            <p>Which book would you like to enter?</p>
-            <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
-            <button id="submitButton" onclick="saveBook()">Submit</button>
-            <p id="submitReturn"></p><br>
-        </div>
-    </section>
-
     <section class="library-table">
-
         <h1>Your Personal Library</h1>
         <table class="personalLibrary">
 
@@ -61,7 +52,6 @@
             </tr>
 
         </table>
-    </section>
 
     <section>
         <div>
