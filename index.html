@@ -20,30 +20,41 @@
         <img src="images/book.png" alt="Book Icon">
         <a class="active" href="#recommendations">Recommendations</a>
     </nav>
+    
+    <div class="header-search-wrapper">
+        <input type="text" placeholder="Search by title, author, or genre">
+        <button>Submit</button>
+    </div>
+    
 
+<<<<<<< HEAD
     <div id="searchBar">
         <h2>Search by title, author, or genre</h2>
         <input id="search" type="text" placeholder="e.g. Fantasy, J.K Rowling, etc.">
         <button id="submitButton" onclick="saveBook()">Search</button>
+=======
+    <div class="h1El">
+        <h1>Your Personal Library</h1>
+>>>>>>> main
     </div>
+
 
     <table class="personalLibrary">
 
-        <h1> Your Personal Library</h1>
-
         <tr class="columns">
-            <th id="title">Book Title</th>
-            <th id="author">Author</th>
-            <th id="genre">Genre</th>
-            <th id="read">Read/Unread</th>
-            <th id="status">Loan Status</th>
-            <th id="due">Due Date</th>
-            <th id="borrower">Loaned To</th>
-            <th id="edit">Remove/Edit</th>
+            <th class="thElColumns" id="title">Book Title</th>
+            <th class="thElColumns" id="author">Author</th>
+            <th class="thElColumns" id="genre">Genre</th>
+            <th class="thElColumns" id="read">Read/Unread</th>
+            <th class="thElColumns" id="status">Loan Status</th>
+            <th class="thElColumns" id="due">Due Date</th>
+            <th class="thElColumns" id="borrower">Loaned To</th>
+            <th class="thElColumns" id="edit">Remove/Edit</th>
         </tr>
 
         <tr class="rowResults">
             <!-- Will be the search results of the API that matches the input above separated into columns -->
+<<<<<<< HEAD
             <th class="results" id="resultsTitle">Harry Potter and the Goblet of Fire</th>
             <th class="results" id="resultsAuthor">J.K Rowling</th>
             <th class="results" id="resultsGenre">Fantasy</th>
@@ -52,10 +63,18 @@
             <th class="results" id="resultsDue">July 10, 2021</th>
             <th class="results" id="results borrower">Ophelia Jones</th>
             <th class="results" id="resultsIcons">Trash/Pencil Icons</th>
+=======
+            <th class ="thElRows">Harry Potter and the Goblet of Fire</th>
+            <th class ="thElRows">J.K. Rowling</th>
+            <th class ="thElRows">Fantasy</th>
+            <th class ="thElRows">Needs to be a Checkmark</th>
+            <th class ="thElRows">Checked Out</th>
+            <th class ="thElRows">July 10, 2021</th>
+            <th class ="thElRows">Ophelia Jones</th>
+            <th class ="thElRows">Trash/Pencil Icons</th>
+>>>>>>> main
         </tr>
 
-
-        </div>
     </table>
 
     <section id="bookLogSection">

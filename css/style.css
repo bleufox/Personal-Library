@@ -14,19 +14,29 @@ nav {
     text-align: justify;
     background-color: #9bbabc;
     width: 100%;
+<<<<<<< HEAD
     padding:20px;
     font-weight: 250;
+=======
+    padding:35px;
+>>>>>>> main
     border-bottom: 5px solid #555555;
+    float: left;
 }
 
 h1  {
     text-align: center;
     font-size: 24pt;
-    padding-top: 50px;
+    padding-right: 0px;
 }
 
 h2  {
+<<<<<<< HEAD
     padding-top: 35px;
+=======
+    padding-top: 15px;
+    padding-bottom: 15px;
+>>>>>>> main
     text-align: center;
 }
 
@@ -37,23 +47,34 @@ a {
 }
 
 nav a {
-    margin: 0 auto;
+    margin: 10px auto;
     text-decoration: none;
 }
 
+nav a:hover {
+    color: #f5f5f5;
+
+}
+
 table {
-    table-layout: flex;
+    table-layout: fixed;
     width: 100%;
+    border-collapse: collapse;
 }
 
 input {
+<<<<<<< HEAD
     width: 85%;
+=======
+    width: 87%;
+>>>>>>> main
     height: 40px;
     /* padding: 12px 20px; */
     margin: 8px 15px 15px;
     box-sizing: border-box;
     border: 2px solid #9bbabc;
     border-radius: 10px;
+    font-size: 15pt;
 }
 
 button  {
@@ -61,6 +82,7 @@ button  {
     padding: 5px;
     border: 1px solid #555555;
     border-radius: 5px;
+<<<<<<< HEAD
     }
 
 th {
@@ -77,12 +99,24 @@ img {
 .results {
     font-size: 12pt;
     font-weight: 100;
+=======
+    font-size: 14pt;
+    }
+
+button:hover {
+    background-color: #e0dacc;
+    color:#ac8220;
+    border: 3px solid #976c17;
+    }
+
+.columns  {
+    font-size: 10pt;
+>>>>>>> main
 }
 
 .library {
     padding: 50px;
     align-items: center;
-    
 }
 
 .rowResults {
@@ -91,13 +125,16 @@ img {
     font-weight: 100;
 }
 
-.personalLibrary {
+th.thElRows {
     color: #555555;
     text-align: center;
-    font-size: 24pt;
+    font-size: 12pt;
     padding-top: 30px;
+    padding: 15px;
+    font-weight: 100;
 }
 
+<<<<<<< HEAD
 #searchBar {
     margin: auto;
     width: 85%;
@@ -106,4 +143,14 @@ img {
 #container {
     background-color: #9bbabc;
     text-align: center;
+=======
+.searchBar {
+    margin: 6px auto;
+    width: 75%;
+    padding-top: 100px;
+}
+
+.thElColumns {
+    font-size: 15pt;
+>>>>>>> main
 }
