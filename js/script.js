@@ -1,10 +1,10 @@
 const searchInputEl = document.getElementById('bookInput');
 const submitBtn = document.getElementById('submitButton');
-const titleEl = document.createElement('div');
-const authorEl = document.createElement('div');
-const genreEl = document.createElement('div');
-const descriptionEl = document.createElement('p');
-const bookImgEl = document.createElement('img');
+const titleEl = document.getElementById('resultsTitle');
+const authorEl = document.getElementById('resultsAuthor');
+const genreEl = document.getElementById('resultsGenre');
+const descriptionEl = document.getElementById('resultsDescrip');
+const bookImgEl = document.getElementById('resultsImg');
 document.body.append(titleEl);
 document.body.append(authorEl);
 document.body.append(genreEl);
@@ -30,7 +30,8 @@ function handleClick() {
 // Handles the parameters of title/author/genre/description/bookimg
 function handleData(data){
         const bookInfo = data.items;
-        console.log('data array is:', data)
+        // console.log('data array: ' + data)
+        // console.log(bookInfo)
         for (let i = 0; i < bookInfo.length; i++) {
             handleTitle(bookInfo[i]); 
             handleAuthor(bookInfo[i]);
@@ -42,21 +43,40 @@ function handleData(data){
 
 function handleTitle(book){
     const title = book.volumeInfo.title;
+    // console.log(book)
     if (title === undefined){
         titleEl.textContent = 'No title listed.'
     } else {
-        titleEl.textContent = title;
-        console.log('title is:' + title);
+        const listEl = document.createElement('ul');
+        const listItem = document.createElement('li');
+        titleEl.appendChild(listEl)
+        listItem.innerHTML = title;
+        listEl.appendChild(listItem);
+        // console.log('title is: ' + title);
+        const addBtn = document.createElement('button')
+        // addBtn.setAttribute("style", "color: white; padding: 5px;")
+        listItem.append(addBtn)
+    //    selectBtn(book);
     }
 }
+
+// function selectBtn(selection){
+//     const addBtn = document.createElement('button')
+//     addBtn.setAttribute("style", "color: white; padding: 5px; margin-left: 35px;")
+//     listEl.append(addBtn)
+// }
 
 function handleAuthor(book){
     const author = book.volumeInfo.authors;
     if (author === undefined){
         authorEl.textContent = 'No author listed.'
     } else {
-        authorEl.textContent = author;
-        console.log('author is:' + author);
+        const listEl = document.createElement('ul');
+        const listItem = document.createElement('li');
+        authorEl.appendChild(listEl);
+        listEl.appendChild(listItem);
+        listItem.innerHTML = author;
+        // console.log('author is: ' + author);
     }
 }
 
@@ -66,8 +86,12 @@ function handleGenre(book){
         genreEl.textContent = 'No genre listed.';
         console.log('no genre')
     } else{
-        genreEl.textContent = genre;
-        console.log('genre is:' + genre);
+        const listEl = document.createElement('ul');
+        const listItem = document.createElement('li');
+        genreEl.appendChild(listEl);
+        listEl.appendChild(listItem);
+        listItem.innerHTML = genre;
+        // console.log('genre is: ' + genre);
     }
 }
 
@@ -78,7 +102,12 @@ function handleDescription(book){
         descriptionEl.textContent = 'No description listed.'
     } else {
         const descripSnippet = description.split('.');
-        descriptionEl.textContent = descripSnippet[0] + '.';
+        // descriptionEl.textContent = descripSnippet[0] + '.';
+        const listEl = document.createElement('ul');
+        const listItem = document.createElement('li');
+        descriptionEl.appendChild(listEl);
+        listEl.appendChild(listItem);
+        listItem.innerHTML = descripSnippet[0] + '.';
         console.log('description is:' + description);
     }
 }
@@ -89,10 +118,26 @@ function handleImg(book){
         bookImgEl.textContent = 'No image available.'
         console.log('no image')
     }else {
-        bookImgEl.setAttribute('src', bookImg);
+        const listEl = document.createElement('ul');
+        const listItem = document.createElement('li');
+        const imageListItem = document.createElement('img');
+        bookImgEl.appendChild(listEl);
+        listEl.appendChild(listItem);
+        listItem.appendChild(imageListItem);
+        imageListItem.setAttribute('src', bookImg);
         console.log('image link is:' + bookImg);
     }
 }
+//  Could be function to add book to personal library----->
+bookImgEl.addEventListener('click', handleImageClick);
+
+function handleImageClick(event){
+    const el = event.target;
+    if(el.tagName === 'IMG'){
+        // insert local storage
+    }
+}
+// <---------------
 
 // --------------------------------------------------------------------------------
 // Book log function - log books in a personal library

@@ -17,7 +17,9 @@
 <body>
 
     <nav>
-        <img src="imges/book.png" alt="Book Icon">
+        <a class="active" href="#library">Personal Library</a>
+        <img src="./imges/book.png" alt="Book Icon">
+        <a class="active" href="#recommendations">Recommendations</a>
     </nav>
 
     <section id="bookLogSection">
@@ -49,7 +51,7 @@
 
             <tr class="rowResults">
                 <!-- Will be the search results of the API that matches the input above separated into columns -->
-                <th class="results" id="resultsTitle">Harry Potter and the Goblet of Fire</th>
+                <th class="results" id="resultsTitle" placeholder="Harry Potter and the Goblet of Fire"></th>
                 <th class="results" id="resultsAuthor">J.K Rowling</th>
                 <th class="results" id="resultsGenre">Fantasy</th>
                 <th class="results" id="resultsRead">Needs to be a Checkmark</th>
@@ -57,6 +59,8 @@
                 <th class="results" id="resultsDue">July 10, 2021</th>
                 <th class="results" id="resultsBorrower">Ophelia Jones</th>
                 <th class="results" id="resultsIcons">Trash/Pencil Icons</th>
+                <th class="results" id="resultsDescrip">Description</th>
+                <th class="results" id="resultsImg">Image Here</th>
             </tr>
 
         </table>
