@@ -21,11 +21,12 @@ nav {
     float: left;
 }
 
-h1  {
+h1 {
     text-align: center;
-    font-size: 24pt;
     padding-right: 0px;
     padding-bottom: 25px;
+    color: red;
+    font-size: 24pt;
 }
 
 h2  {
