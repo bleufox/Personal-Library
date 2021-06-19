@@ -17,16 +17,26 @@
 <body>
 
     <nav>
-        <a class="active" href="https://bleufox.github.io/Personal-Library/">Personal Library</a>
-        <img src="imges/book.png" alt="Book Icon">
-        <a class="active" href="https://bleufox.github.io/Personal-Library/recommendations">Recommendations</a>
+        <a class="active" href="#library">Personal Library</a>
+        <img src="./imges/book.png" alt="Book Icon">
+        <a class="active" href="#recommendations">Recommendations</a>
     </nav>
 
+    <section id="bookLogSection">
+        <div>
+            <p>To add a book to your library, type in the title, genre, or author you wish to add.</p>
+            <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
+            <button id="submitButton" onclick="saveBook()">Search</button>
+            <p id="submitReturn"></p><br>
+            <div id="bookLibrary"></div>
+        </div>
+    </section>
+
     <section class="library-table">
-        
+
         <!-- Note for Ashley: Look into h1 formatting issues -->
         <h3>Your Personal Library</h3>
-       
+
         <table class="personalLibrary">
 
             <tr class="columns">
@@ -42,7 +52,7 @@
 
             <tr class="rowResults">
                 <!-- Will be the search results of the API that matches the input above separated into columns -->
-                <th class="results" id="resultsTitle">Harry Potter and the Goblet of Fire</th>
+                <th class="results" id="resultsTitle" placeholder="Harry Potter and the Goblet of Fire"></th>
                 <th class="results" id="resultsAuthor">J.K Rowling</th>
                 <th class="results" id="resultsGenre">Fantasy</th>
                 <th class="results" id="resultsRead">Needs to be a Checkmark</th>
@@ -50,6 +60,8 @@
                 <th class="results" id="resultsDue">July 10, 2021</th>
                 <th class="results" id="resultsBorrower">Ophelia Jones</th>
                 <th class="results" id="resultsIcons">Trash/Pencil Icons</th>
+                <th class="results" id="resultsDescrip">Description</th>
+                <th class="results" id="resultsImg">Image Here</th>
             </tr>
 
         </table>
@@ -58,22 +70,13 @@
 
     <section>
         <div>
-            <h2>Upcoming due dates</h2>
-            <div id="dueDates"></div><br><br><br>
+            <h3>Upcoming Due Dates</h3>
+            <div id="dueDates"></div>
+            <h4>Carousel or Table?</h4>
         </div>
 
-    <section id="bookLogSection">
-        <div>
-            <h2>Book Log</h2>
-            <p>Which book would you like to enter?</p>
-            <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
-            <button id="submitButton" onclick="saveBook()">Submit</button>
-            <p id="submitReturn"></p><br>
-            <div id="bookLibrary"></div>
-
-    </section>
-
-    <script src="./js/script.js"></script>
+        <script src="./js/script.js"></script>
+        </section>
 
 </body>
 
