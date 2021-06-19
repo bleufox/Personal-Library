@@ -48,12 +48,7 @@ function handleData(data) {
 const libraryArr = [];
 
 // Code adapted from: https://stackoverflow.com/questions/52505323/save-input-value-to-local-storage-and-retrieve-it-on-a-different-page
-<<<<<<< HEAD
 function getBook() {
-=======
-function getBook(){
-    console.log(localStorage.getItem("bookStorage"));
->>>>>>> main
     return localStorage.getItem("bookStorage");
 };
 
@@ -69,30 +64,26 @@ function updateHTML() {
 function saveBook() {
     // Gets input value
     const bookInputEl = document.getElementById("bookInput").value;
-<<<<<<< HEAD
-
-=======
->>>>>>> main
     // Saves data to retrieve later
     localStorage.setItem("bookStorage", bookInputEl);
 
     updateHTML();
 
     libraryArr.push(bookInputEl);
-     
+
     console.log(`In this array: ${libraryArr}`);
 
     savedBooks()
 };
 
-    updateHTML();
-    libraryArr.push(bookInputEl);
-    console.log(`In this array: ${libraryArr}`);
-    savedBooks()
+updateHTML();
+libraryArr.push(bookInputEl);
+console.log(`In this array: ${libraryArr}`);
+savedBooks()
 };
 
-function savedBooks(){
-    const savedBookEl = document.getElementById("bookLibrary");    
+function savedBooks() {
+    const savedBookEl = document.getElementById("bookLibrary");
     const PostLibraryArr = libraryArr.join(`, `);
     savedBookEl.textContent = `${PostLibraryArr}`;
 };
