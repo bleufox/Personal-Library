@@ -10,16 +10,19 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous" />
-    <title>Search For a Book</title>
+    <title>Search Results</title>
 
 </head>
 
 <body>
-
-    <nav>
-        <!-- <a class="active" href="#index">Personal Library</a> -->
-        <img src="imges/book.png" class="header-icon-img" alt="Book Icon">
-        <!-- <a class="active" href="#recommendations">Recommendations</a> -->
+ <nav>
+    <div class="icon">
+        <img src="imges/book.png" alt="Book Icon" class="image">
+        <div class="overlay">
+            <a class="links" href="https://bleufox.github.io/Personal-Library/library">Personal Library</a>
+            <a class="links" href="https://bleufox.github.io/Personal-Library/recommendations">Recommendations</a>
+        </div>
+      </div>
     </nav>
 
     <section id="search-bar-wrapper">
@@ -31,8 +34,6 @@
             <div id="bookLibrary"></div>
         </div>
     </section>
-
-    <section class="pageBreak"></section>
 
     <section class="table-wrapper">
         <h2>Search Results</h2>
@@ -51,8 +52,6 @@
 
         </table>
     </section>
-
-    <section class="pageBreak"></section>
 
     <script src="js/script.js"></script>
 
