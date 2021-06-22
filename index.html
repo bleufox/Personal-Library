@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="css/reset.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
@@ -18,7 +18,7 @@
 
     <nav>
         <!-- <a class="active" href="#index">Personal Library</a> -->
-        <img src="./imges/book.png" alt="Book Icon">
+        <img src="imges/book.png" alt="Book Icon">
         <!-- <a class="active" href="#recommendations">Recommendations</a> -->
     </nav>
 
@@ -27,14 +27,14 @@
             <p>To add a book to your library, type in the title, genre, or author you wish to add.</p>
             <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
             <button id="submitButton" onclick="saveBook()">Search</button>
-            <p id="submitReturn"></p><br>
+            <p id="submitReturn"></p>
             <div id="bookLibrary"></div>
         </div>
     </section>
 
     <section class="table-wrapper">
         <!-- Note for Ashley: Look into h1 formatting issues -->
-        <h3>Your Personal Library</h3>
+        <h2>Your Personal Library</h2>
 
         <table class="tableEl">
             <tr class="columns">
@@ -56,9 +56,9 @@
 
     <section class="table-wrapper">
 
-        <h3>Upcoming Due Dates</h3>
+        <h2>Upcoming Due Dates</h2>
 
-        <div id="dueDates"> </div>
+        <div id="dueDates"></div>
 
         <table class="tableEl">
             <tr class="columns">
@@ -72,9 +72,7 @@
 
     </section>
 
-
-    <script src="./js/script.js"></script>
-
+    <script src="js/script.js"></script>
 
 </body>
 
