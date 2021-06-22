@@ -20,26 +20,6 @@ nav {
     float: left;
 }
 
-p {
-    font-size: 16pt;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: normal;
-}
-
-h2  {
-    text-align: center;
-    padding-right: 0px;
-    padding-bottom: 25px;
-    font-size: 24pt;
-}
-
-a {
-    color: #555555;
-    text-decoration: none;
-    font-weight: 400;
-}
-
 nav a {
     margin: auto;
     text-decoration: none;
@@ -51,10 +31,11 @@ nav a:hover {
     font-style: italic;
 }
 
-table {
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
+p {
+    font-size: 16pt;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: normal;
 }
 
 input {
@@ -74,6 +55,35 @@ button  {
     border: 1px solid #555555;
     border-radius: 5px;
     }
+
+.table-wrapper {
+    border-bottom: 2px solid #555555;
+    border-top: 2px solid #555555;
+    background-color: #9bbabc;
+    }
+
+h2  {
+    text-align: center;
+    padding-right: 0px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    font-size: 20pt;
+}
+
+a {
+    color: #555555;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
 
 th {
     font-size: 14pt;
@@ -133,11 +143,7 @@ ul {
     height: 150px;
 }
 
-.table-wrapper {
-    border-bottom: 2px solid #555555;
-    border-top: 2px solid #555555;
-    background-color: #9bbabc;
-}
+
 
 .pageBreak {
     height: 50px;
