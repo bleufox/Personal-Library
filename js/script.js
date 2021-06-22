@@ -175,11 +175,11 @@ function updateHTML(){
 
 const removeEl = document.getElementById('edit');
 
-removeEl.addEventListener('click', removeBook);
+// removeEl.addEventListener('click', removeBook);
 
-function removeBook(){
-    libraryArr.pull(bookInputEl);
-};
+// function removeBook(){
+//     libraryArr.pull(bookInputEl);
+// };
 
 // --------------------------- Due date reminder ---------------------------
 
@@ -193,16 +193,11 @@ const lentBookExample = {
     LoanedTo: "Crindy",
     RemoveEdit: "Delete me"
 };
-console.log(lentBookExample);
+// console.log(lentBookExample);
 
 const lentBooks = ["Leviathan", "Candide", "War & Peace"];
-// console.log(lentBooks);
 
-// lentBooks.forEach(function (item, index) {
-//   console.log(item, index);
-// });
-
-const dueDateRowEl = document.querySelector("resultsDue");
+const dueDateRowEl = document.querySelector("#resultsDue");
 
 function dueDateReminder(){
     const dueDateEl = document.querySelector("#dueDates");
