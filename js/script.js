@@ -109,8 +109,6 @@ function showSlides(n) {
 
 const libraryArr = [];
 
-// const bookInputEl = document.getElementById("bookInput").value;
-
 function getBook(){
     return localStorage.getItem("bookStorage");
 };
@@ -134,17 +132,20 @@ function updateHTML(){
     console.log(bookEl)
     document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
-    $(`${bookEl}`).fadeOut();
+    // $(`${bookEl}`).fadeOut();
+    $(document).ready(function(){
+        $(`${bookEl}`).fadeOut();
+    });
 };
 
 // --------------------------- Remove from local storage ---------------------------
 
-const removeEl = document.getElementById('edit');
+const removeEl = document.getElementById('delete');
 
-// removeEl.addEventListener('click', removeBook);
+// removeEl.addEventListener('click', removeBook());
 
 // function removeBook(){
-//     libraryArr.pull(bookInputEl);
+//     libraryArr.remove(bookInputEl);
 // };
 
 // --------------------------- Due date reminder ---------------------------
