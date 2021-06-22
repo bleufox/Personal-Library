@@ -56,7 +56,7 @@ button:hover {
     border: 2px solid #555555;
     background-color: #9bbabc;
     box-shadow: 2px 2px 10px  #555555 ;
-}
+    }
 
 h2  {
     text-align: center;
@@ -182,6 +182,7 @@ ul {
 .icon {
     position: relative;
     width: 100%;
+    margin-top: 5px;
 }
 
 .image {
@@ -208,9 +209,18 @@ ul {
 }
 
 .links {
-    color: #f5f5f5;
+    color: #9bbabc;
     font-size: 20px;
     text-align: center;
-    margin: 0 auto;
+    margin: auto;
     padding: 5px;
+}
+
+.links:hover {
+    padding-top: 10px;
+    background-color: #f5f5f5;
+    width: 30%;
+    opacity: .75;
+    border-radius: 30px;
+    align-items: middle;
 }
