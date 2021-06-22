@@ -18,14 +18,13 @@ function getAPI(bookSearch) {
             return response.json()
         })
         .then(handleData);
-}
+};
 
 submitBtn.addEventListener('click', handleClick)
 function handleClick() {
     const userQuery = searchInputEl.value;
     getAPI(userQuery);
-}
-
+};
 
 // Handles the parameters of title/author/genre/description/bookimg
 function handleData(data){
@@ -46,7 +45,7 @@ function handleData(data){
         for (let i = 0; i < bookInfo.length; i++) {
             buildRow(bookInfo[i])
         }
-}
+};
 
 function buildTdWithInfo(info, trEl, isImage){
     const tdEl = document.createElement('td');
@@ -63,8 +62,7 @@ function buildTdWithInfo(info, trEl, isImage){
         tdEl.append(imgEl);
     }
     trEl.append(tdEl);
-}
-
+};
 
 //  Could be function to add book to personal library----->
 bookImgEl.addEventListener('click', handleImageClick);
@@ -74,8 +72,37 @@ function handleImageClick(event){
     if(el.tagName === 'IMG'){
         // insert local storage
     }
-}
+};
 // <---------------
+
+//---------- Carousel-------------// 
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+};
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+};
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+};
 
 // --------------------------- Add to local storage ---------------------------
 
@@ -119,35 +146,6 @@ const removeEl = document.getElementById('edit');
 //     libraryArr.pull(bookInputEl);
 // };
 
-//---------- Carousel-------------// 
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
-
-
 // --------------------------- Due date reminder ---------------------------
 
 const lentBookExample = {
@@ -178,7 +176,7 @@ function dueDateReminder(){
             // lentBooks.forEach(item => console.log(item));
 
             // lentBooks.forEach(function, dueDateRowEl);
-            dueDateEl.textContent = `${dueDateEl} is due on ${dueDateEl}`;
+            // dueDateEl.textContent = `${dueDateEl} is due on ${dueDateEl}`;
         };
     };
 };
