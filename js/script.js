@@ -190,10 +190,10 @@ const lentBookExample = {
     ReadUnread:	"ReadOrNot",
     LoanStatus:	"Loaned",
     DueDate: "Tomorrow",
-    LoanedTo: "Minkus",
+    LoanedTo: "Crindy",
     RemoveEdit: "Delete me"
 };
-console.log(lentBookExample.DueDate);
+console.log(lentBookExample);
 
 const lentBooks = ["Leviathan", "Candide", "War & Peace"];
 // console.log(lentBooks);
