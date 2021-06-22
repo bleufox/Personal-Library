@@ -139,7 +139,7 @@ function handleImageClick(event){
 }
 // <---------------
 
-// --------------------------- Book log ---------------------------
+// --------------------------- Add to local storage ---------------------------
 
 const libraryArr = [];
 
@@ -161,6 +161,7 @@ function updateHTML(){
     const bookEl = getBook();
     document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
+    $(`${bookEl}`).fadeOut();
     // Add fade out
 };
 
@@ -168,27 +169,41 @@ function getBook(){
     return localStorage.getItem("bookStorage");
 };
 
+// --------------------------- Remove from local storage ---------------------------
+
+const removeEl = document.getElementById('edit');
+
+removeEl.addEventListener('click', handleImageClick);
+
+function removeBook(){
+    
+};
+
 // --------------------------- Due date reminder ---------------------------
 
 const lentBooks = [];
+
+function 
+
 const dueDateRowEl = document.querySelector("resultsDue");
 
 function dueDateReminder(){
     const dueDateEl = document.querySelector("#dueDates");
     lentBooks.push(dueDateEl);
-    
+
     for (let i = 0; i < lentBooks.length; i++) {
         // const element = array[i];
         if(lentBooks.length <= 0){
             dueDateEl.textContent = "No upcoming due dates!";
         }else{
+            lentBooks.forEach(function, dueDateRowEl);
             dueDateEl.textContent = `${dueDateEl} is due on ${dueDateEl}`;
         };
     };
 };
 
-// window.onload = function(){
-//     dueDateReminder();
-// };
+window.onload = function(){
+    dueDateReminder();
+};
 
 // --------------------------------------------------------------------------------
