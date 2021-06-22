@@ -11,6 +11,11 @@ document.body.append(genreEl);
 document.body.append(descriptionEl);
 document.body.append(bookImgEl);
 
+const titleArr = [];
+const imgArr = []
+console.log(titleArr)
+console.log(imgArr)
+
 // Searches the api using user's query and gives top 10 results
 function getAPI(bookSearch) {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`)
@@ -57,6 +62,7 @@ function handleTitle(book){
         // addBtn.setAttribute("style", "color: white; padding: 5px;")
         listItem.append(addBtn)
     //    selectBtn(book);
+        titleArr.push(title);
     }
 }
 
@@ -84,7 +90,7 @@ function handleGenre(book){
     const genre = book.volumeInfo.categories;
     if (genre === undefined){
         genreEl.textContent = 'No genre listed.';
-        console.log('no genre')
+        // console.log('no genre')
     } else{
         const listEl = document.createElement('ul');
         const listItem = document.createElement('li');
@@ -108,7 +114,7 @@ function handleDescription(book){
         descriptionEl.appendChild(listEl);
         listEl.appendChild(listItem);
         listItem.innerHTML = descripSnippet[0] + '.';
-        console.log('description is:' + description);
+        // console.log('description is:' + description);
     }
 }
 
@@ -116,7 +122,7 @@ function handleImg(book){
     const bookImg = book.volumeInfo.imageLinks.thumbnail;
     if (bookImg === undefined){
         bookImgEl.textContent = 'No image available.'
-        console.log('no image')
+        // console.log('no image')
     }else {
         const listEl = document.createElement('ul');
         const listItem = document.createElement('li');
@@ -125,7 +131,8 @@ function handleImg(book){
         listEl.appendChild(listItem);
         listItem.appendChild(imageListItem);
         imageListItem.setAttribute('src', bookImg);
-        console.log('image link is:' + bookImg);
+        // console.log('image link is:' + bookImg);
+        imgArr.push(bookImg)
     }
 }
 //  Could be function to add book to personal library----->
@@ -133,7 +140,10 @@ bookImgEl.addEventListener('click', handleImageClick);
 
 function handleImageClick(event){
     const el = event.target;
-    if(el.tagName === 'IMG'){
+    if(el === imgArr[0]){
+        console.log(titleArr[0])
+        // saveBook();
+        // updateHTML();
         // insert local storage
     }
 }
