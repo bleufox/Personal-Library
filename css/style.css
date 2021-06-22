@@ -35,15 +35,7 @@ h3 {
     text-align: center;
     padding-right: 0px;
     padding-bottom: 25px;
-    color: red;
     font-size: 24pt;
-}
-
-h4 {
-    color: green;
-    font-size: 25pt;
-    padding-top: 10px;
-    text-align: center;
 }
 
 a {
@@ -98,6 +90,10 @@ img {
     vertical-align: center;
 }
 
+ul {
+    font-size: 14pt;
+}
+
 .carousel {
     border-bottom: 2px solid #9bbabc;
     padding: 10px;
@@ -126,6 +122,33 @@ img {
     align-items: center;
 }
 
+.thElColumns {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.personalLibrary {
+    
+    height: 150px;
+}
+
+/* .dueDateEl {
+    padding-top: 50px;;
+    border-bottom: 2px solid #555555;
+} */
+
+.tableEl {
+    border-bottom: 2px solid #555555;
+    border-top: 2px solid #555555;
+    padding-top: 25px;
+    background-color: #9bbabc;
+}
+
+.pageBreak {
+    height: 50px;
+    background-color: #f5f5f5;
+}
+
 #searchBar {
     margin: auto;
     width: 90%;
@@ -141,5 +164,5 @@ img {
     margin: auto;
     width: 90%;
     padding-top: 175px;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
 }
