@@ -5,35 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous" />
-    <title>Search Results</title>
+    <title>Book Search</title>
 
 </head>
 
 <body>
 
-    <nav>
-        <div class="icon">
-            <img src="images/menu-icon.png" alt="Book Icon" class="image">
-            <div class="overlay">
-                <a class="links" href="https://bleufox.github.io/Personal-Library/">Personal Library</a>
-                <a class="links" href="https://bleufox.github.io/Personal-Library/recommendations">Recommendations</a>
-                <a class="links" href="https://bleufox.github.io/Personal-Library/book-search">Book Search</a>
-            </div>
+    <div class="icon">
+        <img src="images/menu-icon.png" alt="Book Icon" class="image">
+        <div class="overlay">
+            <a class="links" href="https://bleufox.github.io/Personal-Library/">Personal Library</a>
+            <a class="links" href="https://bleufox.github.io/Personal-Library/recommendations">Recommendations</a>
+            <a class="links" href="https://bleufox.github.io/Personal-Library/book-search">Book Search</a>
         </div>
-    </nav>
-
-    <div>
-        <img src="images/icon.png" class="book-icon" alt="Book Icon" >
     </div>
+
+    <section class="headerEl">
+        <h3>Personal Library API</h3>
+        <h2>Book Search</h2>
+    </section>
 
     <section id="search-bar-wrapper">
         <div>
-            <p>To add a book to your library, type in the title, genre, or author you wish to add.</p>
+            <p>To search for a book, type in the title, genre, or author you wish to add.</p>
             <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham, J.K Rowling, etc.">
             <button id="submitButton" onclick="saveBook()">Search</button>
             <p id="submitReturn"></p>
