@@ -28,9 +28,8 @@ p {
 }
 
 input {
-    width: 70%;
+    width: 80%;
     height: 40px;
-    margin: 8px 15px 15px;
     box-sizing: border-box;
     border: 2px solid #9bbabc;
     border-radius: 30px;
@@ -38,12 +37,13 @@ input {
 }
 
 button  {
+    color: #555555;
+    font-size: 14pt;
     background-color:#9bbabc;
     padding: 5px;
     border: 1px solid #555555;
     border-radius: 25px;
     font-family: 'Calibri';
-    color: #555555;
     }
 
 button:hover {
@@ -144,17 +144,13 @@ ul {
     padding-top: 20px;
 }
 
-.headerEl {
-    padding: 0;
-}
-
 .table-input {
     display: table;
 }
 
 .t {
     display: table-cell;
-    width: 100%;
+    width: 94%;
 }
 
 .t > button {
@@ -179,15 +175,10 @@ ul {
     border-top: 2px solid #9bbabc;
 }
 
-#search-bar-wrapper {
-    text-align: center;
-    width: 90%;
+.search-wrapper {
+    width: 100%;
     padding-top: 20px;
     padding-bottom: 25px;
-}
-
-#submitButton {
-    font-size: 14pt;
 }
 
 .book-info-row {
@@ -215,7 +206,7 @@ ul {
     position: absolute;
     top: 0;
     right: 0;
-    width: 35%;
+    width: 30%;
     margin: 0 auto;
     opacity: 0;
     transition: .4s ease;
