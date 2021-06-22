@@ -20,17 +20,6 @@ nav {
     float: left;
 }
 
-nav a {
-    margin: auto;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: #f5f5f5;
-    transform: scale(1.12);
-    font-style: italic;
-}
-
 p {
     font-size: 16pt;
     margin-bottom: 10px;
@@ -56,9 +45,15 @@ button  {
     border-radius: 5px;
     }
 
-.table-wrapper {
-    border-bottom: 2px solid #555555;
-    border-top: 2px solid #555555;
+button:hover {
+    color: #9bbabc;
+    background-color: #555555;
+}
+
+.personal-library-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    border: 2px solid #555555;
     background-color: #9bbabc;
     }
 
@@ -74,6 +69,7 @@ a {
     color: #555555;
     text-decoration: none;
     font-weight: 400;
+    display: block;
 }
 
 
@@ -88,11 +84,9 @@ td {
     text-align: center;
 }
 
-img {
-    display: inline-block;
+.header-icon-img {
     margin: 0 auto;
     height: 100px;
-    vertical-align: center;
 }
 
 ul {
@@ -174,4 +168,42 @@ ul {
 .book-info-row {
     padding-bottom: 20px;
     border-bottom: 2px solid #555555;
+}
+
+/* SANDBOX CODE BELOW */
+
+.icon {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+    display: block;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .4s ease;
+    background-color: #555555;
+}
+
+.icon:hover .overlay {
+    opacity: 1;
+}
+
+.links {
+    color: #f5f5f5;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 20px;
 }
