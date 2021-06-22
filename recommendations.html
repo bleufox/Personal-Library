@@ -15,7 +15,7 @@
 
     <nav>
         <div class="icon">
-            <img src="imges/book.png" alt="Book Icon" class="image">
+            <img src="./imges/icon.png" alt="Book Icon" class="image">
             <div class="overlay">
                 <a class="links" href="https://bleufox.github.io/Personal-Library/">Personal Library</a>
                 <a class="links" href="https://bleufox.github.io/Personal-Library/recommendations">Recommendations</a>
@@ -24,22 +24,40 @@
         </div>
     </nav>
 
-    <section class="carousel" id="carousel-sci-fi">
-        <h3>Carousel 1 (Example Sci-Fi) Here</h3>
-    </section>
+    <section class="spacer-section"></section>
 
-    <section class="carousel" id="carousel-mystery">
-        <h3>Carousel 2 (Example Mystery) Here</h3>
-    </section>
+    <!-- Carousel need API info-->
+    <div class="slideshow-container">
 
-    <section class="carousel" id="carousel-fiction">
-        <h3>Carousel 3 (Example Fiction) Here</h3>
-    </section>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="" width="500" height="300" class="center">
+            <div class="text">Book1</div>
+        </div>
 
-    <section class="carousel" id="carousel-true-crime">
-        <h3>Carousel 4 (Example True Crime) Here</h3>
-    </section>
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="" width="500" height="300" class="center">
+            <div class="text">Book2</div>
+        </div>
 
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="" width="500" height="300" class="center">
+            <div class="text">Book3</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+
+    </div>
     <script src="./js/script.js"></script>
 
 </body>
