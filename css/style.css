@@ -20,30 +20,6 @@ nav {
     float: left;
 }
 
-p {
-    font-size: 16pt;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-h2  {
-    padding-top: 35px;
-    text-align: center;
-}
-
-h3 {
-    text-align: center;
-    padding-right: 0px;
-    padding-bottom: 25px;
-    font-size: 24pt;
-}
-
-a {
-    color: #555555;
-    text-decoration: none;
-    font-weight: 400;
-}
-
 nav a {
     margin: auto;
     text-decoration: none;
@@ -55,10 +31,11 @@ nav a:hover {
     font-style: italic;
 }
 
-table {
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
+p {
+    font-size: 16pt;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: normal;
 }
 
 input {
@@ -79,8 +56,36 @@ button  {
     border-radius: 5px;
     }
 
-th {
+.table-wrapper {
+    border-bottom: 2px solid #555555;
+    border-top: 2px solid #555555;
+    background-color: #9bbabc;
+    }
+
+h2  {
+    text-align: center;
+    padding-right: 0px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    font-size: 20pt;
+}
+
+a {
+    color: #555555;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
     font-size: 14pt;
+    text-align: center;
 }
 
 img {
@@ -91,7 +96,12 @@ img {
 }
 
 ul {
-    font-size: 14pt;
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+::placeholder {
+    padding-left: 10px;
 }
 
 .carousel {
@@ -127,26 +137,20 @@ ul {
     font-weight: bold;
 }
 
-.personalLibrary {
-    
-    height: 150px;
-}
-
-/* .dueDateEl {
-    padding-top: 50px;;
-    border-bottom: 2px solid #555555;
-} */
-
 .tableEl {
-    border-bottom: 2px solid #555555;
-    border-top: 2px solid #555555;
-    padding-top: 25px;
-    background-color: #9bbabc;
+    margin-top: 50;
+    height: 150px;
 }
 
 .pageBreak {
     height: 50px;
     background-color: #f5f5f5;
+}
+
+.book-td {
+    max-height: 100%;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 #searchBar {
@@ -160,9 +164,14 @@ ul {
     border-top: 2px solid #9bbabc;
 }
 
-#bookLogSection {
+#search-bar-wrapper {
     margin: auto;
     width: 90%;
     padding-top: 175px;
     padding-bottom: 25px;
+}
+
+.book-info-row {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #555555;
 }
