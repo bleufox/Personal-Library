@@ -31,6 +31,7 @@ function handleData(data){
         const bookResultsTable = document.getElementById('book-search-results');
         const bookInfo = data.items;
         function buildRow(book){
+            console.log(data);
             const shortDescription = book.volumeInfo.description.split('.')[0];
             const trEl = document.createElement('tr');
             trEl.classList.add('book-info-row');
@@ -114,7 +115,7 @@ function getBook(){
     return localStorage.getItem("bookStorage");
 };
 
-function saveBook(){
+function bookSearch(){
     const bookInputEl = document.getElementById("bookInput").value;
     localStorage.setItem("bookStorage", bookInputEl);
     libraryArr.push(bookInputEl);
@@ -166,7 +167,6 @@ const dueDateRowEl = document.querySelector("#resultsDue");
 function dueDateReminder(){
     const dueDateEl = document.querySelector("#dueDates");
     lentBooks.push(dueDateEl);
-    console.log(lentBooks);
     for (let i = 0; i < lentBooks.length; i++) {
         // const element = array[i];
         if(lentBooks.length <= 0){
