@@ -99,7 +99,7 @@ ul {
 }
 
 ::placeholder {
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 .carousel {
@@ -127,10 +127,10 @@ ul {
 }
 
 .thElColumns {
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: bold;
     border-bottom: 1px solid #555555;
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
 }
 
 .spacer-section {
@@ -146,6 +146,19 @@ ul {
 
 .headerEl {
     padding: 0;
+}
+
+.table-input {
+    display: table;
+}
+
+.t {
+    display: table-cell;
+    width: 100%;
+}
+
+.t > button {
+    width: 80%;
 }
 
 #bookInput {
@@ -167,7 +180,7 @@ ul {
 }
 
 #search-bar-wrapper {
-    margin: auto;
+    text-align: center;
     width: 90%;
     padding-top: 20px;
     padding-bottom: 25px;
@@ -195,21 +208,23 @@ ul {
     position: absolute;
     margin-right: 50px;
     margin-top: 5px;
+    z-index: 10;
 }
 
 .overlay {
     position: absolute;
     top: 0;
     right: 0;
-    width: 25%;
+    width: 35%;
     margin: 0 auto;
     opacity: 0;
     transition: .4s ease;
     background-color: #555555;
-    height: 95px;
+    height: 105px;
+    z-index: 5;
 }
 
-.icon:hover .overlay {
+.overlay:hover,.image:hover + .overlay {
     opacity: 1;
 }
 
