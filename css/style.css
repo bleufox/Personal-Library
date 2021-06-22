@@ -127,11 +127,11 @@ ul {
     font-weight: bold;
 }
 
-.tableWrappers {
+.tableEl {
     height: 150px;
 }
 
-.tableEl {
+.table-wrapper {
     border-bottom: 2px solid #555555;
     border-top: 2px solid #555555;
     background-color: #9bbabc;
@@ -153,7 +153,7 @@ ul {
     border-top: 2px solid #9bbabc;
 }
 
-#bookLogSection {
+#search-bar-wrapper {
     margin: auto;
     width: 90%;
     padding-top: 175px;
