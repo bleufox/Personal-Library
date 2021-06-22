@@ -127,29 +127,13 @@ ul {
     font-weight: bold;
 }
 
-
-.tableWrappers {
+.tableEl {
     height: 150px;
 }
 
-.tableEl {
+.table-wrapper {
     border-bottom: 2px solid #555555;
     border-top: 2px solid #555555;
-
-.personalLibrary {
-    
-    height: 150px;
-}
-
-/* .dueDateEl {
-    padding-top: 50px;;
-    border-bottom: 2px solid #555555;
-} */
-
-.tableEl {
-    border-bottom: 2px solid #555555;
-    border-top: 2px solid #555555;
-    padding-top: 25px;
     background-color: #9bbabc;
 }
 
@@ -169,7 +153,7 @@ ul {
     border-top: 2px solid #9bbabc;
 }
 
-#bookLogSection {
+#search-bar-wrapper {
     margin: auto;
     width: 90%;
     padding-top: 175px;

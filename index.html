@@ -22,7 +22,7 @@
         <a class="active" href="#recommendations">Recommendations</a>
     </nav>
 
-    <section id="bookLogSection">
+    <section id="search-bar-wrapper">
         <div>
             <p>To add a book to your library, type in the title, genre, or author you wish to add.</p>
             <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
@@ -32,11 +32,11 @@
         </div>
     </section>
 
-    <section class="tableEl">
+    <section class="table-wrapper">
         <!-- Note for Ashley: Look into h1 formatting issues -->
         <h3>Your Personal Library</h3>
 
-        <table class="tableWrappers">
+        <table class="tableEl">
 
             <tr class="columns">
                 <th class="thElColumns" id="title">Book Title</th>
@@ -51,55 +51,31 @@
 
         </table>
 
-</section>
+    </section>
 
-<!-- <section class="tableEl"> -->
+    <section class="pageBreak"></section>
 
-        <table class="tableWrappers">
+
+    <section class="table-wrapper">
+
+        <h3>Upcoming Due Dates</h3>
+
+        <div id="dueDates"> </div>
+
+        <table class="tableEl">
             <tr class="columns">
-                <!-- Will be the search results of the API that matches the input above separated into columns -->
-
                 <th class="thElColumns" id="resultsTitle">Book Title</th>
                 <th class="thElColumns" id="resultsAuthor">Author</th>
                 <th class="thElColumns" id="resultsGenre">Genre</th>
                 <th class="thElColumns" id="resultsDescrip">Description</th>
                 <th class="thElColumns" id="resultsImg">Cover Image</th>
-
-                <th class="results" id="resultsTitle" placeholder="Harry Potter and the Goblet of Fire"></th>
-                <th class="results" id="resultsAuthor"></th>
-                <th class="results" id="resultsGenre"></th>
-                <th class="results" id="resultsRead"></th>
-                <th class="results" id="resultsStatus"></th>
-                <th class="results" id="resultsDue"></th>
-                <th class="results" id="resultsBorrower"></th>
-                <th class="results" id="resultsIcons"></th>
-                <th class="results" id="resultsDescrip"></th>
-                <th class="results" id="resultsImg"></th>
-
             </tr>
-
         </table>
+
     </section>
 
-   
-    <section class="pageBreak"></section>
-
-    <div class="tableEl">
-        <h3>Upcoming Due Dates</h3>
-        <div id="dueDates"></div>
-    </div>
 
     <script src="./js/script.js"></script>
-
-
-    <section class="pageBreak"></section>
-    
-        <div class="tableEl">
-            <h3>Upcoming Due Dates</h3>
-            <div id="dueDates"></div>
-        </div>
-
-        <script src="./js/script.js"></script>
 
 
 </body>
