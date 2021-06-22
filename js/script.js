@@ -64,6 +64,7 @@ function handleTitle(book){
     //    selectBtn(book);
         titleArr.push(title);
     }
+
 }
 
 // function selectBtn(selection){
