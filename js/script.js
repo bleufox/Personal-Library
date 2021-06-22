@@ -143,6 +143,12 @@ function handleImageClick(event){
 
 const libraryArr = [];
 
+// const bookInputEl = document.getElementById("bookInput").value;
+
+function getBook(){
+    return localStorage.getItem("bookStorage");
+};
+
 function saveBook(){
     const bookInputEl = document.getElementById("bookInput").value;
     localStorage.setItem("bookStorage", bookInputEl);
@@ -159,44 +165,58 @@ function savedBooks(){
 
 function updateHTML(){
     const bookEl = getBook();
+    console.log(bookEl)
     document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
     $(`${bookEl}`).fadeOut();
-    // Add fade out
-};
-
-function getBook(){
-    return localStorage.getItem("bookStorage");
 };
 
 // --------------------------- Remove from local storage ---------------------------
 
 const removeEl = document.getElementById('edit');
 
-removeEl.addEventListener('click', handleImageClick);
+removeEl.addEventListener('click', removeBook);
 
 function removeBook(){
-    
+    libraryArr.pull(bookInputEl);
 };
 
 // --------------------------- Due date reminder ---------------------------
 
-const lentBooks = [];
+const lentBookExample = {
+    BookTitle: "Candide",
+    Author:	"AuthorName",
+    Genre: "GenreName",
+    ReadUnread:	"ReadOrNot",
+    LoanStatus:	"Loaned",
+    DueDate: "Tomorrow",
+    LoanedTo: "Minkus",
+    RemoveEdit: "Delete me"
+};
+console.log(lentBookExample.DueDate);
 
-function 
+const lentBooks = ["Leviathan", "Candide", "War & Peace"];
+// console.log(lentBooks);
+
+// lentBooks.forEach(function (item, index) {
+//   console.log(item, index);
+// });
 
 const dueDateRowEl = document.querySelector("resultsDue");
 
 function dueDateReminder(){
     const dueDateEl = document.querySelector("#dueDates");
     lentBooks.push(dueDateEl);
-
+    console.log(lentBooks);
     for (let i = 0; i < lentBooks.length; i++) {
         // const element = array[i];
         if(lentBooks.length <= 0){
             dueDateEl.textContent = "No upcoming due dates!";
         }else{
-            lentBooks.forEach(function, dueDateRowEl);
+            // array.forEach(item => console.log(item));
+            // lentBooks.forEach(item => console.log(item));
+
+            // lentBooks.forEach(function, dueDateRowEl);
             dueDateEl.textContent = `${dueDateEl} is due on ${dueDateEl}`;
         };
     };
