@@ -28,8 +28,9 @@ p {
 }
 
 input {
-    width: 80%;
+    width: 70%;
     height: 40px;
+    margin: 8px 15px 15px;
     box-sizing: border-box;
     border: 2px solid #9bbabc;
     border-radius: 30px;
@@ -37,13 +38,12 @@ input {
 }
 
 button  {
-    color: #555555;
-    font-size: 14pt;
     background-color:#9bbabc;
     padding: 5px;
     border: 1px solid #555555;
     border-radius: 25px;
     font-family: 'Calibri';
+    color: #555555;
     }
 
 button:hover {
@@ -99,7 +99,7 @@ ul {
 }
 
 ::placeholder {
-    padding-left: 5px;
+    padding-left: 10px;
 }
 
 .carousel {
@@ -127,10 +127,10 @@ ul {
 }
 
 .thElColumns {
-    font-size: 14pt;
+    font-size: 16pt;
     font-weight: bold;
     border-bottom: 1px solid #555555;
-    /* padding-bottom: 15px; */
+    padding-bottom: 15px;
 }
 
 .spacer-section {
@@ -142,19 +142,6 @@ ul {
     max-height: 100%;
     padding-bottom: 20px;
     padding-top: 20px;
-}
-
-.table-input {
-    display: table;
-}
-
-.t {
-    display: table-cell;
-    width: 94%;
-}
-
-.t > button {
-    width: 80%;
 }
 
 #bookInput {
@@ -169,9 +156,8 @@ ul {
 }
 
 .search-wrapper {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 25px;
+    margin: auto;
+    width: 90%;
 }
 
 .book-info-row {
@@ -182,7 +168,6 @@ ul {
 .icon {
     position: relative;
     width: 100%;
-    /* margin-top: 5px; */
 }
 
 .image {
@@ -192,7 +177,6 @@ ul {
     position: absolute;
     margin-right: 50px;
     margin-top: 5px;
-    z-index: 10;
 }
 
 .overlay {
@@ -205,10 +189,9 @@ ul {
     transition: .4s ease;
     background-color: #555555;
     height: 105px;
-    z-index: 5;
 }
 
-.overlay:hover,.image:hover + .overlay {
+.icon:hover .overlay {
     opacity: 1;
 }
 
