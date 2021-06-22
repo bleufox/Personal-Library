@@ -178,7 +178,7 @@ function dueDateReminder() {
             // lentBooks.forEach(item => console.log(item));
 
             // lentBooks.forEach(function, dueDateRowEl);
-            dueDateEl.textContent = `${dueDateEl} is due on ${dueDateEl}`;
+            // dueDateEl.textContent = `${dueDateEl} is due on ${dueDateEl}`;
         };
     };
 };
