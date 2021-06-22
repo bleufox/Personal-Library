@@ -144,10 +144,6 @@ ul {
     padding-top: 20px;
 }
 
-.headerEl {
-    padding: 0;
-}
-
 #bookInput {
     margin-left: 100px;
     padding: 20px;
@@ -155,26 +151,13 @@ ul {
     border-radius: 30px;
 }
 
-#searchBar {
-    margin: auto;
-    width: 90%;
-    padding-top: 150px;
-    padding-bottom: 50px;
-}
-
 #carousel-sci-fi {
     border-top: 2px solid #9bbabc;
 }
 
-#search-bar-wrapper {
+.search-wrapper {
     margin: auto;
     width: 90%;
-    padding-top: 20px;
-    padding-bottom: 25px;
-}
-
-#submitButton {
-    font-size: 14pt;
 }
 
 .book-info-row {
@@ -185,7 +168,6 @@ ul {
 .icon {
     position: relative;
     width: 100%;
-    /* margin-top: 5px; */
 }
 
 .image {
@@ -201,12 +183,12 @@ ul {
     position: absolute;
     top: 0;
     right: 0;
-    width: 25%;
+    width: 30%;
     margin: 0 auto;
     opacity: 0;
     transition: .4s ease;
     background-color: #555555;
-    height: 95px;
+    height: 105px;
 }
 
 .icon:hover .overlay {
