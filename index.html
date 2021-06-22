@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="css/reset.css" />
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
@@ -17,28 +17,26 @@
 <body>
 
     <nav>
-        <a class="active" href="#library">Personal Library</a>
-        <img src="./imges/book.png" alt="Book Icon">
-        <a class="active" href="#recommendations">Recommendations</a>
+        <!-- <a class="active" href="#index">Personal Library</a> -->
+        <img src="imges/book.png" alt="Book Icon">
+        <!-- <a class="active" href="#recommendations">Recommendations</a> -->
     </nav>
 
-    <section id="bookLogSection">
+    <section id="search-bar-wrapper">
         <div>
             <p>To add a book to your library, type in the title, genre, or author you wish to add.</p>
             <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham">
             <button id="submitButton" onclick="saveBook()">Search</button>
-            <p id="submitReturn"></p><br>
+            <p id="submitReturn"></p>
             <div id="bookLibrary"></div>
         </div>
     </section>
 
-    <section class="tableEl">
-
+    <section class="table-wrapper">
         <!-- Note for Ashley: Look into h1 formatting issues -->
-        <h3>Your Personal Library</h3>
+        <h2>Your Personal Library</h2>
 
-        <table class="personalLibrary">
-
+        <table class="tableEl">
             <tr class="columns">
                 <th class="thElColumns" id="title">Book Title</th>
                 <th class="thElColumns" id="author">Author</th>
@@ -49,32 +47,74 @@
                 <th class="thElColumns" id="borrower">Loaned To</th>
                 <th class="thElColumns" id="edit">Remove/Edit</th>
             </tr>
+        </table>
 
-            <tr class="rowResults">
-                <!-- Will be the search results of the API that matches the input above separated into columns -->
-                <th class="results" id="resultsTitle" placeholder="Harry Potter and the Goblet of Fire"></th>
-                <th class="results" id="resultsAuthor"></th>
-                <th class="results" id="resultsGenre"></th>
-                <th class="results" id="resultsRead"></th>
-                <th class="results" id="resultsStatus"></th>
-                <th class="results" id="resultsDue"></th>
-                <th class="results" id="resultsBorrower"></th>
-                <th class="results" id="resultsIcons"></th>
-                <th class="results" id="resultsDescrip"></th>
-                <th class="results" id="resultsImg"></th>
+    </section>
+
+    <section class="pageBreak"></section>
+    <!-- Carousel need API info-->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="" width="500" height="300" class = "center">
+          <div class="text">Book1</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="" width="500" height="300" class = "center" >
+          <div class="text">Book2</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="" width="500" height="300"  class = "center">
+          <div class="text">Book3</div>
+        </div>
+      
+      
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+<span class="dot" onclick="currentSlide(3)"></span>
+
+</div>
+
+    <section class="pageBreak"></section>
+
+    <section class="table-wrapper">
+
+        <h2>Upcoming Due Dates</h2>
+
+        <div id="dueDates"></div>
+
+        <table class="tableEl" id='book-search-results'>
+            <tr class="columns">
+                <th class="thElColumns" id="resultsTitle">Book Title</th>
+                <th class="thElColumns" id="resultsAuthor">Author</th>
+                <th class="thElColumns" id="resultsGenre">Genre</th>
+                <th class="thElColumns" id="resultsDescrip">Description</th>
+                <th class="thElColumns" id="resultsImg">Cover Image</th>
+            </tr>
+            <tr class='columns'>
+                <td>Harry Potter</td>
+                <td >JK Rowling</td>
+                <td >Fantasy</td>
+                <td >TEXT HERE</td>
+                <td >Cover Image</td>
             </tr>
 
         </table>
+
     </section>
-    <section class="pageBreak"></section>
-    
-        <div class="tableEl">
-            <h3>Upcoming Due Dates</h3>
-            <div id="dueDates"></div>
-        </div>
 
-        <script src="./js/script.js"></script>
-
+    <script src="js/script.js"></script>
 
 </body>
 

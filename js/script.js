@@ -5,11 +5,11 @@ const authorEl = document.getElementById('resultsAuthor');
 const genreEl = document.getElementById('resultsGenre');
 const descriptionEl = document.getElementById('resultsDescrip');
 const bookImgEl = document.getElementById('resultsImg');
-document.body.append(titleEl);
-document.body.append(authorEl);
-document.body.append(genreEl);
-document.body.append(descriptionEl);
-document.body.append(bookImgEl);
+// document.body.append(titleEl);
+// document.body.append(authorEl);
+// document.body.append(genreEl);
+// document.body.append(descriptionEl);
+// document.body.append(bookImgEl);
 
 const titleArr = [];
 const imgArr = []
@@ -34,18 +34,21 @@ function handleClick() {
 
 // Handles the parameters of title/author/genre/description/bookimg
 function handleData(data){
+        const bookResultsTable = document.getElementById('book-search-results');
         const bookInfo = data.items;
-        // console.log('data array: ' + data)
-        // console.log(bookInfo)
-        for (let i = 0; i < bookInfo.length; i++) {
-            handleTitle(bookInfo[i]); 
-            handleAuthor(bookInfo[i]);
-            handleGenre(bookInfo[i]);
-            handleDescription(bookInfo[i]);
-            handleImg(bookInfo[i]);
+        function buildRow(book){
+            const shortDescription = book.volumeInfo.description.split('.')[0];
+            const trEl = document.createElement('tr');
+            trEl.classList.add('book-info-row');
+            buildTdWithInfo(book.volumeInfo.title, trEl); 
+            buildTdWithInfo(book.volumeInfo.authors, trEl);
+            buildTdWithInfo(book.volumeInfo.categories, trEl);
+            buildTdWithInfo(shortDescription, trEl);
+            buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
+            bookResultsTable.append(trEl)
         }
-}
 
+<<<<<<< HEAD
 function handleTitle(book){
     const title = book.volumeInfo.title;
     // console.log(book)
@@ -65,28 +68,31 @@ function handleTitle(book){
         titleArr.push(title);
     }
 
+=======
+        for (let i = 0; i < bookInfo.length; i++) {
+            buildRow(bookInfo[i])
+        }
+>>>>>>> main
 }
 
-// function selectBtn(selection){
-//     const addBtn = document.createElement('button')
-//     addBtn.setAttribute("style", "color: white; padding: 5px; margin-left: 35px;")
-//     listEl.append(addBtn)
-// }
-
-function handleAuthor(book){
-    const author = book.volumeInfo.authors;
-    if (author === undefined){
-        authorEl.textContent = 'No author listed.'
+function buildTdWithInfo(info, trEl, isImage){
+    const tdEl = document.createElement('td');
+    tdEl.classList.add('book-td');
+    if (!info){
+        tdEl.textContent = 'No info listed.'
+    } else if(!isImage) {
+        console.log('info is: ', info);
+        tdEl.textContent = info;
     } else {
-        const listEl = document.createElement('ul');
-        const listItem = document.createElement('li');
-        authorEl.appendChild(listEl);
-        listEl.appendChild(listItem);
-        listItem.innerHTML = author;
-        // console.log('author is: ' + author);
+        console.log('we should see this rarely!');
+        const imgEl = document.createElement('img');
+        imgEl.setAttribute('src', info);
+        tdEl.append(imgEl);
     }
+    trEl.append(tdEl);
 }
 
+<<<<<<< HEAD
 function handleGenre(book){
     const genre = book.volumeInfo.categories;
     if (genre === undefined){
@@ -136,6 +142,9 @@ function handleImg(book){
         imgArr.push(bookImg)
     }
 }
+=======
+
+>>>>>>> main
 //  Could be function to add book to personal library----->
 bookImgEl.addEventListener('click', handleImageClick);
 
@@ -178,6 +187,35 @@ function updateHTML(){
 function getBook(){
     return localStorage.getItem("bookStorage");
 };
+
+//---------- Carousel-------------// 
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
 
 // --------------------------- Due date reminder ---------------------------
 
