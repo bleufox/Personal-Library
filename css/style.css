@@ -24,14 +24,10 @@ p {
     font-size: 16pt;
     margin-bottom: 10px;
     text-align: center;
+    font-weight: normal;
 }
 
 h2  {
-    padding-top: 35px;
-    text-align: center;
-}
-
-h3 {
     text-align: center;
     padding-right: 0px;
     padding-bottom: 25px;
@@ -91,7 +87,12 @@ img {
 }
 
 ul {
-    font-size: 14pt;
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+::placeholder {
+    padding-left: 10px;
 }
 
 .carousel {
@@ -128,6 +129,7 @@ ul {
 }
 
 .tableEl {
+    margin-top: 50;
     height: 150px;
 }
 
