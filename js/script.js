@@ -193,7 +193,6 @@ const lentBookExample = {
     LoanedTo: "Crindy",
     RemoveEdit: "Delete me"
 };
-// console.log(lentBookExample);
 
 const lentBooks = ["Leviathan", "Candide", "War & Peace"];
 
