@@ -152,6 +152,7 @@ ul {
     margin-left: 100px;
     padding: 20px;
     color: #555555;
+    border-radius: 30px;
 }
 
 #searchBar {
@@ -184,7 +185,7 @@ ul {
 .icon {
     position: relative;
     width: 100%;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 .image {
@@ -192,8 +193,8 @@ ul {
     right: 0;
     height: 35px;
     position: absolute;
-    margin-right: 15px;
-    margin-top: 10px;
+    margin-right: 50px;
+    margin-top: 5px;
 }
 
 .overlay {
