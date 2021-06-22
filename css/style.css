@@ -57,10 +57,16 @@ button  {
     }
 
 .table-wrapper {
-    border-bottom: 2px solid #555555;
+    /* border-bottom: 2px solid #555555; */
     border-top: 2px solid #555555;
     background-color: #9bbabc;
     }
+
+.personal-library-table-wrapper {
+    border-bottom: 2px solid #555555;
+    border-top: 2px solid #555555;
+    background-color: #9bbabc;
+}
 
 h2  {
     text-align: center;
