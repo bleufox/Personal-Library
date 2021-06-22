@@ -127,6 +127,15 @@ ul {
     font-weight: bold;
 }
 
+
+.tableWrappers {
+    height: 150px;
+}
+
+.tableEl {
+    border-bottom: 2px solid #555555;
+    border-top: 2px solid #555555;
+
 .personalLibrary {
     
     height: 150px;
