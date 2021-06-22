@@ -127,6 +127,7 @@ ul {
     font-weight: bold;
 }
 
+
 .tableWrappers {
     height: 150px;
 }
@@ -134,6 +135,21 @@ ul {
 .tableEl {
     border-bottom: 2px solid #555555;
     border-top: 2px solid #555555;
+
+.personalLibrary {
+    
+    height: 150px;
+}
+
+/* .dueDateEl {
+    padding-top: 50px;;
+    border-bottom: 2px solid #555555;
+} */
+
+.tableEl {
+    border-bottom: 2px solid #555555;
+    border-top: 2px solid #555555;
+    padding-top: 25px;
     background-color: #9bbabc;
 }
 
