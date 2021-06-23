@@ -144,25 +144,18 @@ function savedBooks() {
 
 function updateHTML() {
     const bookEl = getBook();
-    // while (bookEl.firstChild) bookEl.removeChild(bookEl.firstChild);
+    console.log(bookEl);
+    while (bookEl.firstChild) {bookEl.removeChild(bookEl.firstChild)};
     document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
 };
 
 function getBook() {
-    const addedBook = document.createElement("div")
-
+    const addedBook = document.createElement("p")
     const totalLibrary = localStorage.getItem("bookStorage");
-
-    addedBook.append(totalLibrary);    
-
-    const userLibraryEl = document.getElementById("userLibrary");
-
-    document.body.innerText(addedBook, userLibraryEl);
-
-    // console.log(addedBook);
-    // console.log(userLibraryEl);
-    // console.log(totalLibrary);
+    // addedBook.append(totalLibrary);
+    console.log(addedBook);
+    document.getElementById("userLibrary").innerHTML = `${totalLibrary}`;
     return totalLibrary;
 };
 
