@@ -19,7 +19,7 @@ function setArrayToLocalStorage() {
 
 setArrayToLocalStorage();
 
-submitBtn.addEventListener('click', handleClick)
+//submitBtn.addEventListener('click', handleClick)
 function handleClick() {
     const userQuery = searchInputEl.value;
     getAPI(userQuery);
@@ -113,8 +113,8 @@ function showSlides(n) {
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-  //  slides[slideIndex - 1].style.display = "block"; // These are not calling anything
-    //dots[slideIndex - 1].className += " active";
+    slides[slideIndex - 1].style.display = "block"; // These are not calling anything
+    dots[slideIndex - 1].className += " active";
 };
 
 // --------------------------- Add to local storage ---------------------------
