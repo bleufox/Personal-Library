@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
         integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous" />
-    <title>Personal Library API</title>
+    <title>Book Search</title>
 
 </head>
 
@@ -24,38 +24,37 @@
         </div>
     </div>
 
-    <h3>Personal Library API</h3>
+        <h3>Personal Library API</h3>
+        <h2>Book Search</h2>
 
     <section class="search-wrapper" id="search-bar-wrapper">
-        <p>To add a book to your library, type in the title, genre, or author you wish to add.</p>
-        <div class="table-input">
-            <div class="t">
-                <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham, J.K Rowling, etc.">
-            </div>
-        <button id="submitButton" onclick="saveBook()">Search</button></div>
-        <p id="submitReturn"></p>
-        <div id="bookLibrary"></div>
-</section>
-
-    <section class="table-wrapper">
-        <h2>Your Personal Library</h2>
-
-        <table>
-            <tr class="columns">
-                <th class="thElColumns" id="title">Book Title</th>
-                <th class="thElColumns" id="author">Author</th>
-                <th class="thElColumns" id="genre">Genre</th>
-                <th class="thElColumns" id="read">Read/Unread</th>
-                <th class="thElColumns" id="status">Loan Status</th>
-                <th class="thElColumns" id="due">Due Date</th>
-                <th class="thElColumns" id="borrower">Loaned To</th>
-                <th class="thElColumns" id="edit">Remove/Edit</th>
-            </tr>
-        </table>
+            <p>To search for a book, type in the title, genre, or author you wish to add.</p>
+            <div class="table-input">
+                <div class="t">
+                    <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham, J.K Rowling, etc.">
+                </div>
+            <button id="submitButton" onclick="saveBook()">Search</button></div>
+            <p id="submitReturn"></p>
+            <div id="bookLibrary"></div>
     </section>
 
-    <div id="book-search-results"></div>
-    <button onclick="getBook()">Click me</button>
+    <section class="table-wrapper" id="active">
+        <h2>Search Results</h2>
+        <div id="dueDates"></div>
+
+        <table class="tableEl" id='book-search-results'>
+            <tr class="columns">
+                <th class="thElColumns" id="resultsTitle">Book Title</th>
+                <th class="thElColumns" id="resultsAuthor">Author</th>
+                <th class="thElColumns" id="resultsGenre">Genre</th>
+                <th class="thElColumns" id="resultsDescrip">Description</th>
+                <th class="thElColumns" id="resultsImg">Cover Image</th>
+            </tr>
+
+            <tr class='columns'></tr>
+
+        </table>
+    </section>
 
     <script src="js/script.js"></script>
 
