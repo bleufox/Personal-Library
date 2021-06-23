@@ -37,34 +37,21 @@ function getAPI(bookSearch) {
         });
 };
 
-function buildRow(book){
-    let bookResultsTable = document.getElementById('book-search-results');
-    const shortDescription = book.volumeInfo.description.split('.')[0];
-    let trEl = document.createElement('tr');
-    trEl.classList.add('book-info-row');
-    buildTdWithInfo(book.volumeInfo.title, trEl);
-    buildTdWithInfo(book.volumeInfo.authors, trEl);
-    buildTdWithInfo(book.volumeInfo.categories, trEl);
-    buildTdWithInfo(shortDescription, trEl);
-    buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
-    bookResultsTable.appendChild(trEl); // append is jQuery
-}
-
 // Handles the parameters of title/author/genre/description/bookimg
 function handleData(data) {
     // let bookResultsTable = document.getElementById('book-search-results');
     const bookInfo = data.items;
-    // function buildRow(book){
-    //     const shortDescription = book.volumeInfo.description.split('.')[0];
-    //     let trEl = document.createElement('tr');
-    //     trEl.classList.add('book-info-row');
-    //     buildTdWithInfo(book.volumeInfo.title, trEl);
-    //     buildTdWithInfo(book.volumeInfo.authors, trEl);
-    //     buildTdWithInfo(book.volumeInfo.categories, trEl);
-    //     buildTdWithInfo(shortDescription, trEl);
-    //     buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
-    //     bookResultsTable.appendChild(trEl); // append is jQuery
-    // }
+    function buildRow(book){
+        const shortDescription = book.volumeInfo.description?.split('.')[0];
+        let trEl = document.createElement('tr');
+        trEl.classList.add('book-info-row');
+        buildTdWithInfo(book.volumeInfo.title, trEl);
+        buildTdWithInfo(book.volumeInfo.authors, trEl);
+        buildTdWithInfo(book.volumeInfo.categories, trEl);
+        buildTdWithInfo(shortDescription, trEl);
+        buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
+        bookResultsTable.appendChild(trEl); // append is jQuery
+    }
 
     for (let i = 0; i < bookInfo.length; i++) {
         buildRow(bookInfo[i]);
@@ -99,7 +86,7 @@ function handleImageClick(event) {
 };
 // <---------------
 
-//---------- Carousel-------------// 
+//---------- Carousel -------------// 
 
 var slideIndex = 1;
 showSlides(slideIndex);
