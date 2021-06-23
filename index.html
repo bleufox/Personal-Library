@@ -15,49 +15,50 @@
 
 <body>
 
-    <div class="icon">
-        <img src="images/menu-icon.png" alt="Book Icon" class="image">
-        <div class="overlay">
-            <a class="links" href="https://bleufox.github.io/Personal-Library/">Personal Library</a>
-            <a class="links" href="https://bleufox.github.io/Personal-Library/recommendations">Recommendations</a>
-            <a class="links" href="https://bleufox.github.io/Personal-Library/book-search">Book Search</a>
+    <div class='icon'>
+        <img src='images/menu-icon.png' alt='Book Icon' class='image'>
+        <div class='overlay'>
+            <a class='links' href='https://bleufox.github.io/Personal-Library/'>Personal Library</a>
+            <a class='links' href='https://bleufox.github.io/Personal-Library/recommendations'>Recommendations</a>
+            <a class='links' href='https://bleufox.github.io/Personal-Library/book-search'>Book Search</a>
         </div>
     </div>
 
     <h3>Personal Library API</h3>
 
-    <section class="search-wrapper" id="search-bar-wrapper">
+    <section class='search-wrapper' id='search-bar-wrapper'>
         <p>To add a book to your library, type in the title, genre, or author you wish to add.</p>
-        <div class="table-input">
-            <div class="t">
-                <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham, J.K Rowling, etc.">
+        <div class='table-input'>
+            <div class='t'>
+                <input id='bookInput' type='text' placeholder='e.g. Green Eggs and Ham, J.K. Rowling, etc.'>
             </div>
-        <button id="submitButton" onclick="saveBook()">Search</button></div>
-        <p id="submitReturn"></p>
-        <div id="bookLibrary"></div>
+            <button id='submitButton' onclick='saveBook()'>Search</button>
+        </div>
+        <p id='submitReturn'></p>
+        <div id='bookLibrary'></div>
     </section>
 
     <section class="table-wrapper">
         <h2 id="userLibrary">Your Personal Library</h2>
 
         <table>
-            <tr class="columns">
-                <th class="thElColumns" id="title">Book Title</th>
-                <th class="thElColumns" id="author">Author</th>
-                <th class="thElColumns" id="genre">Genre</th>
-                <th class="thElColumns" id="read">Read/Unread</th>
-                <th class="thElColumns" id="status">Loan Status</th>
-                <th class="thElColumns" id="due">Due Date</th>
-                <th class="thElColumns" id="borrower">Loaned To</th>
-                <th class="thElColumns" id="edit">Remove/Edit</th>
+            <tr class='columns'>
+                <th class='thElColumns' id='title'>Book Title</th>
+                <th class='thElColumns' id='author'>Author</th>
+                <th class='thElColumns' id='genre'>Genre</th>
+                <th class='thElColumns' id='read'>Read/Unread</th>
+                <th class='thElColumns' id='status'>Loan Status</th>
+                <th class='thElColumns' id='due'>Due Date</th>
+                <th class='thElColumns' id='borrower'>Loaned To</th>
+                <th class='thElColumns' id='edit'>Remove/Edit</th>
             </tr>
         </table>
     </section>
 
-    <div id="book-search-results"></div>
-    <button onclick="getBook()">Your Library</button>
+    <div id='book-search-results'></div>
+    <button onclick='getBook()'>Book search results</button>
 
-    <script src="js/script.js"></script>
+    <script src='js/script.js'></script>
 
 </body>
 
