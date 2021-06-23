@@ -128,6 +128,16 @@ function handleClickSelection(event) {
 
 // --------------------------- Add to local storage ---------------------------
 
+// const searchArr = [];
+
+// function searchBooks() {
+//     const searchVal = document.getElementById("bookInput").value;
+//     searchArr.push(searchVal);
+//     localStorage.setItem("searchStorage", searchArr);
+//     savedBooks();
+//     updateHTML();
+// };
+
 function saveBook() {
     const bookInputVal = document.getElementById("bookInput").value;
     libraryArr.push(bookInputVal);
@@ -137,24 +147,34 @@ function saveBook() {
 };
 
 function savedBooks() {
-    const savedBookEl = document.getElementById("bookLibrary");
-    const postLibraryArr = libraryArr.join(`, `);
-    savedBookEl.textContent = `${postLibraryArr}`;
+    const addedBook = document.createElement("p")
+    const totalLibrary = localStorage.getItem("bookStorage");
+    document.getElementById("userLibrary").innerHTML = `${totalLibrary}`;
+    // addedBook.textContent = `${totalLibrary}`;
+    return totalLibrary;
 };
+
+// function savedBooks() {
+//     const savedBookEl = document.getElementById("bookLibrary");
+//     const postLibraryArr = libraryArr.join(`, `);
+//     savedBookEl.textContent = `${postLibraryArr}`;
+// };
 
 function updateHTML() {
     const bookEl = getBook();
-    console.log(bookEl);
-    while (bookEl.firstChild) {bookEl.removeChild(bookEl.firstChild)};
+    // console.log(bookEl);
+    while (bookEl.firstChild) {
+        bookEl.removeChild(bookEl.firstChild)
+    };
     document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
 };
 
 function getBook() {
-    const addedBook = document.createElement("p")
+    // const addedBook = document.createElement("p")
     const totalLibrary = localStorage.getItem("bookStorage");
     // addedBook.append(totalLibrary);
-    console.log(addedBook);
+    // console.log(addedBook);
     document.getElementById("userLibrary").innerHTML = `${totalLibrary}`;
     return totalLibrary;
 };
