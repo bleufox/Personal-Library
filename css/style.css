@@ -233,7 +233,7 @@ td {
   
   /* Caption text */
   .text {
-    color: #f2f2f2;
+    color: #443f3f;
     font-size: 15px;
     padding: 8px 12px;
     position: absolute;
@@ -244,7 +244,7 @@ td {
   
   /* Number text (1/3 etc) */
   .numbertext {
-    color: #f2f2f2;
+    color: #080808;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
@@ -269,9 +269,9 @@ td {
   
   /* Fading animation */
   .fade {
-    -webkit-animation-name: fade;
+    -webkit-animation-name: "fade";
     -webkit-animation-duration: 1.5s;
-    animation-name: fade;
+    animation-name: "fade";
     animation-duration: 1.5s;
   }
   
@@ -297,16 +297,16 @@ td {
     box-sizing: border-box;
   }
   
-  .gallery-cell {
-   /* width: 66%;
+  /*.gallery-cell {
+    width: 66%;
     height: 200px;
-    margin-right: 10px; */
+    margin-right: 10px; 
     background: #8C8;
     counter-reset: "gallery-cell";
     counter-increment: "gallery-cell";
-  }
+  }*/
   
-  /* cell number */
+  /* cell number 
   .gallery-cell:before {
     display: block;
     text-align: center;
@@ -314,4 +314,4 @@ td {
     line-height: 200px;
     font-size: 80px;
     color: white;
-  }
+  }*/
