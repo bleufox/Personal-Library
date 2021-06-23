@@ -31,14 +31,12 @@ function getAPI(bookSearch) {
         })
         .then(handleData);
 
-// <<<---this code is throwing an error-----
-// function setArrayToLocalStorage() {
-//     console.log(libraryArr);
-//     libraryArr = localStorage.getItem("bookStorage");
-// };
+function setArrayToLocalStorage() {
+    console.log(libraryArr);
+    libraryArr = localStorage.getItem("bookStorage");
+};
 
-// setArrayToLocalStorage();
-// --------->
+setArrayToLocalStorage();
 
 submitBtn.addEventListener('click', handleClick)
 function handleClick() {
