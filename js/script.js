@@ -11,10 +11,6 @@ const bookImgEl = document.getElementById('resultsImg');
 // document.body.append(descriptionEl);
 // document.body.append(bookImgEl);
 
-const titleArr = [];
-const imgArr = []
-console.log(titleArr)
-console.log(imgArr)
 
 // Searches the api using user's query and gives top 10 results
 function getAPI(bookSearch) {
@@ -33,11 +29,12 @@ function handleClick() {
 
 
 // Handles the parameters of title/author/genre/description/bookimg
+
 function handleData(data){
         const bookResultsTable = document.getElementById('book-search-results');
         const bookInfo = data.items;
         function buildRow(book){
-            const shortDescription = book.volumeInfo.description.split('.')[0];
+            const shortDescription = book.volumeInfo.description?.split('.')[0];
             const trEl = document.createElement('tr');
             trEl.classList.add('book-info-row');
             buildTdWithInfo(book.volumeInfo.title, trEl); 
@@ -47,44 +44,21 @@ function handleData(data){
             buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
             bookResultsTable.append(trEl)
         }
-
-<<<<<<< HEAD
-function handleTitle(book){
-    const title = book.volumeInfo.title;
-    // console.log(book)
-    if (title === undefined){
-        titleEl.textContent = 'No title listed.'
-    } else {
-        const listEl = document.createElement('ul');
-        const listItem = document.createElement('li');
-        titleEl.appendChild(listEl)
-        listItem.innerHTML = title;
-        listEl.appendChild(listItem);
-        // console.log('title is: ' + title);
-        const addBtn = document.createElement('button')
-        // addBtn.setAttribute("style", "color: white; padding: 5px;")
-        listItem.append(addBtn)
-    //    selectBtn(book);
-        titleArr.push(title);
-    }
-
-=======
         for (let i = 0; i < bookInfo.length; i++) {
             buildRow(bookInfo[i])
         }
->>>>>>> main
 }
 
 function buildTdWithInfo(info, trEl, isImage){
     const tdEl = document.createElement('td');
     tdEl.classList.add('book-td');
-    if (!info){
+    if (info === undefined){
         tdEl.textContent = 'No info listed.'
     } else if(!isImage) {
-        console.log('info is: ', info);
+        // console.log('info is: ', info);
         tdEl.textContent = info;
     } else {
-        console.log('we should see this rarely!');
+        // console.log('we should see this rarely!');
         const imgEl = document.createElement('img');
         imgEl.setAttribute('src', info);
         tdEl.append(imgEl);
@@ -92,78 +66,23 @@ function buildTdWithInfo(info, trEl, isImage){
     trEl.append(tdEl);
 }
 
-<<<<<<< HEAD
-function handleGenre(book){
-    const genre = book.volumeInfo.categories;
-    if (genre === undefined){
-        genreEl.textContent = 'No genre listed.';
-        // console.log('no genre')
-    } else{
-        const listEl = document.createElement('ul');
-        const listItem = document.createElement('li');
-        genreEl.appendChild(listEl);
-        listEl.appendChild(listItem);
-        listItem.innerHTML = genre;
-        // console.log('genre is: ' + genre);
-    }
-}
-
-function handleDescription(book){
-    const description = book.volumeInfo.description;
-    if (description === undefined){
-        console.log('no description');
-        descriptionEl.textContent = 'No description listed.'
-    } else {
-        const descripSnippet = description.split('.');
-        // descriptionEl.textContent = descripSnippet[0] + '.';
-        const listEl = document.createElement('ul');
-        const listItem = document.createElement('li');
-        descriptionEl.appendChild(listEl);
-        listEl.appendChild(listItem);
-        listItem.innerHTML = descripSnippet[0] + '.';
-        // console.log('description is:' + description);
-    }
-}
-
-function handleImg(book){
-    const bookImg = book.volumeInfo.imageLinks.thumbnail;
-    if (bookImg === undefined){
-        bookImgEl.textContent = 'No image available.'
-        // console.log('no image')
-    }else {
-        const listEl = document.createElement('ul');
-        const listItem = document.createElement('li');
-        const imageListItem = document.createElement('img');
-        bookImgEl.appendChild(listEl);
-        listEl.appendChild(listItem);
-        listItem.appendChild(imageListItem);
-        imageListItem.setAttribute('src', bookImg);
-        // console.log('image link is:' + bookImg);
-        imgArr.push(bookImg)
-    }
-}
-=======
-
->>>>>>> main
 //  Could be function to add book to personal library----->
 bookImgEl.addEventListener('click', handleImageClick);
 
 function handleImageClick(event){
     const el = event.target;
-    if(el === imgArr[0]){
-        console.log(titleArr[0])
-        // saveBook();
-        // updateHTML();
-        // insert local storage
+    if(el.tagName === 'tr'){
+        saveBook();
     }
 }
-// <---------------
+
 
 // --------------------------- Book log ---------------------------
 
 const libraryArr = [];
 
 function saveBook(){
+    // const test = document.
     const bookInputEl = document.getElementById("bookInput").value;
     localStorage.setItem("bookStorage", bookInputEl);
     libraryArr.push(bookInputEl);
