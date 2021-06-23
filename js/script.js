@@ -12,7 +12,7 @@ let libraryArr = [];
 // document.body.append(descriptionEl);
 // document.body.append(bookImgEl);
 
-console.log("WTF");
+console.log(libraryArr.length);
 
 function setArrayToLocalStorage (){
     console.log(libraryArr);
