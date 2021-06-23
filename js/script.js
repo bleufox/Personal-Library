@@ -15,6 +15,8 @@ const libraryArr = [];
 
 // console.log(libraryArr.length);
 
+// console.log("Test");
+
 function setArrayToLocalStorage (){
     // console.log(libraryArr);
     if (libraryArr.length = 0){
@@ -32,48 +34,19 @@ function getAPI(bookSearch) {
         .then(function (response) {
             return response.json()
         })
-        .then(handleData);
-};
-
-//submitBtn.addEventListener('click', handleClick)
-function handleClick() {
-    const userQuery = searchInputEl.value;
-    getAPI(userQuery);
-};
-
-// Searches the api using user's query and gives top 10 results
-function getAPI(bookSearch) {
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`)
-        .then(function (response) {
-            return response.json()
-        })
         .then(function (data) {
             // console.log(data.items)
             handleData(data)
         });
 };
 
-// Handles the parameters of title/author/genre/description/bookimg
-function handleData(data) {
-    let bookResultsTable = document.getElementById('book-search-results');
-    const bookInfo = data.items;
-    function buildRow(book){
-        const shortDescription = book.volumeInfo.description?.split('.')[0];
-        let trEl = document.createElement('tr');
-        trEl.classList.add('book-info-row');
-        buildTdWithInfo(book.volumeInfo.title, trEl);
-        buildTdWithInfo(book.volumeInfo.authors, trEl);
-        buildTdWithInfo(book.volumeInfo.categories, trEl);
-        buildTdWithInfo(shortDescription, trEl);
-        buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
-        bookResultsTable.appendChild(trEl); // append is jQuery
-    }
-
-    for (let i = 0; i < bookInfo.length; i++) {
-        buildRow(bookInfo[i]);
-    }
+submitBtn.addEventListener('click', handleClick)
+function handleClick() {
+    const userQuery = searchInputEl.value;
+    getAPI(userQuery);
 };
 
+// Handles the parameters of title/author/genre/description/bookimg
 function handleData(data){
         let bookResultsTable = document.getElementById('book-search-results');
         const bookInfo = data.items;
@@ -86,10 +59,10 @@ function handleData(data){
             buildTdWithInfo(book.volumeInfo.categories, trEl);
             buildTdWithInfo(shortDescription, trEl);
             buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
-            bookResultsTable.append(trEl)
+            bookResultsTable.append(trEl);
         }
         for (let i = 0; i < bookInfo.length; i++) {
-            buildRow(bookInfo[i])
+            buildRow(bookInfo[i]);
         }
 };
 
@@ -150,8 +123,7 @@ function savedBooks() {
     const addedBook = document.createElement("p")
     const totalLibrary = localStorage.getItem("bookStorage");
     document.getElementById("userLibrary").innerHTML = `${totalLibrary}`;
-    // addedBook.textContent = `${totalLibrary}`;
-    return totalLibrary;
+    addedBook.textContent = `${totalLibrary}`;
 };
 
 // function savedBooks() {
@@ -162,11 +134,11 @@ function savedBooks() {
 
 function updateHTML() {
     const bookEl = getBook();
-    // console.log(bookEl);
-    while (bookEl.firstChild) {
-        bookEl.removeChild(bookEl.firstChild)
-    };
-    document.getElementById("submitReturn").style = "Color: grey";
+    // // console.log(bookEl);
+    // while (bookEl.firstChild) {
+    //     bookEl.removeChild(bookEl.firstChild)
+    // };
+    document.getElementById("submitReturn").style = "color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
 };
 
