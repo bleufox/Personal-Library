@@ -35,7 +35,7 @@ function getAPI(bookSearch) {
         .then(handleData);
 };
 
-submitBtn.addEventListener('click', handleClick)
+//submitBtn.addEventListener('click', handleClick)
 function handleClick() {
     const userQuery = searchInputEl.value;
     getAPI(userQuery);
