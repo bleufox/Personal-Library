@@ -13,9 +13,9 @@ const libraryArr = [];
 // document.body.append(descriptionEl);
 // document.body.append(bookImgEl);
 
-// console.log(libraryArr.length);
+console.log(libraryArr.length);
 
-// console.log("Test");
+console.log("Test");
 
 function setArrayToLocalStorage (){
     // console.log(libraryArr);
