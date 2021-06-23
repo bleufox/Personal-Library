@@ -92,7 +92,7 @@ function handleImageClick(event) {
 };
 // <---------------
 
-//---------- Carousel -------------// 
+// ---------- Carousel -------------// 
 
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -147,11 +147,6 @@ function updateHTML() {
     //     $(`${bookEl}`).fadeOut();
     // });
 };
-
-// var node = document.createElement("LI");                 // Create a <li> node
-// var textnode = document.createTextNode("Water");         // Create a text node
-// node.appendChild(textnode);                              // Append the text to <li>
-// document.getElementById("myList").appendChild(node); 
 
 function getBook() {
     const addedBook = document.createElement("p")
