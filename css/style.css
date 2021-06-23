@@ -152,7 +152,7 @@ ul {
 
 .t {
     display: table-cell;
-    width: 93%;
+    width: 100%;
 }
 
 .t > button {
