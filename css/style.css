@@ -152,7 +152,11 @@ ul {
 
 .t {
     display: table-cell;
+<<<<<<< HEAD
     width: 100%;
+=======
+    width: 93%;
+>>>>>>> AndyBranch5
 }
 
 .t > button {
