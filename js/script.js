@@ -12,10 +12,10 @@ const libraryArr = [];
 // document.body.append(descriptionEl);
 // document.body.append(bookImgEl);
 
-console.log(libraryArr.length);
+// console.log(libraryArr.length);
 
 function setArrayToLocalStorage (){
-    console.log(libraryArr);
+    // console.log(libraryArr);
     if (libraryArr.length = 0){
         console.log("Array is empty");
     }else{
@@ -38,7 +38,7 @@ function getAPI(bookSearch) {
             return response.json()
         })
         .then(function (data) {
-            console.log(data.items)
+            // console.log(data.items)
             handleData(data)
         });
 };
@@ -70,7 +70,7 @@ function buildTdWithInfo(info, trEl, isImage) {
     if (!info) {
         tdEl.textContent = 'No info listed.'
     } else if (!isImage) {
-        console.log('info is: ', info);
+        // console.log('info is: ', info);
         tdEl.textContent = info;
     } else {
         console.log('we should see this rarely!');
@@ -148,11 +148,21 @@ function updateHTML() {
     // });
 };
 
+// var node = document.createElement("LI");                 // Create a <li> node
+// var textnode = document.createTextNode("Water");         // Create a text node
+// node.appendChild(textnode);                              // Append the text to <li>
+// document.getElementById("myList").appendChild(node); 
+
 function getBook() {
+    const addedBook = document.createElement("p")
     const userLibraryEl = document.getElementById("userLibrary");
-    userLibraryEl.append();
-    console.log(localStorage.getItem("bookStorage"));
-    return localStorage.getItem("bookStorage");
+    const totalLibrary = localStorage.getItem("bookStorage");
+    addedBook.append(userLibraryEl);
+    userLibraryEl.append(totalLibrary);
+    console.log(addedBook);
+    console.log(userLibraryEl);
+    console.log(totalLibrary);
+    return totalLibrary;
 };
 
 // --------------------------- Remove from local storage ---------------------------
