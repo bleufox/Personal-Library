@@ -13,9 +13,12 @@ const libraryArr = [];
 // document.body.append(descriptionEl);
 // document.body.append(bookImgEl);
 
-// console.log(libraryArr.length);
+console.log(libraryArr.length);
 
-// console.log("Test");
+console.log("Test");
+
+window.onload = function () {
+    dueDateReminder();
 
 function setArrayToLocalStorage (){
     // console.log(libraryArr);
@@ -126,12 +129,6 @@ function savedBooks() {
     addedBook.textContent = `${totalLibrary}`;
 };
 
-// function savedBooks() {
-//     const savedBookEl = document.getElementById("bookLibrary");
-//     const postLibraryArr = libraryArr.join(`, `);
-//     savedBookEl.textContent = `${postLibraryArr}`;
-// };
-
 function updateHTML() {
     const bookEl = getBook();
     // // console.log(bookEl);
@@ -164,17 +161,6 @@ const removeEl = document.getElementById('delete');
 
 // --------------------------- Due date reminder ---------------------------
 
-const lentBookExample = {
-    BookTitle: "Candide",
-    Author: "AuthorName",
-    Genre: "GenreName",
-    ReadUnread: "ReadOrNot",
-    LoanStatus: "Loaned",
-    DueDate: "Tomorrow",
-    LoanedTo: "Crindy",
-    RemoveEdit: "Delete me"
-};
-
 const lentBooks = ["Leviathan", "Candide", "War & Peace"];
 
 const dueDateRowEl = document.querySelector("#resultsDue");
@@ -196,8 +182,6 @@ function dueDateReminder() {
     };
 };
 
-window.onload = function () {
-    dueDateReminder();
 };
 
 // --------------------------------------------------------------------------------
