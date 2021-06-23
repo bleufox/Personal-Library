@@ -12,6 +12,7 @@ const bookImgEl = document.getElementById('resultsImg');
 // document.body.append(descriptionEl);
 // document.body.append(bookImgEl);
 
+<<<<<<< HEAD
 // Searches the api using user's query and gives top 10 results
 function getAPI(bookSearch) {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`)
@@ -21,12 +22,22 @@ function getAPI(bookSearch) {
         .then(handleData);
 };
 
+=======
+function setArrayToLocalStorage() {
+    console.log(libraryArr);
+    libraryArr = localStorage.getItem("bookStorage");
+};
+
+setArrayToLocalStorage();
+
+>>>>>>> main
 submitBtn.addEventListener('click', handleClick)
 function handleClick() {
     const userQuery = searchInputEl.value;
     getAPI(userQuery);
 };
 
+<<<<<<< HEAD
 // function buildRow(book){
 //     let bookResultsTable = document.getElementById('book-search-results');
 //     const shortDescription = book.volumeInfo.description.split('.')[0];
@@ -60,6 +71,39 @@ function handleData(data){
         for (let i = 0; i < bookInfo.length; i++) {
             buildRow(bookInfo[i])
         }
+=======
+// Searches the api using user's query and gives top 10 results
+function getAPI(bookSearch) {
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`)
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            console.log("---STRING---", data.items)
+            handleData(data)
+        });
+};
+
+// Handles the parameters of title/author/genre/description/bookimg
+function handleData(data) {
+    // let bookResultsTable = document.getElementById('book-search-results');
+    const bookInfo = data.items;
+    function buildRow(book){
+        const shortDescription = book.volumeInfo.description?.split('.')[0];
+        let trEl = document.createElement('tr');
+        trEl.classList.add('book-info-row');
+        buildTdWithInfo(book.volumeInfo.title, trEl);
+        buildTdWithInfo(book.volumeInfo.authors, trEl);
+        buildTdWithInfo(book.volumeInfo.categories, trEl);
+        buildTdWithInfo(shortDescription, trEl);
+        buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
+        bookResultsTable.appendChild(trEl); // append is jQuery
+    }
+
+    for (let i = 0; i < bookInfo.length; i++) {
+        buildRow(bookInfo[i]);
+    }
+>>>>>>> main
 }
 
 function buildTdWithInfo(info, trEl, isImage) {
@@ -130,20 +174,21 @@ function getBook(){
 };
 // <---------------
 
-//---------- Carousel-------------// 
+//---------- Carousel -------------// 
 
 var slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex += n);
 };
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 };
 
 function showSlides(n) {
+<<<<<<< HEAD
   var i;
   var slides = document.getElementsByClassName("mySlides");
 //   console.log(slides);
@@ -159,6 +204,23 @@ function showSlides(n) {
   }
 //   slides[slideIndex-1].style.display = "block"; // These are not calling anything
 //   dots[slideIndex-1].className += " active";
+=======
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    console.log(slides);
+    var dots = document.getElementsByClassName("dot");
+    console.log(dots);
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block"; // These are not calling anything
+    dots[slideIndex - 1].className += " active";
+>>>>>>> main
 };
 
 // --------------------------- Add to local storage ---------------------------
@@ -183,7 +245,7 @@ function updateHTML() {
     // console.log(bookEl)
     document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
-    $(document).ready(function(){
+    $(document).ready(function () {
         $(`${bookEl}`).fadeOut();
     });
 };
