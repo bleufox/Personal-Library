@@ -18,10 +18,13 @@ const libraryArr = [];
 function setArrayToLocalStorage (){
     // console.log(libraryArr);
     if (libraryArr.length = 0){
-        console.log("Array is empty");
+        console.log("Array is empty")
     }else{
         return localStorage.getItem("bookStorage");
-    };
+    }
+};
+
+setArrayToLocalStorage();
 
 // Searches the api using user's query and gives top 10 results
 function getAPI(bookSearch) {
@@ -30,13 +33,7 @@ function getAPI(bookSearch) {
             return response.json()
         })
         .then(handleData);
-
-function setArrayToLocalStorage() {
-    console.log(libraryArr);
-    libraryArr = localStorage.getItem("bookStorage");
 };
-
-setArrayToLocalStorage();
 
 submitBtn.addEventListener('click', handleClick)
 function handleClick() {
@@ -94,7 +91,7 @@ function handleData(data){
         for (let i = 0; i < bookInfo.length; i++) {
             buildRow(bookInfo[i])
         }
-}
+};
 
 function buildTdWithInfo(info, trEl, isImage) {
     const tdEl = document.createElement('td');
@@ -112,7 +109,6 @@ function buildTdWithInfo(info, trEl, isImage) {
     trEl.append(tdEl);
 };
 
-
 //  Could be function to add book to personal library----->
 const bookSelection = document.querySelector('#book-search-results');
 bookSelection.addEventListener('click', handleClickSelection);
@@ -128,78 +124,12 @@ function handleClickSelection(event) {
         console.log('no')
         console.log(el)
     }
-}
-
-
-// --------------------------- Book log ---------------------------
-
-const libraryArr = [];
-
-function saveBook(test){
-    // const bookInputEl = document.getElementById("bookInput").value;
-    localStorage.setItem("bookStorage", test);
-    libraryArr.push(bookInputEl);
-    savedBooks();
-    updateHTML();
-};
-
-function savedBooks(){
-    const savedBookEl = document.getElementById("bookLibrary");
-    const postLibraryArr = libraryArr.join(`, `);
-    savedBookEl.textContent = `${postLibraryArr}`;
-};
-
-function updateHTML(){
-    const bookEl = getBook();
-    document.getElementById("submitReturn").style = "Color: grey";
-    document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
-    // Add fade out
-};
-
-function getBook(){
-    return localStorage.getItem("bookStorage");
-    if (el.tagName === 'IMG') {
-        // insert local storage
-    }
-};
-// <---------------
-
-// ---------- Carousel -------------// 
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-};
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-};
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-//   console.log(slides);
-  var dots = document.getElementsByClassName("dot");
-//   console.log(dots);
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-//   slides[slideIndex-1].style.display = "block"; // These are not calling anything
-//   dots[slideIndex-1].className += " active";
 };
 
 // --------------------------- Add to local storage ---------------------------
 
 function saveBook() {
     const bookInputVal = document.getElementById("bookInput").value;
-
     libraryArr.push(bookInputVal);
     localStorage.setItem("bookStorage", libraryArr);
     savedBooks();
