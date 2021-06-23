@@ -17,9 +17,6 @@ console.log(libraryArr.length);
 
 console.log("Test");
 
-window.onload = function () {
-    dueDateReminder();
-
 function setArrayToLocalStorage (){
     // console.log(libraryArr);
     if (libraryArr.length = 0){
@@ -135,6 +132,7 @@ function updateHTML() {
     // while (bookEl.firstChild) {
     //     bookEl.removeChild(bookEl.firstChild)
     // };
+    console.log("TEST")
     document.getElementById("submitReturn").innerHTML = "TEST";
     document.getElementById("submitReturn").style = "color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
@@ -182,6 +180,8 @@ function dueDateReminder() {
     };
 };
 
+window.onload = function () {
+    dueDateReminder();
 };
 
 // --------------------------------------------------------------------------------
