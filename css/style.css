@@ -302,8 +302,7 @@ td {
     height: 200px;
     margin-right: 10px; */
     background: #8C8;
-    counter-reset: gallery-cell;
-    counter-increment: gallery-cell;
+    counter-increment: "gallery-cell";
   }
   
   /* cell number */
