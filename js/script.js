@@ -13,9 +13,9 @@ const libraryArr = [];
 // document.body.append(descriptionEl);
 // document.body.append(bookImgEl);
 
-console.log(libraryArr.length);
+// console.log(libraryArr.length);
 
-console.log("Test");
+// console.log("Test");
 
 function setArrayToLocalStorage (){
     // console.log(libraryArr);
@@ -138,6 +138,7 @@ function updateHTML() {
     // while (bookEl.firstChild) {
     //     bookEl.removeChild(bookEl.firstChild)
     // };
+    document.getElementById("submitReturn").innerHTML = "TEST";
     document.getElementById("submitReturn").style = "color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
 };
