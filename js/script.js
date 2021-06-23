@@ -5,7 +5,7 @@ const authorEl = document.getElementById('resultsAuthor');
 const genreEl = document.getElementById('resultsGenre');
 const descriptionEl = document.getElementById('resultsDescrip');
 const bookImgEl = document.getElementById('resultsImg');
-let libraryArr = [];
+const libraryArr = [];
 // document.body.append(titleEl);
 // document.body.append(authorEl);
 // document.body.append(genreEl);
@@ -16,7 +16,11 @@ console.log(libraryArr.length);
 
 function setArrayToLocalStorage (){
     console.log(libraryArr);
-    libraryArr = localStorage.getItem("bookStorage");
+    if (libraryArr.length = 0){
+        console.log("Array is empty");
+    }else{
+        return localStorage.getItem("bookStorage");
+    };
 };
 
 setArrayToLocalStorage();
@@ -34,14 +38,14 @@ function getAPI(bookSearch) {
             return response.json()
         })
         .then(function (data) {
-            console.log("---STRING---", data.items)
+            console.log(data.items)
             handleData(data)
         });
 };
 
 // Handles the parameters of title/author/genre/description/bookimg
 function handleData(data) {
-    // let bookResultsTable = document.getElementById('book-search-results');
+    let bookResultsTable = document.getElementById('book-search-results');
     const bookInfo = data.items;
     function buildRow(book){
         const shortDescription = book.volumeInfo.description?.split('.')[0];
@@ -104,9 +108,9 @@ function currentSlide(n) {
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
-    console.log(slides);
+    // console.log(slides);
     var dots = document.getElementsByClassName("dot");
-    console.log(dots);
+    // console.log(dots);
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
@@ -123,7 +127,6 @@ function showSlides(n) {
 
 function saveBook() {
     const bookInputVal = document.getElementById("bookInput").value;
-    console.log(libraryArr);
     libraryArr.push(bookInputVal);
     localStorage.setItem("bookStorage", libraryArr);
     savedBooks();
@@ -138,15 +141,16 @@ function savedBooks() {
 
 function updateHTML() {
     const bookEl = getBook();
-    // console.log(bookEl)
     document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
-    $(document).ready(function () {
-        $(`${bookEl}`).fadeOut();
-    });
+    // $(document).ready(function () {
+    //     $(`${bookEl}`).fadeOut();
+    // });
 };
 
 function getBook() {
+    const userLibraryEl = document.getElementById("userLibrary");
+    userLibraryEl.append();
     console.log(localStorage.getItem("bookStorage"));
     return localStorage.getItem("bookStorage");
 };
