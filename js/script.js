@@ -18,11 +18,13 @@ function getAPI(bookSearch) {
         .then(function (response) {
             return response.json()
         })
-        .then(function (data) {
-            console.log("---STRING---", data.items)
-            handleData(data)
-            console.log(data)
-        });
+        .then(handleData);
+};
+
+submitBtn.addEventListener('click', handleClick)
+function handleClick() {
+    const userQuery = searchInputEl.value;
+    getAPI(userQuery);
 };
 
 // function buildRow(book){
@@ -39,15 +41,14 @@ function getAPI(bookSearch) {
 
 
 // Handles the parameters of title/author/genre/description/bookimg
-console.log('this is before handle data')
+
 
 function handleData(data){
-        const bookResultsTable = document.getElementById('book-search-results');
+        let bookResultsTable = document.getElementById('book-search-results');
         const bookInfo = data.items;
-        console.log('this is bookInfo:', bookInfo)
         function buildRow(book){
             const shortDescription = book.volumeInfo.description?.split('.')[0];
-            const trEl = document.createElement('tr');
+            let trEl = document.createElement('tr');
             trEl.classList.add('book-info-row');
             buildTdWithInfo(book.volumeInfo.title, trEl); 
             buildTdWithInfo(book.volumeInfo.authors, trEl);
@@ -55,13 +56,11 @@ function handleData(data){
             buildTdWithInfo(shortDescription, trEl);
             buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
             bookResultsTable.append(trEl)
-            console.log('this is in the build row function: ', book)
         }
         for (let i = 0; i < bookInfo.length; i++) {
             buildRow(bookInfo[i])
         }
 }
-console.log('this is before buildwithinfo')
 
 function buildTdWithInfo(info, trEl, isImage) {
     const tdEl = document.createElement('td');
@@ -72,7 +71,6 @@ function buildTdWithInfo(info, trEl, isImage) {
         console.log('info is: ', info);
         tdEl.textContent = info;
     } else {
-        // console.log('we should see this rarely!');
         const imgEl = document.createElement('img');
         imgEl.setAttribute('src', info);
         tdEl.append(imgEl);
