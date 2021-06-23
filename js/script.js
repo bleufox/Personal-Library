@@ -78,13 +78,21 @@ function buildTdWithInfo(info, trEl, isImage) {
     trEl.append(tdEl);
 };
 
-//  Could be function to add book to personal library----->
-// bookImgEl.addEventListener('click', handleImageClick);
 
-function handleImageClick(event) {
+//  Could be function to add book to personal library----->
+const bookSelection = document.querySelector('#book-search-results');
+bookSelection.addEventListener('click', handleClickSelection);
+
+function handleClickSelection(event) {
     const el = event.target;
-    if(el.tagName === 'tr'){
-        saveBook();
+    if(el.tagName === 'TD'){
+        console.log('yay')
+        const bookRow = el.parentElement;
+        console.log()
+        saveBook(bookRow);
+    } else {
+        console.log('no')
+        console.log(el)
     }
 }
 
@@ -93,10 +101,9 @@ function handleImageClick(event) {
 
 const libraryArr = [];
 
-function saveBook(){
-    // const test = document.
-    const bookInputEl = document.getElementById("bookInput").value;
-    localStorage.setItem("bookStorage", bookInputEl);
+function saveBook(test){
+    // const bookInputEl = document.getElementById("bookInput").value;
+    localStorage.setItem("bookStorage", test);
     libraryArr.push(bookInputEl);
     savedBooks();
     updateHTML();
