@@ -16,7 +16,6 @@ nav {
     width: 100%;
     padding:20px;
     font-weight: bold;
-    /* border-bottom: 5px solid #555555; */
     float: left;
 }
 
@@ -152,11 +151,7 @@ ul {
 
 .t {
     display: table-cell;
-<<<<<<< HEAD
     width: 100%;
-=======
-    width: 93%;
->>>>>>> AndyBranch5
 }
 
 .t > button {
