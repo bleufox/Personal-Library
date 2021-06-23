@@ -223,7 +223,6 @@ ul {
 }
 
 /*Carousel*/
-
 /* Slideshow container */
 .slideshow-container {
     max-width: 1000px;
@@ -286,14 +285,14 @@ ul {
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #555555;
+    background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
 }
 
 .dot:hover {
-    background-color: #9bbabc;
+    background-color: #717171;
 }
 
   /* Fading animation */
@@ -319,4 +318,4 @@ ul {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-}
+} 
