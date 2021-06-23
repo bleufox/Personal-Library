@@ -132,7 +132,7 @@ ul {
     font-size: 14pt;
     font-weight: bold;
     border-bottom: 1px solid #555555;
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
 }
 
 .spacer-section {
