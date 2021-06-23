@@ -7,13 +7,11 @@ const descriptionEl = document.getElementById('resultsDescrip');
 const bookImgEl = document.getElementById('resultsImg');
 const libraryArr = [];
 
-
 console.log(libraryArr.length);
-
 
 function setArrayToLocalStorage (){
     if (libraryArr.length = 0){
-        console.log("Array is empty")
+        console.log("Array is empty");
     }else{
         return localStorage.getItem("bookStorage");
     }
@@ -106,15 +104,15 @@ console.log(bookRowArr)
 
 // --------------------------- Add to local storage ---------------------------
 
-// const searchArr = [];
+const savedLibraryArr = [];
 
-// function searchBooks() {
-//     const searchVal = document.getElementById("bookInput").value;
-//     searchArr.push(searchVal);
-//     localStorage.setItem("searchStorage", searchArr);
-//     savedBooks();
-//     updateHTML();
-// };
+function browseLibrary() {
+    const searchVal = document.getElementById("bookInput").value;
+    savedLibraryArr.push(searchVal);
+    localStorage.setItem("searchStorage", savedLibraryArr);
+    savedBooks();
+    updateHTML();
+};
 
 function saveBook() {
     // const bookInputVal = document.getElementById("bookInput").value;
@@ -173,9 +171,6 @@ function updateHTML() {
     document.getElementById("submitReturn").style = "color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
 };
-
-
-
 
 // function getBook() {
 //     const addedBook = document.createElement("p")
