@@ -19,7 +19,7 @@ function setArrayToLocalStorage (){
     libraryArr = localStorage.getItem("bookStorage");
 };
 
-setArrayToLocalStorage ();
+setArrayToLocalStorage();
 
 submitBtn.addEventListener('click', handleClick)
 function handleClick() {
@@ -58,7 +58,7 @@ function handleData(data) {
     for (let i = 0; i < bookInfo.length; i++) {
         buildRow(bookInfo[i]);
     }
-}
+};
 
 function buildTdWithInfo(info, trEl, isImage) {
     const tdEl = document.createElement('td');
@@ -94,29 +94,29 @@ var slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex += n);
 };
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 };
 
 function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  console.log(slides);
-  var dots = document.getElementsByClassName("dot");
-  console.log(dots);
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block"; // These are not calling anything
-  dots[slideIndex-1].className += " active";
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    console.log(slides);
+    var dots = document.getElementsByClassName("dot");
+    console.log(dots);
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block"; // These are not calling anything
+    dots[slideIndex - 1].className += " active";
 };
 
 // --------------------------- Add to local storage ---------------------------
@@ -141,7 +141,7 @@ function updateHTML() {
     // console.log(bookEl)
     document.getElementById("submitReturn").style = "Color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
-    $(document).ready(function(){
+    $(document).ready(function () {
         $(`${bookEl}`).fadeOut();
     });
 };
