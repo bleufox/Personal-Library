@@ -15,40 +15,41 @@
 
 <body>
 
-    <div class="icon">
-        <img src="images/menu-icon.png" alt="Book Icon" class="image">
-        <div class="overlay">
-            <a class="links" href="https://bleufox.github.io/Personal-Library/">Personal Library</a>
-            <a class="links" href="https://bleufox.github.io/Personal-Library/recommendations">Recommendations</a>
-            <a class="links" href="https://bleufox.github.io/Personal-Library/book-search">Book Search</a>
+    <div class='icon'>
+        <img src='images/menu-icon.png' alt='Book Icon' class='image'>
+        <div class='overlay'>
+            <a class='links' href='https://bleufox.github.io/Personal-Library/'>Personal Library</a>
+            <a class='links' href='https://bleufox.github.io/Personal-Library/recommendations'>Recommendations</a>
+            <a class='links' href='https://bleufox.github.io/Personal-Library/book-search'>Book Search</a>
         </div>
     </div>
 
-        <h3>Personal Library API</h3>
-        <h2>Book Search</h2>
+    <h3>Personal Library API</h3>
+    <h2>Book Search</h2>
 
-    <section class="search-wrapper" id="search-bar-wrapper">
-            <p>To search for a book, type in the title, genre, or author you wish to add.</p>
-            <div class="table-input">
-                <div class="t">
-                    <input id="bookInput" type="text" placeholder="e.g. Green Eggs and Ham, J.K Rowling, etc.">
-                </div>
-            <button id="submitButton" onclick="saveBook()">Search</button></div>
-            <p id="submitReturn"></p>
-            <div id="bookLibrary"></div>
+    <section class='search-wrapper' id='search-bar-wrapper'>
+        <p>To search for a book, type in the title, genre, or author you wish to add.</p>
+        <div class='table-input'>
+            <div class='t'>
+                <input id='bookInput' type='text' placeholder='e.g. Green Eggs and Ham, J.K. Rowling, etc.'>
+            </div>
+            <button id='submitButton' onclick='saveBook()'>Search</button>
+        </div>
+        <p id='submitReturn'></p>
+        <div id='bookLibrary'></div>
     </section>
 
-    <section class="table-wrapper" id="active">
+    <section class='table-wrapper' id='active'>
         <h2>Search Results</h2>
-        <div id="dueDates"></div>
+        <div id='dueDates'></div>
 
-        <table class="tableEl" id='book-search-results'>
-            <tr class="columns">
-                <th class="thElColumns" id="resultsTitle">Book Title</th>
-                <th class="thElColumns" id="resultsAuthor">Author</th>
-                <th class="thElColumns" id="resultsGenre">Genre</th>
-                <th class="thElColumns" id="resultsDescrip">Description</th>
-                <th class="thElColumns" id="resultsImg">Cover Image</th>
+        <table class='tableEl' id='book-search-results'>
+            <tr class='columns'>
+                <th class='thElColumns' id='resultsTitle'>Book Title</th>
+                <th class='thElColumns' id='resultsAuthor'>Author</th>
+                <th class='thElColumns' id='resultsGenre'>Genre</th>
+                <th class='thElColumns' id='resultsDescrip'>Description</th>
+                <th class='thElColumns' id='resultsImg'>Cover Image</th>
             </tr>
 
             <tr class='columns'></tr>
