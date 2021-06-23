@@ -12,6 +12,7 @@ API allows users to search for book titles and and them to a personal library. T
 HTML, CSS, JavaScript, jQuery
 
 ## Screenshot
+![BookSearch](/images/screenshot-book-search.png)
 
 ## Links
 * Deployed Site: https://bleufox.github.io/Personal-Library/
