@@ -110,7 +110,7 @@ function browseLibrary(){
     console.log(bookRowArr[0]);
     updateHTML(bookRowArr[0]);
 };
-console.log(bookRowArr);
+// console.log(bookRowArr);
 
 // --------------------------- Add to Local Storage ---------------------------
 // (Second One)
@@ -188,8 +188,8 @@ function updateHTML() {
     // while (bookEl.firstChild) {
     //     bookEl.removeChild(bookEl.firstChild)
     // };
-    console.log("TEST")
-    document.getElementById("submitReturn").innerHTML = "TEST";
+    // console.log("TEST")
+    // document.getElementById("submitReturn").innerHTML = "TEST";
     document.getElementById("submitReturn").style = "color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
 };
@@ -219,9 +219,9 @@ function currentSlide(n) {
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
-    console.log(slides);
+    // console.log(slides);
     var dots = document.getElementsByClassName("dot");
-    console.log(dots);
+    // console.log(dots);
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
