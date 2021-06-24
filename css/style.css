@@ -1,55 +1,65 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #f5f5f5;
-    font-family: "Calibri";
-    font-size: 16pt;
-    color: #555555;
+  background-color: #f5f5f5;
+  font-family: 'Calibri';
+  font-size: 16pt;
+  color: #555555;
 }
 
 p {
-    font-size: 16pt;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: normal;
+  font-size: 16pt;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: normal;
 }
 
 input {
-    width: 85%;
-    height: 40px;
-    box-sizing: border-box;
-    border: 2px solid #9bbabc;
-    border-radius: 30px;
-    font-size: 15pt;
-    color: #555555;
-    border-radius: 30px;
-    padding-left: 15px;
+  width: 85%;
+  height: 40px;
+  box-sizing: border-box;
+  border: 2px solid #9bbabc;
+  border-radius: 30px;
+  font-size: 15pt;
+  color: #555555;
+  border-radius: 30px;
+  padding-left: 15px;
 }
 
 button  {
-    background-color:#9bbabc;
-    padding: 5px;
-    border: 1px solid #555555;
-    border-radius: 25px;
-    font-family: 'Calibri';
-    color: #555555;
-    display: inline;
-    }
+  background-color:#9bbabc;
+  padding: 5px;
+  border: 1px solid #555555;
+  border-radius: 25px;
+  font-family: 'Calibri';
+  color: #555555;
+  display: inline;
+}
 
 button:hover {
-    color: #9bbabc;
-    background-color: #555555;
+  color: #9bbabc;
+  background-color: #555555;
 }
 
 .table-wrapper {
-    width: 90%;
-    margin: 0 auto;
-    border: 1px solid #555555;
-    background-color: #9bbabc;
-    box-shadow: 2px 0px 10px  #555555 ;
-    }
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid #555555;
+  background-color: #9bbabc;
+  box-shadow: 2px 0px 10px  #555555 ;
+}
+
+.carousel-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid #555555;
+  background-color: #9bbabc;
+  box-shadow: 2px 0px 10px  #555555 ;
+  padding: 30px;
+  width: 50%;
+}
 
 h2  {
     text-align: center;
@@ -86,8 +96,8 @@ table {
 }
 
 td {
-    font-size: 12pt;
-    text-align: center;
+  font-size: 12pt;
+  text-align: center;
 }
 
 th  {
@@ -101,22 +111,22 @@ footer {
 }
 
 ::placeholder {
-    padding-left: 5px;
+  padding-left: 5px;
 }
 
 .thElColumns {
-    font-size: 14pt;
-    font-weight: bold;
-    border-bottom: 1px solid #555555;
+  font-size: 14pt;
+  font-weight: bold;
+  border-bottom: 1px solid #555555;
 }
 
 .book-td {
-    max-height: 100%;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    color: #555555;
-    font-weight: normal;
-    font-size: 12pt;
+  max-height: 100%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  color: #555555;
+  font-weight: normal;
+  font-size: 12pt;
 }
 
 .button-el {
@@ -125,75 +135,75 @@ footer {
 }
 
 .table-input {
-    display: table;
+  display: table;
 }
 
 .t {
-    display: table-cell;
-    width: 95%;
+  display: table-cell;
+  width: 95%;
 }
 
 .t > button {
-    width: 100%;
+  width: 100%;
 }
 
 .search-wrapper {
-    width: 65%;
-    padding-top: 20px;
-    padding-bottom: 25px;
-    margin: 0 auto;
+  width: 65%;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  margin: 0 auto;
 }
 
 .book-info-row {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #555555;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #555555;
 }
 
-.icon {
-    position: relative;
-    width: 100%;
+.menu {
+  position: relative;
+  width: 100%;
 }
 
 .image {
-    top: 0;
-    right: 0;
-    height: 35px;
-    position: absolute;
-    margin-right: 50px;
-    margin-top: 5px;
-    z-index: 10;
+  top: 0;
+  right: 0;
+  height: 35px;
+  position: absolute;
+  margin-right: 50px;
+  margin-top: 5px;
+  z-index: 10;
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30%;
-    margin: 0 auto;
-    opacity: 0;
-    transition: .4s ease;
-    background-color: #555555;
-    height: 105px;
-    z-index: 5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  margin: 0 auto;
+  opacity: 0;
+  transition: .4s ease;
+  background-color: #555555;
+  height: 105px;
+  z-index: 5;
 }
 
 .overlay:hover,.image:hover + .overlay {
-    opacity: 1;
+  opacity: 1;
 }
 
 .links {
-    color: #9bbabc;
-    font-size: 18px;
-    text-align: center;
-    margin: auto;
-    padding: 6px;
+  color: #9bbabc;
+  font-size: 18px;
+  text-align: center;
+  margin: auto;
+  padding: 6px;
 }
 
 .links:hover {
-    width: 45%;
-    border-bottom: 1px solid #f5f5f5;
-    border-color: #f5f5f5;
-    display: block;
+  width: 45%;
+  border-bottom: 1px solid #f5f5f5;
+  border-color: #f5f5f5;
+  display: block;
 }
 
 .dot-container {
@@ -263,14 +273,14 @@ footer {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: rgb(117, 208, 224);
+  background-color: #f5f5f5;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  transition: 0.6s ease;
 }
 
 .act, .dot:hover {
-  background-color: #71a0a1;
+  background-color: #888888;
 }
 
 /* Fading animation */
