@@ -33,16 +33,18 @@
             <div class='t'>
                 <input id='bookInput' type='text' placeholder='Search within your library'>
             </div>
-            <button id='submitButton' onclick='browseLibrary()'>Search</button>
-            <button onclick="removeAll()">Reset</button>
+            <div class="button-wrapper">
+                <button id='submitButton' onclick='saveBook()'>Search</button>
+                <button id='resetButton' onclick="removeAll()">Reset</button>
+            </div>
+
         </div>
         <p id='submitReturn'></p>
     </section>
 
     <section class="table-wrapper">
-        <h2>Your Personal Library
-            <!-- <div id="userLibrary"></div> -->
-        </h2>
+
+        <div id="userLibrary"></div>
 
         <table id="usersBooks">
             <tr class='columns'>
