@@ -62,6 +62,13 @@ h3 {
     padding-top: 15px;
 }
 
+h4  {
+  font-size: 12pt;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+}
+
 a {
     text-decoration: none;
     font-weight: normal;
@@ -74,40 +81,27 @@ table {
     border-collapse: collapse;
     margin-top: 50px;
     height: 150px;
+  
 }
 
 td {
-    font-size: 14pt;
+    font-size: 12pt;
     text-align: center;
+}
+
+th  {
+  padding-bottom: 25px;
+}
+
+footer {
+  height: 50px;
+  background-color: #f5f5f5;
+  color: #888888;
 }
 
 ::placeholder {
     padding-left: 5px;
 }
-
-/* .carousel {
-    border-bottom: 2px solid #9bbabc;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 20pt;
-    padding-bottom: 15px;
-    padding-top: 15px;
-} */
-/* 
-.rowResults {
-    font-size: 12pt;
-    color: #555555;
-    font-weight: 100;
-} */
-/* 
-.results {
-    color: #555555;
-    text-align: center;
-    font-size: 12pt;
-    padding-top: 30px;
-    padding: 15px;
-    font-weight: 100;
-} */
 
 .thElColumns {
     font-size: 14pt;
@@ -119,7 +113,9 @@ td {
     max-height: 100%;
     padding-bottom: 20px;
     padding-top: 20px;
-    color: red;
+    color: #555555;
+    font-weight: normal;
+    font-size: 12pt;
 }
 
 .table-input {
@@ -194,12 +190,17 @@ td {
     display: block;
 }
 
+.dot-container {
+  padding-bottom: 15px;
+}
+
 /*Carousel*/
 /* Slideshow container */
 .slideshow-container {
     max-width: 1000px;
     position: relative;
     margin: auto;
+    height: 350px;
   }
   
   /* Hide the images by default */
@@ -257,14 +258,14 @@ td {
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: rgb(117, 208, 224);
+    background-color: #555555;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
   }
   
   .act, .dot:hover {
-    background-color: #71a0a1;
+    background-color: #f5f5f5;
   }
   
   /* Fading animation */
@@ -315,3 +316,9 @@ td {
     font-size: 80px;
     color: white;
   }*/
+
+  @media (max-width: 768px) {
+    .main-content {
+      padding: 20px 8px;
+    }
+  }
