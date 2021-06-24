@@ -49,7 +49,7 @@ function handleData(data){
             buildTdWithInfo(book.volumeInfo.authors, trEl);
             buildTdWithInfo(book.volumeInfo.categories, trEl);
             buildTdWithInfo(shortDescription, trEl);
-            console.log(book.volumeInfo.imageLinks.thumbnail);
+            console.log(book.volumeInfo.imageLinks.thumbnail, trEl, true);
             buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
             bookResultsTable.append(trEl);
         }
@@ -66,7 +66,7 @@ function buildTdWithInfo(info, trEl, isImage) {
     if (!info) {
         tdEl.textContent = 'No info listed.'
     } else if (!isImage) {
-        console.log('info is: ', info);
+        // console.log('info is: ', info);
         tdEl.textContent = info;
     } else {
         const imgEl = document.createElement('img');
@@ -83,20 +83,22 @@ bookSelection.addEventListener('click', handleClickSelection);
 
 const bookRowArr = [];
 
-function handleClickSelection(event) {
+function handleClickSelection(event){
     const el = event.target;
     if(el.tagName === 'TD'){
         const bookRow = el.parentElement;
         // saveBook(bookRow);
         for(let i = 0; i < 3; i++){
-           const bookRowText = bookRow.children[i].innerText;
-        //    console.log(bookRowText)
-           bookRowArr.push(bookRowText)
-        } 
+            const bookRowText = bookRow.children[i].innerText;
+            // console.log(bookRowText);
+            bookRowArr.push(bookRowText);
+            // saveBook(bookRowArr);
+        };
         saveBook();
+        // saveBook(bookRow);   
     } else {
-        console.log('you did not click on a <td> tag')
-    }
+        console.log('you did not click on a <td> tag');
+    };
 };
 
 // ------------------------ Add to local storage ------------------------
@@ -114,6 +116,7 @@ function saveBook(){
     // console.log('library array ', libraryArr)
     // console.log('book row array ', bookRowArr[0])
     savedBooks();
+    // updateHTML();
     updateHTML(bookRowArr[0]);
     addToLibrary();
 };
