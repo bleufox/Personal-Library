@@ -134,6 +134,8 @@ function addToLibrary(){
         createRows(bookRowArr[0], trEl2)
         createRows(bookRowArr[1], trEl2)
         createRows(bookRowArr[2], trEl2)
+        console.log(trEl2);
+        console.log(libraryTable);
         libraryTable.append(trEl2);
         console.log('hi im in the console')
     }
