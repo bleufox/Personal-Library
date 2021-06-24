@@ -62,15 +62,15 @@ button:hover {
 }
 
 h2  {
-    text-align: center;
-    font-size: 20pt;
+  text-align: center;
+  font-size: 20pt;
 }
 
 h3 {
-    font-family: 'Calibri';
-    font-size: 35pt;
-    text-align: center;
-    padding-top: 15px;
+  font-family: 'Calibri';
+  font-size: 35pt;
+  text-align: center;
+  padding-top: 15px;
 }
 
 h4  {
@@ -81,18 +81,17 @@ h4  {
 }
 
 a {
-    text-decoration: none;
-    font-weight: normal;
-    display: block;
+  text-decoration: none;
+  font-weight: normal;
+  display: block;
 }
 
 table {
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 50px;
-    height: 150px;
-  
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 50px;
+  height: 150px;
 }
 
 td {
