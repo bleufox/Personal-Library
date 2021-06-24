@@ -17,7 +17,7 @@ p {
 }
 
 input {
-    width: 98%;
+    width: 85%;
     height: 40px;
     box-sizing: border-box;
     border: 2px solid #9bbabc;
@@ -116,6 +116,10 @@ footer {
     color: #555555;
     font-weight: normal;
     font-size: 12pt;
+}
+
+.button-wrapper {
+  display: block
 }
 
 .table-input {
