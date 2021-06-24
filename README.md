@@ -1,7 +1,7 @@
 # Class Project: Personal Library API
 
 ## Description
-API allows users to search for book titles and and them to a personal library. The search results include book title, author, genre, description, and a cover photo. Site includes hamburger menu with menu display on hover, ability to save a title to personal library, and dynamic carousel of cover photos of titles within the user's personal library.
+API allows users to search for book titles and and them to a personal library. The search results include book title, author, genre, description, and a cover photo. Site includes hamburger menu with menu display on hover, ability to save a title to personal library, and carousel of recommended Library Apps.
 
 ## MVPs
 * Search for a book by title, author, or genre
