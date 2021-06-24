@@ -31,6 +31,7 @@ function getAPI(bookSearch) {
 };
 
 submitBtn.addEventListener('click', handleClick)
+
 function handleClick() {
     const userQuery = searchInputEl.value;
     getAPI(userQuery);
@@ -107,17 +108,18 @@ function browseLibrary(){
     const searchVal = document.getElementById("bookInput").value;
     savedLibraryArr.push(searchVal);
     localStorage.setItem("searchStorage", savedLibraryArr);
-    // updateHTML(bookRowArr[0]);
+    console.log(bookRowArr[0]);
+    updateHTML(bookRowArr[0]);
 };
 
 function saveBook(){
     // const bookInputVal = document.getElementById("bookInput").value;
+    console.log(savedLibraryArr);
+    savedLibraryArr.push(bookRowArr);
     // console.log(libraryArr);
-    libraryArr.push(bookRowArr);
-    console.log(libraryArr);
-    localStorage.setItem("bookStorage", libraryArr);
-    console.log('library array ', libraryArr)
-    console.log('book row array ', bookRowArr[0])
+    localStorage.setItem("bookStorage", savedLibraryArr);
+    // console.log('library array: ', libraryArr)
+    console.log('book row array: ', bookRowArr[0])
     savedBooks();
     // updateHTML();
     updateHTML(bookRowArr[0]);
@@ -133,8 +135,8 @@ function addToLibrary(){
         createRows(bookRowArr[0], trEl2)
         createRows(bookRowArr[1], trEl2)
         createRows(bookRowArr[2], trEl2)
-        console.log(trEl2);
-        console.log(searchInputEl);
+        // console.log(trEl2);
+        // console.log(searchInputEl);
         searchInputEl.append(trEl2);
         // console.log('hi im in the console')
     }
@@ -156,7 +158,7 @@ function savedBooks(){
 };
 
 function updateHTML(item){
-    console.log(item);
+    console.log(`Input is: ${item}`);
     // document.getElementById("submitReturn").innerHTML = `TEST`;
     document.getElementById("submitReturn").style = "color: grey";
     document.getElementById("submitReturn").innerHTML = `${item} has been added!`;
