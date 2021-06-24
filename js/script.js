@@ -95,6 +95,7 @@ function handleClickSelection(event) {
         //    saveBook();
         } 
         saveBook();
+        updateHTML();
     } else {
         console.log('you did not click on a <td> tag')
     }
@@ -120,7 +121,7 @@ function saveBook(){
     console.log('library array ', libraryArr)
     console.log('book row array ', bookRowArr[0])
     savedBooks();
-    updateHTML();
+    // updateHTML();
     addToLibrary();
 };
 
@@ -159,16 +160,12 @@ function savedBooks(){
     addedBook.textContent = `${totalLibrary}`;
 };
 
-function updateHTML(){
-    const bookEl = addToLibrary();
-    // // console.log(bookEl);
-    // while (bookEl.firstChild) {
-    //     bookEl.removeChild(bookEl.firstChild)
-    // };
-    console.log("TEST")
+function updateHTML(item){
+    // const bookEl = item;
+    // console.log("TEST")
     document.getElementById("submitReturn").innerHTML = "TEST";
     document.getElementById("submitReturn").style = "color: grey";
-    document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
+    document.getElementById("submitReturn").innerHTML = `${item} has been added!`;
 };
 
 // function getBook(){
