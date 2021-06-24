@@ -58,7 +58,7 @@ function handleData(data){
         }
 };
 
-//  ----------------------- Builds table with handleData info -----------------------
+// ----------------------- Builds table with handleData info -----------------------
 
 function buildTdWithInfo(info, trEl, isImage) {
     const tdEl = document.createElement('td');
@@ -77,7 +77,7 @@ function buildTdWithInfo(info, trEl, isImage) {
     }
 };
 
-//  ------------ Click event to select the book/row from query search ------------
+// ------------ Click event to select the book/row from query search ------------
 
 const bookSelection = document.querySelector('#book-search-results');
 bookSelection.addEventListener('click', handleClickSelection);
@@ -239,4 +239,4 @@ function removeAll(){
     document.getElementById("book-search-results").innerHTML = "";
 };
 
-// --------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
