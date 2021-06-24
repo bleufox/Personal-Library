@@ -6,8 +6,7 @@ const genreEl = document.getElementById('resultsGenre');
 const descriptionEl = document.getElementById('resultsDescrip');
 const bookImgEl = document.getElementById('resultsImg');
 const libraryArr = [];
-
-console.log(libraryArr.length);
+const savedLibraryArr = [];
 
 function setArrayToLocalStorage (){
     if (libraryArr.length = 0){
@@ -19,7 +18,7 @@ function setArrayToLocalStorage (){
 
 setArrayToLocalStorage();
 
-// --------------------Searches the api using user's query and gives top 10 results--------------
+// -------------------- Searches the api using user's query and gives top 10 results --------------
 function getAPI(bookSearch) {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`)
         .then(function (response) {
@@ -37,7 +36,7 @@ function handleClick() {
     getAPI(userQuery);
 };
 
-// --------------Handles the parameters of title/author/genre/description/bookimg---------------
+// -------------- Handles the parameters of title/author/genre/description/bookimg ---------------
 
 function handleData(data){
         let bookResultsTable = document.getElementById('book-search-results');
@@ -92,7 +91,6 @@ function handleClickSelection(event) {
            const bookRowText = bookRow.children[i].innerText;
            console.log(bookRowText)
            bookRowArr.push(bookRowText)
-        //    saveBook();
         } 
         saveBook();
     } else {
@@ -102,15 +100,12 @@ function handleClickSelection(event) {
 
 console.log(bookRowArr);
 
-// --------------------------- Add to local storage ---------------------------
-
-const savedLibraryArr = [];
+// ------------------------ Add to local storage ------------------------
 
 function browseLibrary(){
     const searchVal = document.getElementById("bookInput").value;
     savedLibraryArr.push(searchVal);
     localStorage.setItem("searchStorage", savedLibraryArr);
-    // updateHTML();
 };
 
 function saveBook(){
@@ -124,7 +119,7 @@ function saveBook(){
     addToLibrary();
 };
 
-// ---------- Adds book to Personal Library Page --------------------
+// ------------------ Adds book to Personal Library Page ------------------
 
 function addToLibrary(){
     const libraryTable = document.getElementById('usersBooks');
@@ -139,9 +134,6 @@ function addToLibrary(){
         libraryTable.append(trEl2);
         console.log('hi im in the console')
     }
-    // for (let i = 0; i < 1; i++) {
-    //     buildPersonalLibrary(bookRowArr[i]);
-    // }
     buildPersonalLibrary();
 };
 
@@ -160,8 +152,6 @@ function savedBooks(){
 };
 
 function updateHTML(item){
-    // const bookEl = item;
-    // console.log("TEST")
     document.getElementById("submitReturn").innerHTML = "TEST";
     document.getElementById("submitReturn").style = "color: grey";
     document.getElementById("submitReturn").innerHTML = `${item} has been added!`;
@@ -176,7 +166,7 @@ function updateHTML(item){
 //     return totalLibrary;
 // };
 
-// --------------------------- Remove from local storage ---------------------------
+// ----------------------- Remove from local storage -----------------------
 
 const removeEl = document.getElementById('delete');
 
@@ -213,4 +203,10 @@ window.onload = function () {
     dueDateReminder();
 };
 
-// --------------------------------------------------------------------------------
+// ------------------------Clears Search Results-----------------------------
+
+function removeAll(){
+    document.getElementById("book-search-results").innerHTML = "";
+};
+
+// --------------------------------------------------------------------------
