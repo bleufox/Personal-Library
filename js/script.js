@@ -5,7 +5,7 @@ const authorEl = document.getElementById('resultsAuthor');
 const genreEl = document.getElementById('resultsGenre');
 const descriptionEl = document.getElementById('resultsDescrip');
 const bookImgEl = document.getElementById('resultsImg');
-const libraryArr = [];
+let libraryArr = [];
 
 
 console.log(libraryArr.length);
@@ -89,12 +89,10 @@ function handleClickSelection(event) {
     const el = event.target;
     if(el.tagName === 'TD'){
         const bookRow = el.parentElement;
-        // saveBook(bookRow);
         for(let i = 0; i < 3; i++){
            const bookRowText = bookRow.children[i].innerText;
            console.log(bookRowText)
            bookRowArr.push(bookRowText)
-        //    saveBook();
         } 
         saveBook();
     } else {
@@ -122,7 +120,7 @@ function saveBook() {
     localStorage.setItem("bookStorage", libraryArr);
     console.log('library array ', libraryArr)
     console.log('book row array ', bookRowArr[0])
-    savedBooks();
+    // savedBooks();
     updateHTML();
     addToLibrary();
 };
@@ -155,15 +153,15 @@ function createRows(rowInfo, trEl2){
 }
 
 
-function savedBooks() {
-    const addedBook = document.createElement("p")
-    const totalLibrary = localStorage.getItem("bookStorage");
-    document.getElementById("userLibrary").innerHTML = `${totalLibrary}`;
-    addedBook.textContent = `${totalLibrary}`;
-};
+// function savedBooks() {
+//     const addedBook = document.createElement("p")
+//     const totalLibrary = localStorage.getItem("bookStorage");
+//     document.getElementById("userLibrary").innerHTML = `${totalLibrary}`;
+//     addedBook.textContent = `${totalLibrary}`;
+// };
 
 function updateHTML() {
-    const bookEl = addToLibrary();
+    const bookEl = bookRowArr[0]
     // // console.log(bookEl);
     // while (bookEl.firstChild) {
     //     bookEl.removeChild(bookEl.firstChild)
@@ -259,11 +257,13 @@ window.onload = function () {
 
 // ------------------------Clears Search Results-----------------------------
 
-
+const clearArr = []
 
 function removeAll(){
     document.getElementById("book-search-results").innerHTML = "";
-    document.getElementById("bookInput").value = "";
+    document.getElementById("submitReturn").innerHTML = "";
+    libraryArr = clearArr
+    bookRowArr = clearArr
 }
 
 // --------------------------------------------------------------------------------
