@@ -119,8 +119,9 @@ footer {
     font-size: 12pt;
 }
 
-.button-wrapper {
-  display: block
+.button-el {
+  font-size: 13pt;
+  width: 100px;
 }
 
 .table-input {
@@ -129,7 +130,7 @@ footer {
 
 .t {
     display: table-cell;
-    width: 100%;
+    width: 95%;
 }
 
 .t > button {
@@ -137,7 +138,7 @@ footer {
 }
 
 .search-wrapper {
-    width: 85%;
+    width: 65%;
     padding-top: 20px;
     padding-bottom: 25px;
     margin: 0 auto;

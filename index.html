@@ -33,11 +33,10 @@
             <div class='t'>
                 <input id='bookInput' type='text' placeholder='Search within your library'>
             </div>
-            <div class="button-wrapper">
-                <button id='submitButton' onclick='saveBook()'>Search</button>
-                <button id='resetButton' onclick="removeAll()">Reset</button>
-            </div>
-
+            <nobr>
+                <button class="button-el" id='submitButton' onclick='saveBook()'>Search</button>
+                <button class="button-el" id='resetButton' onclick="removeAll()">Reset</button>
+            </nobr>
         </div>
         <p id='submitReturn'></p>
     </section>
