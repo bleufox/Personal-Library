@@ -72,9 +72,8 @@ function buildTdWithInfo(info, trEl, isImage) {
         const imgEl = document.createElement('img');
         imgEl.setAttribute('src', info);
         tdEl.append(imgEl);
-        console.log(trEl);
-        trEl.append(tdEl);
     }
+    trEl.append(tdEl);
 };
 
 // ------------ Click event to select the book/row from query search ------------
