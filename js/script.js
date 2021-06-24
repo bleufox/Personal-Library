@@ -166,7 +166,7 @@ function updateHTML(item){
 //     return totalLibrary;
 // };
 
-//---------- Carousel -------------// 
+//--------------------------- Carousel -------------// 
 
 var slideIndex = 1;
 showSlides(slideIndex);
