@@ -95,7 +95,6 @@ function handleClickSelection(event) {
         //    saveBook();
         } 
         saveBook();
-        updateHTML();
     } else {
         console.log('you did not click on a <td> tag')
     }
@@ -118,10 +117,10 @@ function saveBook(){
     // const bookInputVal = document.getElementById("bookInput").value;
     libraryArr.push(bookRowArr);
     localStorage.setItem("bookStorage", libraryArr);
-    console.log('library array ', libraryArr)
-    console.log('book row array ', bookRowArr[0])
+    // console.log('library array ', libraryArr)
+    // console.log('book row array ', bookRowArr[0])
     savedBooks();
-    // updateHTML();
+    updateHTML(bookRowArr[0]);
     addToLibrary();
 };
 
