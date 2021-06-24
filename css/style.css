@@ -320,9 +320,8 @@ footer {
   font-size: 80px;
   color: white;
 }*/
-
-  /*@media (max-width: 768px) {
+  @media (max-width: 768px) {
     .main-content {
       padding: 20px 8px;
     }
-  }*/
+  }
