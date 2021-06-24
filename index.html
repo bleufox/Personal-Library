@@ -28,21 +28,21 @@
     <h2>Personal Library</h2>
 
     <section class='search-wrapper' id='search-bar-wrapper'>
-        <p>To add a book to your library, type in the title, genre, or author you wish to add.</p>
+        <p>To search for a book in your library, type in the title, genre, or author you are looking for.</p>
         <div class='table-input'>
             <div class='t'>
-                <input id='bookInput' type='text' placeholder='e.g. Green Eggs and Ham, J.K. Rowling, etc.'>
+                <input id='bookInput' type='text' placeholder='Search within your library'>
             </div>
-            <button id='submitButton' onclick='saveBook()'>Search</button>
-
+            <button id='submitButton' onclick='browseLibrary()'>Search</button>
             <button onclick="removeAll()">Reset</button>
         </div>
         <p id='submitReturn'></p>
     </section>
 
     <section class="table-wrapper">
-    
-            <div id="userLibrary"></div>
+        <h2>Your Personal Library
+            <!-- <div id="userLibrary"></div> -->
+        </h2>
 
         <table id="usersBooks">
             <tr class='columns'>
@@ -56,7 +56,6 @@
                 <th class='thElColumns' id='edit'>Remove/Edit</th>
             </tr>
         </table>
-        <button onclick='getBook()'>Book search results</button>
     </section>
 
     <div id='book-search-results'></div>
