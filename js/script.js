@@ -157,7 +157,7 @@ function updateHTML(item){
     document.getElementById("submitReturn").innerHTML = `${item} has been added!`;
 };
 
-// function getBook(){
+// function getBook() {
 //     const addedBook = document.createElement("p")
 //     const totalLibrary = localStorage.getItem("bookStorage");
 //     addedBook.append(totalLibrary);
@@ -165,6 +165,37 @@ function updateHTML(item){
 //     document.getElementById("userLibrary").innerHTML = `${totalLibrary}`;
 //     return totalLibrary;
 // };
+
+// ---------- Carousel -------------// 
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+};
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+};
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+//   console.log(slides);
+  var dots = document.getElementsByClassName("dot");
+//   console.log(dots);
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+//   slides[slideIndex-1].style.display = "block"; // These are not calling anything
+//   dots[slideIndex-1].className += " active";
+};
 
 // ----------------------- Remove from local storage -----------------------
 
