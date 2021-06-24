@@ -249,4 +249,10 @@ window.onload = function () {
     dueDateReminder();
 };
 
+// ------------------------Clears Search Results-----------------------------
+
+function removeAll(){
+    document.getElementById("book-search-results").innerHTML = "";
+}
+
 // --------------------------------------------------------------------------------
