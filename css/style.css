@@ -35,6 +35,7 @@ button  {
     border-radius: 25px;
     font-family: 'Calibri';
     color: #555555;
+    display: inline;
     }
 
 button:hover {
