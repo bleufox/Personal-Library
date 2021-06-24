@@ -166,14 +166,14 @@ function addToLibrary(){
     //     buildPersonalLibrary(bookRowArr[i]);
     // }
     buildPersonalLibrary();
-} 
+};
 
 function createRows(rowInfo, trEl2){
     const tdEl2 = document.createElement('td');
     tdEl2.classList.add('users-book-td');
     tdEl2.textContent = rowInfo;
     trEl2.append(tdEl2);
-}
+};
 
 // function savedBooks() {
 //     const addedBook = document.createElement("p")
