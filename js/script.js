@@ -81,7 +81,7 @@ function buildTdWithInfo(info, trEl, isImage) {
 const bookSelection = document.querySelector('#book-search-results');
 bookSelection.addEventListener('click', handleClickSelection);
 
-let bookRowArr = [];
+const bookRowArr = [];
 
 function handleClickSelection(event) {
     const el = event.target;
@@ -100,21 +100,20 @@ function handleClickSelection(event) {
     }
 };
 
-console.log(bookRowArr)
+console.log(bookRowArr);
 
 // --------------------------- Add to local storage ---------------------------
 
 const savedLibraryArr = [];
 
-function browseLibrary() {
+function browseLibrary(){
     const searchVal = document.getElementById("bookInput").value;
     savedLibraryArr.push(searchVal);
     localStorage.setItem("searchStorage", savedLibraryArr);
-    savedBooks();
-    updateHTML();
+    // updateHTML();
 };
 
-function saveBook() {
+function saveBook(){
     // const bookInputVal = document.getElementById("bookInput").value;
     libraryArr.push(bookRowArr);
     localStorage.setItem("bookStorage", libraryArr);
@@ -125,13 +124,12 @@ function saveBook() {
     addToLibrary();
 };
 
-
 // ---------- Adds book to Personal Library Page --------------------
 
 function addToLibrary(){
-    let libraryTable = document.getElementById('usersBooks');
+    const libraryTable = document.getElementById('usersBooks');
     function buildPersonalLibrary(){
-        let trEl2 = document.createElement('tr');
+        const trEl2 = document.createElement('tr');
         trEl2.classList.add('users-book-row');
         createRows(bookRowArr[0], trEl2)
         createRows(bookRowArr[1], trEl2)
@@ -143,24 +141,23 @@ function addToLibrary(){
     //     buildPersonalLibrary(bookRowArr[i]);
     // }
     buildPersonalLibrary();
-} 
+};
 
 function createRows(rowInfo, trEl2){
     const tdEl2 = document.createElement('td');
     tdEl2.classList.add('users-book-td');
     tdEl2.textContent = rowInfo;
     trEl2.append(tdEl2);
-}
+};
 
-
-function savedBooks() {
+function savedBooks(){
     const addedBook = document.createElement("p")
     const totalLibrary = localStorage.getItem("bookStorage");
-    document.getElementById("userLibrary").innerHTML = `${totalLibrary}`;
+    // document.getElementById("userLibrary").innerHTML = `${totalLibrary}`;
     addedBook.textContent = `${totalLibrary}`;
 };
 
-function updateHTML() {
+function updateHTML(){
     const bookEl = addToLibrary();
     // // console.log(bookEl);
     // while (bookEl.firstChild) {
@@ -172,7 +169,7 @@ function updateHTML() {
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
 };
 
-// function getBook() {
+// function getBook(){
 //     const addedBook = document.createElement("p")
 //     const totalLibrary = localStorage.getItem("bookStorage");
 //     addedBook.append(totalLibrary);
