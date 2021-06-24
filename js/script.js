@@ -197,6 +197,7 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 };
 
+
 // ----------------------- Remove from local storage -----------------------
 
 const removeEl = document.getElementById('delete');
