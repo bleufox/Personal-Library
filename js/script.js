@@ -57,10 +57,10 @@ function handleData(data){
             console.log(book.volumeInfo.imageLinks.thumbnail, trEl, true);
             buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
             bookResultsTable.append(trEl);
-        }
+        };
         for (let i = 0; i < bookInfo.length; i++) {
             buildRow(bookInfo[i]);
-        }
+        };
 };
 
 // ----------------------- Builds Table with handleData Info -----------------------
@@ -156,15 +156,15 @@ function addToLibrary(){
     function buildPersonalLibrary(){
         let trEl2 = document.createElement('tr');
         trEl2.classList.add('users-book-row');
-        createRows(bookRowArr[0], trEl2)
-        createRows(bookRowArr[1], trEl2)
-        createRows(bookRowArr[2], trEl2)
+        createRows(bookRowArr[0], trEl2);
+        createRows(bookRowArr[1], trEl2);
+        createRows(bookRowArr[2], trEl2);
         // // console.log(trEl2);
         // // console.log(searchInputEl);
         // searchInputEl.append(trEl2);
         // // console.log('hi im in the console')
         libraryTable.append(trEl2);
-        console.log('hi im in the console')
+        console.log('hi im in the console');
     }
     // for (let i = 0; i < 1; i++) {
     //     buildPersonalLibrary(bookRowArr[i]);
@@ -186,16 +186,33 @@ function createRows(rowInfo, trEl2){
 //     addedBook.textContent = `${totalLibrary}`;
 // };
 
-function updateHTML() {
-    const bookEl = bookRowArr[0]
+function updateHTML(){
+    const bookEl = bookRowArr[0];
+    const submitReturnEl = document.getElementById("submitReturn");
+    if(!bookEl){
+        console.log("Ain't nothing here")
+    }else{
     // // console.log(bookEl);
     // while (bookEl.firstChild) {
     //     bookEl.removeChild(bookEl.firstChild)
     // };
     // console.log("TEST")
     // document.getElementById("submitReturn").innerHTML = "TEST";
-    document.getElementById("submitReturn").style = "color: grey";
-    document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
+    submitReturnEl.style = "color: grey";
+    submitReturnEl.innerHTML = `${bookEl} has been added!`;
+    if (submitReturnEl.className.indexOf('hide') !== -1){
+      fadeIn(img);
+      this.innerHTML = 'Fade Out';
+    }
+    else{
+      fadeOut(img);
+      this.innerHTML = 'Fade In';    
+    };
+};
+
+function fadeOut(el){
+    el.classList.add('hide');
+    el.classList.remove('show');
 };
 
 // function getBook() {
@@ -226,14 +243,18 @@ function showSlides(n) {
     // console.log(slides);
     var dots = document.getElementsByClassName("dot");
     // console.log(dots);
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
+    if (n > slides.length){ 
+        slideIndex = 1 
+    };
+    if (n < 1){ 
+        slideIndex = slides.length 
+    };
+    for (i = 0; i < slides.length; i++){
         slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
+    };
+    for (i = 0; i < dots.length; i++){
         dots[i].className = dots[i].className.replace(" act", "");
-    }
+    };
     slides[slideIndex - 1].style.display = "block"; 
     dots[slideIndex - 1].className += " act";
 };
@@ -254,14 +275,14 @@ const lentBooks = ["Leviathan", "Candide", "War & Peace"];
 
 const dueDateRowEl = document.querySelector("#resultsDue");
 
-function dueDateReminder() {
+function dueDateReminder(){
     const dueDateEl = document.querySelector("#dueDates");
     lentBooks.push(dueDateEl);
     for (let i = 0; i < lentBooks.length; i++) {
         // const element = array[i];
-        if (lentBooks.length <= 0) {
+        if (lentBooks.length <= 0){
             dueDateEl.textContent = "No upcoming due dates!";
-        } else {
+        } else{
             // array.forEach(item => console.log(item));
             // lentBooks.forEach(item => console.log(item));
 
@@ -271,19 +292,19 @@ function dueDateReminder() {
     };
 };
 
-window.onload = function () {
+window.onload = function (){
     dueDateReminder();
 };
 
 // ------------------------ Clears Search Results -----------------------------
 
-const clearArr = []
+const clearArr = [];
 
 function removeAll(){
     document.getElementById("book-search-results").innerHTML = "";
     document.getElementById("submitReturn").innerHTML = "";
-    libraryArr = clearArr
-    bookRowArr = clearArr
-}
+    libraryArr = clearArr;
+    bookRowArr = clearArr;
+};
 
 // ----------------------------------------------------------------------------
