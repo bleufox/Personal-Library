@@ -7,10 +7,6 @@ const descriptionEl = document.getElementById('resultsDescrip');
 const bookImgEl = document.getElementById('resultsImg');
 let libraryArr = [];
 
-
-console.log(libraryArr.length);
-
-
 function setArrayToLocalStorage (){
     if (libraryArr.length = 0){
         console.log("Array is empty")
@@ -21,7 +17,8 @@ function setArrayToLocalStorage (){
 
 setArrayToLocalStorage();
 
-// --------------------Searches the api using user's query and gives top 10 results--------------
+// -------------- Searches the API Using User's Query and Gives Top 10 Results --------------
+
 function getAPI(bookSearch) {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`)
         .then(function (response) {
@@ -40,7 +37,7 @@ function handleClick() {
     getAPI(userQuery);
 };
 
-// --------------Handles the parameters of title/author/genre/description/bookimg---------------
+// -------------- Handles the Parameters of Title/Author/Genre/Description/BookImg ---------------
 
 function handleData(data){
         let bookResultsTable = document.getElementById('book-search-results');
@@ -62,7 +59,7 @@ function handleData(data){
         }
 };
 
-// ----------------------- Builds table with handleData info -----------------------
+// ----------------------- Builds Table with handleData Info -----------------------
 
 function buildTdWithInfo(info, trEl, isImage) {
     const tdEl = document.createElement('td');
@@ -80,7 +77,7 @@ function buildTdWithInfo(info, trEl, isImage) {
     trEl.append(tdEl);
 };
 
-// ------------ Click event to select the book/row from query search ------------
+// ------------ Click Event to Select the Book/Row from Query Search ------------
 
 const bookSelection = document.querySelector('#book-search-results');
 bookSelection.addEventListener('click', handleClickSelection);
@@ -104,8 +101,7 @@ function handleClickSelection(event){
     };
 };
 
-// ------------------------ Add to Local Storage ------------------------
-// Second version
+// --------------------------- Add to Local Storage ---------------------------
 
 function browseLibrary(){
     const searchVal = document.getElementById("bookInput").value;
@@ -117,6 +113,7 @@ function browseLibrary(){
 console.log(bookRowArr);
 
 // --------------------------- Add to Local Storage ---------------------------
+// (Second One)
 
 // const searchArr = [];
 
@@ -147,7 +144,6 @@ function saveBook() {
     updateHTML();
     addToLibrary();
 };
-
 
 // ---------- Adds Book to Personal Library Page --------------------
 
@@ -197,9 +193,6 @@ function updateHTML() {
     document.getElementById("submitReturn").style = "color: grey";
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
 };
-
-
-
 
 // function getBook() {
 //     const addedBook = document.createElement("p")
