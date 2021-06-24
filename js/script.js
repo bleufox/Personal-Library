@@ -50,7 +50,7 @@ function handleData(data){
             buildTdWithInfo(book.volumeInfo.categories, trEl);
             buildTdWithInfo(shortDescription, trEl);
             console.log(book.volumeInfo.imageLinks.thumbnail);
-            buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, true);
+            buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
             bookResultsTable.append(trEl);
         }
         for (let i = 0; i < bookInfo.length; i++) {
@@ -58,7 +58,7 @@ function handleData(data){
         }
 };
 
-//  --------------------------Builds table with handleData info -----------------------------------
+//  ----------------------- Builds table with handleData info -----------------------
 
 function buildTdWithInfo(info, trEl, isImage) {
     const tdEl = document.createElement('td');
@@ -66,17 +66,18 @@ function buildTdWithInfo(info, trEl, isImage) {
     if (!info) {
         tdEl.textContent = 'No info listed.'
     } else if (!isImage) {
-        // console.log('info is: ', info);
+        console.log('info is: ', info);
         tdEl.textContent = info;
     } else {
         const imgEl = document.createElement('img');
         imgEl.setAttribute('src', info);
         tdEl.append(imgEl);
+        console.log(trEl);
+        trEl.append(tdEl);
     }
-    trEl.append(tdEl);
 };
 
-//  ---------------------- Click event to select the book/row from query search------------------
+//  ------------ Click event to select the book/row from query search ------------
 
 const bookSelection = document.querySelector('#book-search-results');
 bookSelection.addEventListener('click', handleClickSelection);
@@ -164,7 +165,7 @@ function updateHTML(item){
 //     return totalLibrary;
 // };
 
-// ---------- Carousel -------------// 
+// --------------------------- Carousel ------------------------------
 
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -232,7 +233,7 @@ window.onload = function () {
     dueDateReminder();
 };
 
-// ------------------------Clears Search Results-----------------------------
+// ------------------------ Clears Search Results -----------------------------
 
 function removeAll(){
     document.getElementById("book-search-results").innerHTML = "";
