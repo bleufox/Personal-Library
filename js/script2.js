@@ -30,7 +30,7 @@ function getAPI(bookSearch) {
         });
 };
 
-submitBtn.addEventListener('click', handleClick)
+//submitBtn.addEventListener('click', handleClick);
 function handleClick() {
     const userQuery = searchInputEl.value;
     getAPI(userQuery);
@@ -78,7 +78,7 @@ function buildTdWithInfo(info, trEl, isImage) {
 //  ---------------------- Click event to select the book/row from query search------------------
 
 const bookSelection = document.querySelector('#book-search-results');
-bookSelection.addEventListener('click', handleClickSelection);
+//bookSelection.addEventListener('click', handleClickSelection);
 
 const bookRowArr = [];
 
