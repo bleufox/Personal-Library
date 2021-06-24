@@ -92,10 +92,10 @@ function handleClickSelection(event){
             const bookRowText = bookRow.children[i].innerText;
             // console.log(bookRowText);
             bookRowArr.push(bookRowText);
-            // saveBook(bookRowArr);
+            // saveBook(bookRowText);
         };
-        saveBook();
-        // saveBook(bookRow);   
+        // saveBook(bookRow);
+        saveBook(bookRowArr);   
     } else {
         console.log('you did not click on a <td> tag');
     };
@@ -107,14 +107,17 @@ function browseLibrary(){
     const searchVal = document.getElementById("bookInput").value;
     savedLibraryArr.push(searchVal);
     localStorage.setItem("searchStorage", savedLibraryArr);
+    // updateHTML(bookRowArr[0]);
 };
 
 function saveBook(){
     // const bookInputVal = document.getElementById("bookInput").value;
+    // console.log(libraryArr);
     libraryArr.push(bookRowArr);
+    console.log(libraryArr);
     localStorage.setItem("bookStorage", libraryArr);
-    // console.log('library array ', libraryArr)
-    // console.log('book row array ', bookRowArr[0])
+    console.log('library array ', libraryArr)
+    console.log('book row array ', bookRowArr[0])
     savedBooks();
     // updateHTML();
     updateHTML(bookRowArr[0]);
@@ -130,8 +133,8 @@ function addToLibrary(){
         createRows(bookRowArr[0], trEl2)
         createRows(bookRowArr[1], trEl2)
         createRows(bookRowArr[2], trEl2)
-        // console.log(trEl2);
-        // console.log(searchInputEl);
+        console.log(trEl2);
+        console.log(searchInputEl);
         searchInputEl.append(trEl2);
         // console.log('hi im in the console')
     }
@@ -153,7 +156,8 @@ function savedBooks(){
 };
 
 function updateHTML(item){
-    document.getElementById("submitReturn").innerHTML = "TEST";
+    console.log(item);
+    // document.getElementById("submitReturn").innerHTML = `TEST`;
     document.getElementById("submitReturn").style = "color: grey";
     document.getElementById("submitReturn").innerHTML = `${item} has been added!`;
 };
