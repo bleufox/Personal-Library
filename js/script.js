@@ -49,7 +49,8 @@ function handleData(data){
             buildTdWithInfo(book.volumeInfo.authors, trEl);
             buildTdWithInfo(book.volumeInfo.categories, trEl);
             buildTdWithInfo(shortDescription, trEl);
-            buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
+            console.log(book.volumeInfo.imageLinks.thumbnail);
+            buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, true);
             bookResultsTable.append(trEl);
         }
         for (let i = 0; i < bookInfo.length; i++) {
@@ -89,7 +90,7 @@ function handleClickSelection(event) {
         // saveBook(bookRow);
         for(let i = 0; i < 3; i++){
            const bookRowText = bookRow.children[i].innerText;
-           console.log(bookRowText)
+        //    console.log(bookRowText)
            bookRowArr.push(bookRowText)
         } 
         saveBook();
@@ -97,8 +98,6 @@ function handleClickSelection(event) {
         console.log('you did not click on a <td> tag')
     }
 };
-
-console.log(bookRowArr);
 
 // ------------------------ Add to local storage ------------------------
 
@@ -122,17 +121,16 @@ function saveBook(){
 // ------------------ Adds book to Personal Library Page ------------------
 
 function addToLibrary(){
-    const libraryTable = document.getElementById('usersBooks');
     function buildPersonalLibrary(){
         const trEl2 = document.createElement('tr');
         trEl2.classList.add('users-book-row');
         createRows(bookRowArr[0], trEl2)
         createRows(bookRowArr[1], trEl2)
         createRows(bookRowArr[2], trEl2)
-        console.log(trEl2);
-        console.log(libraryTable);
-        libraryTable.append(trEl2);
-        console.log('hi im in the console')
+        // console.log(trEl2);
+        // console.log(searchInputEl);
+        searchInputEl.append(trEl2);
+        // console.log('hi im in the console')
     }
     buildPersonalLibrary();
 };
