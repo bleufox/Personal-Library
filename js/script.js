@@ -17,7 +17,7 @@ function setArrayToLocalStorage (){
 
 setArrayToLocalStorage();
 
-// -------------- Searches the API Using User's Query and Gives Top 10 Results --------------
+// -------- Searches the API Using User's Query and Gives Top 10 Results --------
 
 function getAPI(bookSearch) {
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`)
@@ -37,10 +37,11 @@ function handleClick() {
     getAPI(userQuery);
 };
 
-// -------------- Handles the Parameters of Title/Author/Genre/Description/BookImg ---------------
+// -------- Handles the Parameters of Title/Author/Genre/Description/BookImg --------
 
 function handleData(data){
-        let bookResultsTable = document.getElementById('book-search-results');
+        // let bookResultsTable = document.getElementById('book-search-results');
+        let bookResultsTable = document.querySelector('#book-search-results > tbody')
         const bookInfo = data.items;
         function buildRow(book){
             const shortDescription = book.volumeInfo.description?.split('.')[0];
@@ -59,7 +60,7 @@ function handleData(data){
         }
 };
 
-// ----------------------- Builds Table with handleData Info -----------------------
+// -------- Builds Table with handleData Info --------
 
 function buildTdWithInfo(info, trEl, isImage) {
     const tdEl = document.createElement('td');
@@ -77,7 +78,7 @@ function buildTdWithInfo(info, trEl, isImage) {
     trEl.append(tdEl);
 };
 
-// ------------ Click Event to Select the Book/Row from Query Search ------------
+// -------- Click Event to Select the Book/Row from Query Search --------
 
 const bookSelection = document.querySelector('#book-search-results');
 bookSelection.addEventListener('click', handleClickSelection);
@@ -88,14 +89,14 @@ function handleClickSelection(event){
     const el = event.target;
     if(el.tagName === 'TD'){
         const bookRow = el.parentElement;
-        for(let i = 0; i < 3; i++){
-            const bookRowText = bookRow.children[i].innerText;
-            // console.log(bookRowText);
-            bookRowArr.push(bookRowText);
-            // saveBook(bookRowText);
+        const bookInfo = {
+            title: bookRow.children[0].innerText,
+            author: bookRow.children[1].innerText,
+            genre: bookRow.children[2].innerText,
+            description: bookRow.children[3].innerText,
         };
-        // saveBook(bookRow);
-        saveBook(bookRowArr);   
+
+        saveBook(bookInfo);   
     } else {
         console.log('you did not click on a <td> tag');
     };
@@ -110,77 +111,42 @@ function browseLibrary(){
     console.log(bookRowArr[0]);
     updateHTML(bookRowArr[0]);
 };
-// console.log(bookRowArr);
 
-// --------------------------- Add to Local Storage ---------------------------
-// (Second One)
-
-// const searchArr = [];
-
-// function searchBooks() {
-//     const searchVal = document.getElementById("bookInput").value;
-//     searchArr.push(searchVal);
-//     localStorage.setItem("searchStorage", searchArr);
-//     savedBooks();
-//     updateHTML();
-// };
-
-function saveBook() {
-    // const bookInputVal = document.getElementById("bookInput").value;
-    // console.log(savedLibraryArr);
-    // savedLibraryArr.push(bookRowArr);
-    // // console.log(libraryArr);
-    // localStorage.setItem("bookStorage", savedLibraryArr);
-    // // console.log('library array: ', libraryArr)
-    // console.log('book row array: ', bookRowArr[0])
-    // savedBooks();
-    // // updateHTML();
-    // updateHTML(bookRowArr[0]);
-    libraryArr.push(bookRowArr);
-    localStorage.setItem("bookStorage", libraryArr);
-    console.log('library array ', libraryArr)
-    console.log('book row array ', bookRowArr[0])
-    // savedBooks();
-    updateHTML();
-    addToLibrary();
+function saveBook(bookInfo) {
+    if (!bookInfo)return
+    let bookStorage = localStorage.getItem("bookStorage") || "[]"
+    bookStorage = JSON.parse(bookStorage)
+    bookStorage.push(bookInfo)
+    localStorage.setItem("bookStorage", JSON.stringify(bookStorage))
 };
 
-// ---------- Adds Book to Personal Library Page --------------------
+// -------- Adds Book to Personal Library Page --------
 
 function addToLibrary(){
     let libraryTable = document.getElementById('usersBooks');
     function buildPersonalLibrary(){
-        let trEl2 = document.createElement('tr');
-        trEl2.classList.add('users-book-row');
-        createRows(bookRowArr[0], trEl2)
-        createRows(bookRowArr[1], trEl2)
-        createRows(bookRowArr[2], trEl2)
-        // // console.log(trEl2);
-        // // console.log(searchInputEl);
-        // searchInputEl.append(trEl2);
-        // // console.log('hi im in the console')
-        libraryTable.append(trEl2);
-        console.log('hi im in the console')
+        let bookStorage = localStorage.getItem("bookStorage") || "[]"
+        bookStorage = JSON.parse(bookStorage)
+        for (let i = 0; i < bookStorage.length; i++){
+            let bookStorageEntry = bookStorage[i]
+            let trEl = document.createElement('tr')
+            trEl.classList.add('users-book-row');
+            let tdEl = document.createElement('td');
+            tdEl.textContent = bookStorageEntry.title
+            trEl.appendChild(tdEl)
+            tdEl = document.createElement('td');
+            tdEl.textContent = bookStorageEntry.author
+            trEl.appendChild(tdEl)
+            tdEl = document.createElement('td');
+            tdEl.textContent = bookStorageEntry.genre
+            trEl.appendChild(tdEl)
+            libraryTable.append(trEl);
+        }
     }
-    // for (let i = 0; i < 1; i++) {
-    //     buildPersonalLibrary(bookRowArr[i]);
-    // }
     buildPersonalLibrary();
 } 
 
-function createRows(rowInfo, trEl2){
-    const tdEl2 = document.createElement('td');
-    tdEl2.classList.add('users-book-td');
-    tdEl2.textContent = rowInfo;
-    trEl2.append(tdEl2);
-}
-
-// function savedBooks() {
-//     const addedBook = document.createElement("p")
-//     const totalLibrary = localStorage.getItem("bookStorage");
-//     document.getElementById("userLibrary").innerHTML = `${totalLibrary}`;
-//     addedBook.textContent = `${totalLibrary}`;
-// };
+addToLibrary();
 
 function updateHTML() {
     const bookEl = bookRowArr[0]
@@ -194,16 +160,7 @@ function updateHTML() {
     document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
 };
 
-// function getBook() {
-//     const addedBook = document.createElement("p")
-//     const totalLibrary = localStorage.getItem("bookStorage");
-//     addedBook.append(totalLibrary);
-//     console.log(addedBook);
-//     document.getElementById("userLibrary").innerHTML = `${totalLibrary}`;
-//     return totalLibrary;
-// };
-
-// --------------------------- Carousel ------------------------------
+// -------- Carousel --------
 
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -234,7 +191,7 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " act";
 };
 
-// ----------------------- Remove from Local Storage -----------------------
+// -------- Remove from Local Storage --------
 
 const removeEl = document.getElementById('delete');
 
@@ -244,7 +201,7 @@ const removeEl = document.getElementById('delete');
 //     libraryArr.remove(bookInputEl);
 // };
 
-// --------------------------- Due Date Reminder ---------------------------
+// -------- Due Date Reminder --------
 
 const lentBooks = ["Leviathan", "Candide", "War & Peace"];
 
@@ -271,12 +228,13 @@ window.onload = function () {
     dueDateReminder();
 };
 
-// ------------------------ Clears Search Results -----------------------------
+// -------- Clears Search Results --------
 
 const clearArr = []
 
 function removeAll(){
-    document.getElementById("book-search-results").innerHTML = "";
+    // document.getElementById("book-search-results").innerHTML = "";
+    document.querySelector('#book-search-results > tbody').innerHTML = "";
     document.getElementById("submitReturn").innerHTML = "";
     libraryArr = clearArr
     bookRowArr = clearArr
