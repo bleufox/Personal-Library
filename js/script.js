@@ -257,7 +257,6 @@ window.onload = function () {
 
 // ------------------------Clears Search Results-----------------------------
 
-<<<<<<< HEAD
 const clearArr = []
 
 function removeAll(){
@@ -265,13 +264,6 @@ function removeAll(){
     document.getElementById("submitReturn").innerHTML = "";
     libraryArr = clearArr
     bookRowArr = clearArr
-=======
-
-
-function removeAll(){
-    document.getElementById("book-search-results").innerHTML = "";
-    document.getElementById("bookInput").value = "";
->>>>>>> main
 }
 
 // --------------------------------------------------------------------------------
