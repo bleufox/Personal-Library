@@ -7,12 +7,16 @@ const descriptionEl = document.getElementById('resultsDescrip');
 const bookImgEl = document.getElementById('resultsImg');
 let libraryArr = [];
 
+console.log("Does this work?");
+
 function setArrayToLocalStorage (){
     if (libraryArr.length = 0){
-        console.log("Array is empty")
+        console.log("Array is empty");
     }else{
         return localStorage.getItem("bookStorage");
     }
+    console.log("Test");
+
 };
 
 setArrayToLocalStorage();
