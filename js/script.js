@@ -151,7 +151,8 @@ function handleClickSelection(event){
             genre: bookRow.children[2].innerText,
         };
         document.querySelector('#resultsBtn');
-        // console.log('bookinfo: ', bookInfo)
+        console.log('bookinfo: ', bookInfo)
+        alert('You added ' + bookInfo.title + ' to your library!');
         saveBook(bookInfo);   
     };
 }
