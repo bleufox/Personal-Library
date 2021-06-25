@@ -5,9 +5,10 @@ const authorEl = document.getElementById('resultsAuthor');
 const genreEl = document.getElementById('resultsGenre');
 const descriptionEl = document.getElementById('resultsDescrip');
 const bookImgEl = document.getElementById('resultsImg');
+const clearArr = [];
 let libraryArr = [];
 
-console.log("Does this work?");
+// console.log("Does this work?");
 
 function setArrayToLocalStorage(){
     if(libraryArr.length = 0){
@@ -261,11 +262,10 @@ window.onload = function (){
 
 // -------- Clears Search Results --------
 
-const clearArr = [];
-
 function removeAll(){
-    // document.getElementById("book-search-results").innerHTML = "";
-    document.querySelector('#book-search-results > tbody').innerHTML = "";
+    document.getElementById('bookInput').value = '';
+    document.getElementById("book-search-results").innerHTML = "";
+    // document.querySelector('#book-search-results > tbody').innerHTML = "";
     console.log(document.getElementById("submitReturn"));
     document.getElementById("submitReturn").innerHTML = "";
     libraryArr = clearArr;
