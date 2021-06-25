@@ -8,15 +8,15 @@ const bookImgEl = document.getElementById('resultsImg');
 const clearArr = [];
 let libraryArr = [];
 
-// console.log("Does this work?");
+// console.log('Does this work?');
 
 function setArrayToLocalStorage(){
     if(libraryArr.length = 0){
-        console.log("Array is empty");
+        console.log('Array is empty');
     } else{
-        return localStorage.getItem("bookStorage");
+        return localStorage.getItem('bookStorage');
     };
-    console.log("Test");
+    console.log('Test');
 };
 
 setArrayToLocalStorage();
@@ -44,7 +44,19 @@ function handleClick(){
 // -------- Handles the Parameters of Title/Author/Genre/Description/BookImg --------
 
 function handleData(data){
-        // let bookResultsTable = document.getElementById('book-search-results');
+    if (condition) {
+        function removeAll(){
+            // const elem = document.getElementById('book-search-results');
+            // elem.parentNode.removeChild(elem);
+            document.getElementById('bookInput').value = '';
+            document.getElementById('book-search-results > tbody').innerHTML = ''; // This is clearing too much
+            // document.querySelector('#book-search-results > tbody').innerHTML = '';
+            // console.log(document.getElementById('submitReturn'));
+            document.getElementById('submitReturn').innerHTML = '';
+            libraryArr = clearArr;
+            bookRowArr = clearArr;
+        };
+
         let bookResultsTable = document.querySelector('#book-search-results');
         // console.log(bookResultsTable);
         const bookInfo = data.items;
@@ -64,6 +76,9 @@ function handleData(data){
         for (let i = 0; i < bookInfo.length; i++){
             buildRow(bookInfo[i]);
         };
+    } else {
+        
+    }        
 };
 
 // -------- Builds Table with handleData Info --------
@@ -74,7 +89,7 @@ function buildTdWithInfo(info, trEl, isImage) {
     if (!info){
         tdEl.textContent = 'No info listed.';
     } else if (!isImage){
-        // console.log('info is: ', info);
+        console.log('info is: ', info);
         tdEl.textContent = info;
     } else{
         const imgEl = document.createElement('img');
@@ -101,7 +116,7 @@ function handleClickSelection(event){
             genre: bookRow.children[2].innerText,
             description: bookRow.children[3].innerText,
         };
-        document.querySelector("#resultsBtn");
+        document.querySelector('#resultsBtn');
         saveBook(bookInfo);   
     } else{
         console.log('you did not click on a <td> tag');
@@ -123,9 +138,9 @@ function currentSlide(n){
 
 function showSlides(n) {
     var i;
-    var slides = document.getElementsByClassName("mySlides");
+    var slides = document.getElementsByClassName('mySlides');
     // console.log(slides);
-    var dots = document.getElementsByClassName("dot");
+    var dots = document.getElementsByClassName('dot');
     // console.log(dots);
     if (n > slides.length){ 
         slideIndex = 1 
@@ -134,21 +149,21 @@ function showSlides(n) {
         slideIndex = slides.length 
     };
     for (i = 0; i < slides.length; i++){
-        slides[i].style.display = "none";
+        slides[i].style.display = 'none';
     };
     for (i = 0; i < dots.length; i++){
-        dots[i].className = dots[i].className.replace(" act", "");
+        dots[i].className = dots[i].className.replace(' act', '');
     };
-    slides[slideIndex - 1].style.display = "block"; 
-    dots[slideIndex - 1].className += " act";
+    slides[slideIndex - 1].style.display = 'block'; 
+    dots[slideIndex - 1].className += ' act';
 };
 
 // -------- Add to Local Storage --------
 
 function browseLibrary(){
-    const searchVal = document.getElementById("bookInput").value;
+    const searchVal = document.getElementById('bookInput').value;
     savedLibraryArr.push(searchVal);
-    localStorage.setItem("searchStorage", savedLibraryArr);
+    localStorage.setItem('searchStorage', savedLibraryArr);
     console.log(bookRowArr[0]);
     updateHTML(bookRowArr[0]);
 };
@@ -156,10 +171,10 @@ function browseLibrary(){
 function saveBook(bookInfo){
     if (!bookInfo)
         return;
-    let bookStorage = localStorage.getItem("bookStorage") || "[]";
+    let bookStorage = localStorage.getItem('bookStorage') || '[]';
     bookStorage = JSON.parse(bookStorage);
     bookStorage.push(bookInfo);
-    localStorage.setItem("bookStorage", JSON.stringify(bookStorage));
+    localStorage.setItem('bookStorage', JSON.stringify(bookStorage));
 };
 
 // -------- Adds Book to Personal Library Page --------
@@ -167,7 +182,7 @@ function saveBook(bookInfo){
 function addToLibrary(){
     let libraryTable = document.getElementById('usersBooks');
     function buildPersonalLibrary(){
-        let bookStorage = localStorage.getItem("bookStorage") || "[]";
+        let bookStorage = localStorage.getItem('bookStorage') || '[]';
         bookStorage = JSON.parse(bookStorage);
         for (let i = 0; i < bookStorage.length; i++){
             let bookStorageEntry = bookStorage[i]
@@ -192,17 +207,17 @@ addToLibrary();
 
 function updateHTML(){
     const bookEl = bookRowArr[0];
-    const submitReturnEl = document.getElementById("submitReturn");
+    const submitReturnEl = document.getElementById('submitReturn');
     if(!bookEl){
-        console.log("Ain't nothing here");
+        console.log("Ain't nothing here")
     }else{
     // // console.log(bookEl);
     // while (bookEl.firstChild) {
     //     bookEl.removeChild(bookEl.firstChild)
     // };
-    // console.log("TEST")
-    // document.getElementById("submitReturn").innerHTML = "TEST";
-    submitReturnEl.style = "color: grey";
+    // console.log('TEST')
+    // document.getElementById('submitReturn').innerHTML = 'TEST';
+    submitReturnEl.style = 'color: grey';
     submitReturnEl.innerHTML = `${bookEl} has been added!`;
     // if (submitReturnEl.className.indexOf('hide') !== -1){
     //   fadeIn(img);
@@ -235,17 +250,17 @@ const removeEl = document.getElementById('delete');
 
 // -------- Due Date Reminder --------
 
-const lentBooks = ["Leviathan", "Candide", "War & Peace"];
+const lentBooks = ['Leviathan', 'Candide', 'War & Peace'];
 
-const dueDateRowEl = document.querySelector("#resultsDue");
+const dueDateRowEl = document.querySelector('#resultsDue');
 
 function dueDateReminder(){
-    const dueDateEl = document.querySelector("#dueDates");
+    const dueDateEl = document.querySelector('#dueDates');
     lentBooks.push(dueDateEl);
     for (let i = 0; i < lentBooks.length; i++){
         // const element = array[i];
         if (lentBooks.length <= 0){
-            dueDateEl.textContent = "No upcoming due dates!";
+            dueDateEl.textContent = 'No upcoming due dates!';
         } else{
             // array.forEach(item => console.log(item));
             // lentBooks.forEach(item => console.log(item));
@@ -262,14 +277,16 @@ window.onload = function (){
 
 // -------- Clears Search Results --------
 
-function removeAll(){
-    document.getElementById('bookInput').value = '';
-    document.getElementById("book-search-results").innerHTML = "";
-    // document.querySelector('#book-search-results > tbody').innerHTML = "";
-    console.log(document.getElementById("submitReturn"));
-    document.getElementById("submitReturn").innerHTML = "";
-    libraryArr = clearArr;
-    bookRowArr = clearArr;
-};
+// function removeAll(){
+//     // const elem = document.getElementById('book-search-results');
+//     // elem.parentNode.removeChild(elem);
+//     document.getElementById('bookInput').value = '';
+//     document.getElementById('book-search-results > tbody').innerHTML = ''; // This is clearing too much
+//     // document.querySelector('#book-search-results > tbody').innerHTML = '';
+//     // console.log(document.getElementById('submitReturn'));
+//     document.getElementById('submitReturn').innerHTML = '';
+//     libraryArr = clearArr;
+//     bookRowArr = clearArr;
+// };
 
 // ----------------------------------------------------------------------------
