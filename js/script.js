@@ -45,7 +45,7 @@ function handleClick(){
 function handleData(data){
         // let bookResultsTable = document.getElementById('book-search-results');
         let bookResultsTable = document.querySelector('#book-search-results');
-        console.log(bookResultsTable);
+        // console.log(bookResultsTable);
         const bookInfo = data.items;
         function buildRow(book){
             const shortDescription = book.volumeInfo.description?.split('.')[0];
@@ -55,9 +55,9 @@ function handleData(data){
             buildTdWithInfo(book.volumeInfo.authors, trEl);
             buildTdWithInfo(book.volumeInfo.categories, trEl);
             buildTdWithInfo(shortDescription, trEl);
-            console.log(book.volumeInfo.imageLinks.thumbnail, trEl, true);
+            // console.log(book.volumeInfo.imageLinks.thumbnail, trEl, true);
             buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
-            console.log(bookResultsTable);
+            // console.log(bookResultsTable);
             bookResultsTable.append(trEl);
         };
         for (let i = 0; i < bookInfo.length; i++){
@@ -100,14 +100,49 @@ function handleClickSelection(event){
             genre: bookRow.children[2].innerText,
             description: bookRow.children[3].innerText,
         };
-
+        document.querySelector("#resultsBtn");
         saveBook(bookInfo);   
     } else{
         console.log('you did not click on a <td> tag');
     };
 };
 
-// --------------------------- Add to Local Storage ---------------------------
+// -------- Carousel --------
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n){
+    showSlides(slideIndex += n);
+};
+
+function currentSlide(n){
+    showSlides(slideIndex = n);
+};
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    // console.log(slides);
+    var dots = document.getElementsByClassName("dot");
+    // console.log(dots);
+    if (n > slides.length){ 
+        slideIndex = 1 
+    };
+    if (n < 1){ 
+        slideIndex = slides.length 
+    };
+    for (i = 0; i < slides.length; i++){
+        slides[i].style.display = "none";
+    };
+    for (i = 0; i < dots.length; i++){
+        dots[i].className = dots[i].className.replace(" act", "");
+    };
+    slides[slideIndex - 1].style.display = "block"; 
+    dots[slideIndex - 1].className += " act";
+};
+
+// -------- Add to Local Storage --------
 
 function browseLibrary(){
     const searchVal = document.getElementById("bookInput").value;
@@ -183,44 +218,13 @@ function fadeOut(el){
     el.classList.remove('show');
 };
 
-// -------- Carousel --------
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n){
-    showSlides(slideIndex += n);
-};
-
-function currentSlide(n){
-    showSlides(slideIndex = n);
-};
-
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    // console.log(slides);
-    var dots = document.getElementsByClassName("dot");
-    // console.log(dots);
-    if (n > slides.length){ 
-        slideIndex = 1 
-    };
-    if (n < 1){ 
-        slideIndex = slides.length 
-    };
-    for (i = 0; i < slides.length; i++){
-        slides[i].style.display = "none";
-    };
-    for (i = 0; i < dots.length; i++){
-        dots[i].className = dots[i].className.replace(" act", "");
-    };
-    slides[slideIndex - 1].style.display = "block"; 
-    dots[slideIndex - 1].className += " act";
-};
-
 // -------- Remove from Local Storage --------
 
 const removeEl = document.getElementById('delete');
+
+
+
+
 
 // removeEl.addEventListener('click', removeBook());
 
