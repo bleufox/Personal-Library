@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
-        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous" />
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
+    <link rel='stylesheet' href='css/style.css' />
+    <link rel='stylesheet' href='https://unpkg.com/purecss@2.0.6/build/pure-min.css'
+        integrity='sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5' crossorigin='anonymous' />
     <title>Personal Library API</title>
 
 </head>
@@ -33,22 +33,22 @@
         <p>To search for a book in your library, type in the title, genre, or author you are looking for.</p>
         <div class='table-input'>
             <div class='t'>
-                <input id='bookInput' type='text' placeholder='Search within your library'>
+                <input id='bookInput' onkeyup='saveBook()' type='text' placeholder='Search within your library'>
             </div>
-            <nobr>
-                <button class="button-el" id='submitButton' onclick='saveBook()'>Search</button>
-                <button class="button-el" id='resetButton' onclick="removeAll()">Reset</button>
-            </nobr>
         </div>
+            <nobr>
+                <a><button class='button-el' id='submitButton' onclick='saveBook()'>Search</button>
+                    <button class='button-el' id='resetButton' onclick='removeAll()'>Reset</button></a>
+            </nobr>        
         <p id='submitReturn'></p>
     </section>
 
-    <section class="table-wrapper">
+    <section class='table-wrapper'>
         <h2>Library</h2>
 
-        <div id="userLibrary"></div>
+        <div id='userLibrary'></div>
 
-        <table id="usersBooks">
+        <table id='usersBooks'>
             <tr class='columns'>
                 <th class='thElColumns' id='title'>Book Title</th>
                 <th class='thElColumns' id='author'>Author</th>
