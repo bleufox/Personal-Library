@@ -266,6 +266,7 @@ const clearArr = [];
 function removeAll(){
     // document.getElementById("book-search-results").innerHTML = "";
     document.querySelector('#book-search-results > tbody').innerHTML = "";
+    console.log(document.getElementById("submitReturn"));
     document.getElementById("submitReturn").innerHTML = "";
     libraryArr = clearArr;
     bookRowArr = clearArr;
