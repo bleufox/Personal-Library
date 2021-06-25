@@ -50,7 +50,6 @@ function handleData(data){
             buildTdWithInfo(book.volumeInfo.authors, trEl);
             buildTdWithInfo(book.volumeInfo.categories, trEl);
             buildTdWithInfo(shortDescription, trEl);
-            console.log(book.volumeInfo.imageLinks.thumbnail, trEl, true);
             buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
             bookResultsTable.append(trEl);
         }
@@ -90,16 +89,23 @@ function handleClickSelection(event){
         const bookRow = el.parentElement;
         for(let i = 0; i < 3; i++){
             const bookRowText = bookRow.children[i].innerText;
-            // console.log(bookRowText);
+            console.log(bookRowText);
             bookRowArr.push(bookRowText);
-            // saveBook(bookRowText);
         };
-        // saveBook(bookRow);
-        saveBook(bookRowArr);   
-    } else {
-        console.log('you did not click on a <td> tag');
-    };
+            bookStorage.title.push(bookRowArr[0]);
+            bookStorage.author.push(bookRowArr[1]);
+            bookStorage.genre.push(bookRowArr[3]);
+            saveBook(bookRowArr);   
+    }
 };
+
+let bookStorage = {
+    title: [],
+    author: [],
+    genre: [],
+};
+
+console.log(bookStorage)
 
 // --------------------------- Add to Local Storage ---------------------------
 
@@ -141,7 +147,7 @@ function saveBook() {
     console.log('library array ', libraryArr)
     console.log('book row array ', bookRowArr[0])
     // savedBooks();
-    updateHTML();
+    // updateHTML();
     addToLibrary();
 };
 
@@ -182,17 +188,17 @@ function createRows(rowInfo, trEl2){
 //     addedBook.textContent = `${totalLibrary}`;
 // };
 
-function updateHTML() {
-    const bookEl = bookRowArr[0]
-    // // console.log(bookEl);
-    // while (bookEl.firstChild) {
-    //     bookEl.removeChild(bookEl.firstChild)
-    // };
-    // console.log("TEST")
-    // document.getElementById("submitReturn").innerHTML = "TEST";
-    document.getElementById("submitReturn").style = "color: grey";
-    document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
-};
+// function updateHTML() {
+//     const bookEl = bookRowArr[0]
+//     // // console.log(bookEl);
+//     // while (bookEl.firstChild) {
+//     //     bookEl.removeChild(bookEl.firstChild)
+//     // };
+//     // console.log("TEST")
+//     // document.getElementById("submitReturn").innerHTML = "TEST";
+//     // document.getElementById("submitReturn").style = "color: grey";
+//     // document.getElementById("submitReturn").innerHTML = `${bookEl} has been added!`;
+// };
 
 // function getBook() {
 //     const addedBook = document.createElement("p")
@@ -205,34 +211,34 @@ function updateHTML() {
 
 // --------------------------- Carousel ------------------------------
 
-var slideIndex = 1;
-showSlides(slideIndex);
+// var slideIndex = 1;
+// showSlides(slideIndex);
 
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-};
+// function plusSlides(n) {
+//     showSlides(slideIndex += n);
+// };
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-};
+// function currentSlide(n) {
+//     showSlides(slideIndex = n);
+// };
 
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    // console.log(slides);
-    var dots = document.getElementsByClassName("dot");
-    // console.log(dots);
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" act", "");
-    }
-    slides[slideIndex - 1].style.display = "block"; 
-    dots[slideIndex - 1].className += " act";
-};
+// function showSlides(n) {
+//     var i;
+//     var slides = document.getElementsByClassName("mySlides");
+//     // console.log(slides);
+//     var dots = document.getElementsByClassName("dot");
+//     // console.log(dots);
+//     if (n > slides.length) { slideIndex = 1 }
+//     if (n < 1) { slideIndex = slides.length }
+//     for (i = 0; i < slides.length; i++) {
+//         slides[i].style.display = "none";
+//     }
+//     for (i = 0; i < dots.length; i++) {
+//         dots[i].className = dots[i].className.replace(" act", "");
+//     }
+//     slides[slideIndex - 1].style.display = "block"; 
+//     dots[slideIndex - 1].className += " act";
+// };
 
 // ----------------------- Remove from Local Storage -----------------------
 
@@ -283,3 +289,19 @@ function removeAll(){
 }
 
 // ----------------------------------------------------------------------------
+
+
+
+
+function testSavedBooks(){
+    bookStorage = testGetStorage('bookstorage');
+    if (bookStorage === null){
+        bookStorage = {};
+        saveBookToStorage('bookstorage', bookStorage)
+    }
+}
+
+function saveTheBook(key, userEntry) {
+    bookStorage[key] = userEntry;
+    saveToStorage("storage", events);
+}
