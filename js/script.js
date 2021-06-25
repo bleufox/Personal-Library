@@ -16,6 +16,30 @@ function setArrayToLocalStorage(){
 
 setArrayToLocalStorage();
 
+// -------------- Pulls the local storage data to add to the Personal Library upon opening page --------------
+
+let libraryTable = document.getElementById('usersBooks');
+let bookStorage = localStorage.getItem('bookStorage') || '[]';
+if(libraryTable){
+   bookStorage = JSON.parse(bookStorage);
+    console.log('hi')
+    for (let i = 0; i < bookStorage.length; i++){
+        let bookStorageEntry = bookStorage[i]
+        console.log('bookstorageentry: ', bookStorageEntry)
+        let trEl = document.createElement('tr');
+        trEl.classList.add('users-book-row');
+        let tdEl = document.createElement('td');
+        tdEl.textContent = bookStorageEntry.title;
+        trEl.appendChild(tdEl);
+        tdEl = document.createElement('td');
+        tdEl.textContent = bookStorageEntry.author;
+        trEl.appendChild(tdEl);
+        tdEl = document.createElement('td');
+        tdEl.textContent = bookStorageEntry.genre;
+        trEl.appendChild(tdEl);
+        libraryTable.append(trEl);
+    } 
+}
 
 // -------------- Fetches the API data based on user's query search --------------
 
