@@ -38,8 +38,8 @@ if(libraryTable){
         tdEl.textContent = bookStorageEntry.genre;
         trEl.appendChild(tdEl);
         libraryTable.append(trEl);
-    } 
-}
+    };
+};
 
 // -------------- Fetches the API data based on user's query search --------------
 
@@ -133,7 +133,7 @@ function buildTdWithInfo(info, trEl, isImage) {
     trEl.append(tdEl);
 };
 
-// --------------- Event listener to select the table row based on user's click ---------------
+// -------------- Event listener to select the table row based on user's click --------------
 
 const bookSelection = document.querySelector('#book-search-results');
 bookSelection.addEventListener('click', handleClickSelection);
@@ -157,17 +157,7 @@ function handleClickSelection(event){
     };
 }
 
-// ============= I don't think this is being called anywhere, lets remove it if we aren't using it? ================
-// function browseLibrary(){
-//     const searchVal = document.getElementById('bookInput').value;
-//     savedLibraryArr.push(searchVal);
-//     localStorage.setItem('searchStorage', savedLibraryArr);
-//     console.log(bookRowArr[0]);
-//     updateHTML(bookRowArr[0]);
-// };
-// =================================================================================================================
-
-// --------------- Saves bookInfo from handleSelection function to local storage ---------------
+// -------------- Saves bookInfo from handleSelection function to local storage --------------
 
 function saveBook(bookInfo){
     if (!bookInfo)
@@ -181,7 +171,7 @@ function saveBook(bookInfo){
     addToLibrary();
 };
 
-// --------------- Retrieves bookInfo from local storage to add to Personal Library Page and builds Personal Library table ---------------
+// -------------- Retrieves bookInfo from local storage to add to Personal Library Page and builds table --------------
 
 function addToLibrary(){
     let libraryTable = document.getElementById('usersBooks');
@@ -246,7 +236,7 @@ function fadeOut(el){
     el.classList.remove('show');
 };
 
-// --------------- Remove from Local Storage ---------------
+// -------------- Remove from Local Storage --------------
 
 const removeEl = document.getElementById('delete');
 
@@ -256,7 +246,7 @@ const removeEl = document.getElementById('delete');
 //     libraryArr.remove(bookInputEl);
 // };
 
-// --------------- Due date reminder ---------------
+// -------------- Due Date Reminder --------------
 
 const lentBooks = ['Leviathan', 'Candide', 'War & Peace'];
 
@@ -285,16 +275,14 @@ window.onload = function (){
 
 // --------------- Clears Search Results ---------------
 
-// function removeAll(){
-//     // const elem = document.getElementById('book-search-results');
-//     // elem.parentNode.removeChild(elem);
-//     document.getElementById('bookInput').value = '';
-//     document.getElementById('book-search-results > tbody').innerHTML = ''; // This is clearing too much
-//     // document.querySelector('#book-search-results > tbody').innerHTML = '';
-//     // console.log(document.getElementById('submitReturn'));
-//     document.getElementById('submitReturn').innerHTML = '';
-//     libraryArr = clearArr;
-//     bookRowArr = clearArr;
-// };
-
-
+function removeAll(){
+    // const elem = document.getElementById('book-search-results');
+    // elem.parentNode.removeChild(elem);
+    document.getElementById('bookInput').value = '';
+    document.getElementById('book-search-results > tbody').innerHTML = ''; // This is clearing too much
+    // document.querySelector('#book-search-results > tbody').innerHTML = '';
+    // console.log(document.getElementById('submitReturn'));
+    document.getElementById('submitReturn').innerHTML = '';
+    libraryArr = clearArr;
+    bookRowArr = clearArr;
+};
