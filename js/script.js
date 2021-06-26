@@ -46,7 +46,7 @@ if(libraryTable){
 function getAPI(bookSearch){
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`)
         .then(function (response){
-            return response.json()
+            return response.json();
         })
         .then(function (data){
             handleData(data);
@@ -65,35 +65,6 @@ function handleClick(){
 // -------------- Handles defined data parameters from API fetch, to be added to local storage --------------
 
 function handleData(data){
-    // if (condition) {
-    //     function removeAll(){
-    //         // const elem = document.getElementById('book-search-results');
-    //         // elem.parentNode.removeChild(elem);
-    //         document.getElementById('bookInput').value = '';
-    //         document.getElementById('book-search-results > tbody').innerHTML = ''; // This is clearing too much
-    //         // document.querySelector('#book-search-results > tbody').innerHTML = '';
-    //         // console.log(document.getElementById('submitReturn'));
-    //         document.getElementById('submitReturn').innerHTML = '';
-    //         libraryArr = clearArr;
-    //         bookRowArr = clearArr;
-    //     };
-
-    //     let bookResultsTable = document.querySelector('#book-search-results');
-    //     // console.log(bookResultsTable);
-    //     const bookInfo = data.items;
-    //     function buildRow(book){
-    //         const shortDescription = book.volumeInfo.description?.split('.')[0];
-    //         let trEl = document.createElement('tr');
-    //         trEl.classList.add('book-info-row');
-    //         buildTdWithInfo(book.volumeInfo.title, trEl); 
-    //         buildTdWithInfo(book.volumeInfo.authors, trEl);
-    //         buildTdWithInfo(book.volumeInfo.categories, trEl);
-    //         buildTdWithInfo(shortDescription, trEl);
-    //         // console.log(book.volumeInfo.imageLinks.thumbnail, trEl, true);
-    //         buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
-    //         // console.log(bookResultsTable);
-    //         bookResultsTable.append(trEl);
-    //     };
     let bookResultsTable = document.querySelector('#book-search-results');
     // console.log(bookResultsTable);
     const bookInfo = data.items;
@@ -109,10 +80,10 @@ function handleData(data){
         buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
         // console.log(bookResultsTable);
         bookResultsTable.append(trEl);
-    }
+    };
     for (let i = 0; i < bookInfo.length; i++){
         buildRow(bookInfo[i]);
-    }       
+    };
 };
 
 // -------------- Builds table to display handleData parameters --------------
@@ -129,7 +100,7 @@ function buildTdWithInfo(info, trEl, isImage) {
         const imgEl = document.createElement('img');
         imgEl.setAttribute('src', info);
         tdEl.append(imgEl);
-    }
+    };
     trEl.append(tdEl);
 };
 
@@ -154,11 +125,12 @@ function handleClickSelection(event){
         };
         document.querySelector('#resultsBtn');
         // console.log('bookinfo: ', bookInfo)
-        // alert('You added ' + bookInfo.title + ' to your library!');
         submitReturnEl.style = 'color: grey';
         submitReturnEl.innerHTML = ``;
         submitReturnEl.innerHTML = `${bookInfo.title} has been added to your library!`;
         saveBook(bookInfo);   
+    }else if(el.tagName === ''){
+        removeBook();
     };
 };
 
@@ -204,6 +176,11 @@ function addToLibrary(){
             tdEl = document.createElement('td');
             tdEl.textContent = bookStorageEntry.genre;
             trEl.appendChild(tdEl);
+            
+            tdEl = document.createElement('button');
+            // tdEl.textContent = "Hello World";
+            trEl.appendChild(teEl);
+
             libraryTable.append(trEl);
         };
     };
@@ -250,12 +227,15 @@ window.onload = function (){
 // --------------- Clears Search Results ---------------
 
 function removeAll(){
+    let bookStorage = localStorage.getItem('bookStorage') || '[]';
+    bookStorage = JSON.parse(bookStorage);
     document.getElementById('bookInput').value = '';
-    document.getElementById('book-search-results').innerHTML = ''; // This is clearing too much
-    console.log(document.getElementById('book-search-results'));
-    // document.querySelector('#book-search-results > tbody').innerHTML = '';
+    // document.getElementById('book-search-results').innerHTML = ''; // This is clearing too much
+    // console.log(document.getElementById('book-search-results > tbody'));
+    document.querySelector('tbody').innerHTML = '';
     // console.log(document.getElementById('submitReturn'));
-    document.getElementById('submitReturn').innerHTML = '';
+    // document.getElementById('testTestTest').innerHTML = '';
     libraryArr = clearArr;
     bookRowArr = clearArr;
+    saveBook(bookRowArr);
 };
