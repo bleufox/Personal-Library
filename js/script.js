@@ -78,6 +78,7 @@ function handleData(data){
         buildTdWithInfo(shortDescription, trEl);
         // console.log(book.volumeInfo.imageLinks.thumbnail, trEl, true);
         buildTdWithInfo(book.volumeInfo.imageLinks.thumbnail, trEl, true);
+        buildTdWithInfo(); // Add button here?
         // console.log(bookResultsTable);
         bookResultsTable.append(trEl);
     };
@@ -227,8 +228,8 @@ window.onload = function (){
 // --------------- Clears Search Results ---------------
 
 function removeAll(){
-    let bookStorage = localStorage.getItem('bookStorage') || '[]';
-    bookStorage = JSON.parse(bookStorage);
+    // let bookStorage = localStorage.getItem('bookStorage') || '[]';
+    // bookStorage = JSON.parse(bookStorage);
     document.getElementById('bookInput').value = '';
     // document.getElementById('book-search-results').innerHTML = ''; // This is clearing too much
     // console.log(document.getElementById('book-search-results > tbody'));
