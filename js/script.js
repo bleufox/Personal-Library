@@ -153,11 +153,11 @@ function handleClickSelection(event){
             genre: bookRow.children[2].innerText,
         };
         document.querySelector('#resultsBtn');
-        console.log('bookinfo: ', bookInfo)
+        // console.log('bookinfo: ', bookInfo)
         // alert('You added ' + bookInfo.title + ' to your library!');
         submitReturnEl.style = 'color: grey';
         submitReturnEl.innerHTML = ``;
-        submitReturnEl.innerHTML = `${bookInfo.title} has been added!`;
+        submitReturnEl.innerHTML = `${bookInfo.title} has been added to your library!`;
         saveBook(bookInfo);   
     };
 };
@@ -250,10 +250,9 @@ window.onload = function (){
 // --------------- Clears Search Results ---------------
 
 function removeAll(){
-    // const elem = document.getElementById('book-search-results');
-    // elem.parentNode.removeChild(elem);
     document.getElementById('bookInput').value = '';
-    document.getElementById('book-search-results > tbody').innerHTML = ''; // This is clearing too much
+    document.getElementById('book-search-results').innerHTML = ''; // This is clearing too much
+    console.log(document.getElementById('book-search-results'));
     // document.querySelector('#book-search-results > tbody').innerHTML = '';
     // console.log(document.getElementById('submitReturn'));
     document.getElementById('submitReturn').innerHTML = '';
