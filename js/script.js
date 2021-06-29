@@ -65,7 +65,7 @@ function handleClick(){
 // -------------- Handles defined data parameters from API fetch, to be added to local storage --------------
 
 function handleData(data){
-    let bookResultsTable = document.querySelector('#book-search-results');
+    let bookResultsTable = document.querySelector('#results');
     // console.log(bookResultsTable);
     const bookInfo = data.items;
     function buildRow(book){
@@ -137,6 +137,7 @@ function handleClickSelection(event){
 
 // -------------- Saves bookInfo from handleSelection function to local storage --------------
 
+
 function saveBook(bookInfo){
     if (!bookInfo)
         return;
@@ -188,55 +189,17 @@ function addToLibrary(){
     buildPersonalLibrary();
 };
 
-// -------------- Remove from Local Storage --------------
-
-const removeEl = document.getElementById('delete');
-
-// removeEl.addEventListener('click', removeBook());
-
-// function removeBook(){
-//     libraryArr.remove(bookInputEl);
-// };
-
-// -------------- Due Date Reminder --------------
-
-const lentBooks = ['Leviathan', 'Candide', 'War & Peace'];
-
-const dueDateRowEl = document.querySelector('#resultsDue');
-
-function dueDateReminder(){
-    const dueDateEl = document.querySelector('#dueDates');
-    lentBooks.push(dueDateEl);
-    for (let i = 0; i < lentBooks.length; i++){
-        // const element = array[i];
-        if (lentBooks.length <= 0){
-            dueDateEl.textContent = 'No upcoming due dates!';
-        } else{
-            // array.forEach(item => console.log(item));
-            // lentBooks.forEach(item => console.log(item));
-
-            // lentBooks.forEach(function, dueDateRowEl);
-            // dueDateEl.textContent = `${dueDateEl} is due on ${dueDateEl}`;
-        };
-    };
-};
-
-window.onload = function (){
-    dueDateReminder();
-};
+function fadeOut(el){
+    el.classList.add('hide');
+    el.classList.remove('show');
 
 // --------------- Clears Search Results ---------------
 
 function removeAll(){
-    // let bookStorage = localStorage.getItem('bookStorage') || '[]';
-    // bookStorage = JSON.parse(bookStorage);
-    document.getElementById('bookInput').value = '';
-    // document.getElementById('book-search-results').innerHTML = ''; // This is clearing too much
-    // console.log(document.getElementById('book-search-results > tbody'));
-    document.querySelector('tbody').innerHTML = '';
-    // console.log(document.getElementById('submitReturn'));
-    // document.getElementById('testTestTest').innerHTML = '';
-    libraryArr = clearArr;
-    bookRowArr = clearArr;
-    saveBook(bookRowArr);
+
+    document.getElementById("results").innerHTML = "";
+    document.getElementById("submitReturn").innerHTML = "";
+    libraryArr = clearArr
+    bookRowArr = clearArr
+
 };
