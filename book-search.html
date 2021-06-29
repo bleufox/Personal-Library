@@ -31,7 +31,7 @@
 
     <section class='search-wrapper' id='search-bar-wrapper'>
         <p>To search for a book, type in the title, genre, or author you wish to add.</p>
-        <div class='table-input'>
+        <div class='table-input' style='display: flex;'>
             <div class='t'>
                 <input id='bookInput' onkeyup='saveBook()' type='text' placeholder='e.g. Green Eggs and Ham, J.K Rowling, etc.'>
             </div>
@@ -60,7 +60,7 @@
                 </tr>
             </thead>
 
-            <tbody></tbody>
+            <tbody id="results"></tbody>
 
         </table>
     </section>

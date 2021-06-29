@@ -17,15 +17,15 @@ p {
 }
 
 input {
-  width: 85%;
-  height: 40px;
-  box-sizing: border-box;
+  width: 107%;
+  height: 35px;
   border: 2px solid #9bbabc;
   border-radius: 30px;
   font-size: 15pt;
   color: #555555;
   border-radius: 30px;
   padding-left: 15px;
+  margin: auto;
 }
 
 button  {
@@ -59,6 +59,11 @@ button:hover {
   box-shadow: 2px 0px 10px  #555555 ;
   padding: 30px;
   width: 50%;
+}
+
+.table-input  {
+  width: 75%;
+  margin: auto;
 }
 
 h2  {
@@ -109,10 +114,6 @@ footer {
   color: #888888;
 }
 
-::placeholder {
-  padding-left: 5px;
-}
-
 .thElColumns {
   font-size: 14pt;
   font-weight: bold;
@@ -133,24 +134,18 @@ footer {
   width: 100px;
 }
 
-.table-input {
-  display: table;
+.search-elements  {
+  display: cell;
 }
 
 .t {
-  display: table-cell;
-  width: 95%;
+  display: cell;
+  width: 65%;
+  margin: auto;
 }
 
 .t > button {
-  width: 100%;
-}
-
-.search-wrapper {
-  width: 65%;
-  padding-top: 20px;
-  padding-bottom: 25px;
-  margin: 0 auto;
+  width: 50%;
 }
 
 .book-info-row {
@@ -307,31 +302,8 @@ footer {
   width: 50%;
 }
 
-/*{
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/*.gallery-cell {
-  width: 66%;
-  height: 200px;
-  margin-right: 10px; 
-  background: #8C8;
-  counter-reset: "gallery-cell";
-  counter-increment: "gallery-cell";
-}*/
-
-/* cell number 
-.gallery-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(gallery-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
-}*/
-  @media (max-width: 768px) {
-    .main-content {
-      padding: 20px 8px;
+@media (max-width: 768px) {
+  .main-content {
+  padding: 20px 8px;
     }
   }

@@ -31,15 +31,15 @@
 
     <section class='search-wrapper' id='search-bar-wrapper'>
         <p>To search for a book in your library, type in the title, genre, or author you are looking for.</p>
-        <div class='table-input'>
+        <div class='table-input' style='display: flex;'>
             <div class='t'>
                 <input id='bookInput' onkeyup='saveBook()' type='text' placeholder='Search within your library'>
             </div>
-        </div>
             <nobr>
                 <a><button class='button-el' id='submitButton' onclick='saveBook()'>Search</button>
                     <button class='button-el' id='resetButton' onclick='removeAll()'>Reset</button></a>
-            </nobr>        
+            </nobr>
+        </div>
         <p id='submitReturn'></p>
     </section>
 
