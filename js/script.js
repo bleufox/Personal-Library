@@ -143,6 +143,7 @@ function saveBook(bookInfo){
     addToLibrary();
 };
 
+
 // --------------- Retrieves bookInfo from local storage to add to Personal Library Page and builds Personal Library table ---------------
 
 function addToLibrary(){
