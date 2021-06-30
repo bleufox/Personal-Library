@@ -5,14 +5,13 @@ API allows users to search for book titles and add them to a personal library. T
 
 ## MVPs
 * Search for a book by title, author, or genre
-* Save/remove books to and from local storage (personal library table)
-* Track loaned books in personal library
+* Save books to local storage (personal library table)
 
 ## Technologies Used
 HTML, CSS, JavaScript, jQuery
 
 ## Screenshot
-![BookSearch](/images/screenshot-book-search.png)
+![BookSearch](/images/Screenshot-book-search.png)
 
 ## Links
 * Deployed Site: https://bleufox.github.io/Personal-Library/

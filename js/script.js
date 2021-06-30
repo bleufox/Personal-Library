@@ -5,10 +5,10 @@ const clearArr = [];
 let libraryArr = [];
 let bookRowArr = [];
 
-function setArrayToLocalStorage() {
-    if (libraryArr.length = 0) {
+function setArrayToLocalStorage(){
+    if(libraryArr.length = 0){
         console.log('Array is empty');
-    } else {
+    } else{
         return localStorage.getItem('bookStorage');
     };
     console.log('Test');
@@ -20,10 +20,10 @@ setArrayToLocalStorage();
 
 let libraryTable = document.getElementById('usersBooks');
 let bookStorage = localStorage.getItem('bookStorage') || '[]';
-if (libraryTable) {
-    bookStorage = JSON.parse(bookStorage);
+if(libraryTable){
+   bookStorage = JSON.parse(bookStorage);
     console.log('hi')
-    for (let i = 0; i < bookStorage.length; i++) {
+    for (let i = 0; i < bookStorage.length; i++){
         let bookStorageEntry = bookStorage[i]
         console.log('bookstorageentry: ', bookStorageEntry)
         let trEl = document.createElement('tr');
@@ -38,17 +38,17 @@ if (libraryTable) {
         tdEl.textContent = bookStorageEntry.genre;
         trEl.appendChild(tdEl);
         libraryTable.append(trEl);
-    }
+    } 
 }
 
 // -------------- Fetches the API data based on user's query search --------------
 
-function getAPI(bookSearch) {
+function getAPI(bookSearch){
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookSearch}`)
-        .then(function (response) {
+        .then(function (response){
             return response.json()
         })
-        .then(function (data) {
+        .then(function (data){
             handleData(data);
         });
 };
@@ -57,23 +57,23 @@ function getAPI(bookSearch) {
 
 submitBtn.addEventListener('click', handleClick);
 
-function handleClick() {
+function handleClick(){
     const userQuery = searchInputEl.value;
     getAPI(userQuery);
 };
 
 // -------------- Handles defined data parameters from API fetch, to be added to local storage --------------
 
-function handleData(data) {
+function handleData(data){
 
     let bookResultsTable = document.querySelector('#results');
     // console.log(bookResultsTable);
     const bookInfo = data.items;
-    function buildRow(book) {
+    function buildRow(book){
         const shortDescription = book.volumeInfo.description?.split('.')[0];
         let trEl = document.createElement('tr');
         trEl.classList.add('book-info-row');
-        buildTdWithInfo(book.volumeInfo.title, trEl);
+        buildTdWithInfo(book.volumeInfo.title, trEl); 
         buildTdWithInfo(book.volumeInfo.authors, trEl);
         buildTdWithInfo(book.volumeInfo.categories, trEl);
         buildTdWithInfo(shortDescription, trEl);
@@ -82,9 +82,9 @@ function handleData(data) {
         // console.log(bookResultsTable);
         bookResultsTable.append(trEl);
     }
-    for (let i = 0; i < bookInfo.length; i++) {
+    for (let i = 0; i < bookInfo.length; i++){
         buildRow(bookInfo[i]);
-    }
+    }       
 };
 
 // -------------- Builds table to display handleData parameters --------------
@@ -92,12 +92,12 @@ function handleData(data) {
 function buildTdWithInfo(info, trEl, isImage) {
     const tdEl = document.createElement('td');
     tdEl.classList.add('book-td');
-    if (!info) {
+    if (!info){
         tdEl.textContent = 'No info listed.';
-    } else if (!isImage) {
+    } else if (!isImage){
         // console.log('info is: ', info);
         tdEl.textContent = info;
-    } else {
+    } else{
         const imgEl = document.createElement('img');
         imgEl.setAttribute('src', info);
         tdEl.append(imgEl);
@@ -113,9 +113,9 @@ bookSelection.addEventListener('click', handleClickSelection);
 // --------------- Handles user's click selection ---------------
 // (Function recieves the <td> target tag, identifies the <tr> parent element and then selects the first 3 objects of the parent element array to generate the items being placed in personal library list)
 
-function handleClickSelection(event) {
+function handleClickSelection(event){
     const el = event.target;
-    if (el.tagName === 'TD') {
+    if(el.tagName === 'TD'){
         const bookRow = el.parentElement;
         const bookInfo = {
             title: bookRow.children[0].innerText,
@@ -125,13 +125,13 @@ function handleClickSelection(event) {
         document.querySelector('#resultsBtn');
         console.log('bookinfo: ', bookInfo)
         alert('You added ' + bookInfo.title + ' to your library!');
-        saveBook(bookInfo);
+        saveBook(bookInfo);   
     };
 }
 
 // --------------- Saves bookInfo from handleSelection function to local storage ---------------
 
-function saveBook(bookInfo) {
+function saveBook(bookInfo){
     if (!bookInfo)
         return;
     let bookStorage = localStorage.getItem('bookStorage') || '[]';
@@ -145,12 +145,12 @@ function saveBook(bookInfo) {
 
 // --------------- Retrieves bookInfo from local storage to add to Personal Library Page and builds Personal Library table ---------------
 
-function addToLibrary() {
+function addToLibrary(){
     let libraryTable = document.getElementById('usersBooks');
-    function buildPersonalLibrary() {
+    function buildPersonalLibrary(){
         let bookStorage = localStorage.getItem('bookStorage') || '[]';
         bookStorage = JSON.parse(bookStorage);
-        for (let i = 0; i < bookStorage.length; i++) {
+        for (let i = 0; i < bookStorage.length; i++){
             // ------- if you view bookStorage in the console, you will see that all items are getting added to the bookstorage array which saves them to localstorage, if we don't target the last element in the bookStorage array it will continue to append the full list to the page plus the most recently added book.
             console.log('bookStorage: ', bookStorage)
             i = bookStorage.length - 1;
@@ -175,15 +175,16 @@ function addToLibrary() {
     buildPersonalLibrary();
 };
 
-function fadeOut(el) {
+function fadeOut(el){
     el.classList.add('hide');
     el.classList.remove('show');
 };
 
 // --------------- Clears Search Results ---------------
 
-function removeAll() {
+function removeAll(){
     document.getElementById("results").innerHTML = "";
+    // document.querySelector('#book-search-results > tbody').innerHTML = "";
     document.getElementById("submitReturn").innerHTML = "";
     libraryArr = clearArr
     bookRowArr = clearArr
