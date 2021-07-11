@@ -10,15 +10,20 @@ API allows users to search for book titles and add them to a personal library. T
 ## Technologies Used
 HTML, CSS, JavaScript, jQuery
 
-## Screenshot
-![BookSearch](/images/Screenshot-book-search.png)
+## Screenshots
+![BookSearch](/images/book-search-screenshot.png)
+![Recommended Apps](/images/recommended-apps-screenshot.png)
+![Results](/images/results-page-screenshot.png)
 
 ## Links
 * Deployed Site: https://bleufox.github.io/Personal-Library/
 * GitHub Repo: https://github.com/bleufox/Personal-Library
 
+## License
+* MIT
+
 ## Created By
 * Eva Popp
 * Andy Williams 
 * Mariam Ngoye
-* Ashley Jones
+* Ashley Jones - thebleufox8@gmail.com - 541.505.5287
